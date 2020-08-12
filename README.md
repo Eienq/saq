@@ -1,10 +1,18 @@
-**FYNX CODE Discord.js v12 Müzik Altyapısı**
+**Discord.js v12 Müzik Altyapısı by Bay Ördekcik - Lord Creative**
 
 //-------------------------------------------------------------------------------------------//
 
 ✔ Bay Ördekcik ve Lord Creative tarafından yapılmıştır.
 
 ✘ Çalınması, kopyalanması veya başka sunucularda paylaşılması yasaktır.
+
+//-------------------------------------------------------------------------------------------//
+
+❓ **Olamaz dosyalar nerede?**
+
+• Selam korkma, endişelenme dosyalar hala burada ama şifreli. 
+
+• Dosyaları görebilmek için videoyu tamamen izlemen gerek.
 
 //-------------------------------------------------------------------------------------------//
 
