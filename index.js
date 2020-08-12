@@ -103,8 +103,8 @@ newState.setSelfDeaf(true);
 
 client.on("ready", ready => { 
 client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
-client.channels.cache.get("743093543274283071").setName(`🎀 `  + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`) 
-client.channels.cache.get("735055981968621618").setName(`🎀 ` + client.guilds.cache.size + ` Sunucu`);
+client.channels.cache.get("743218160672702608").setName(`🎀 ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`)
+client.channels.cache.get("743218148458889246").setName(`🎀 ${client.guilds.cache.size} Sunucu`);
 });
 
 client.login(fynx.fynxtoken)
