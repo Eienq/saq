@@ -41,7 +41,7 @@ reactions.on("end", () => message.delete().then(mr => sentEmbed.delete()).then(m
     reactions.on("collect", async function (reaction) {
 				if (reaction.emoji.name === "✅") {
   try {
-    message.delete().then(mr => sentEmbed.delete()).then(adam => message.channel.send(embed3)).then(wb => { 
+    message.delete().then(mr => sentEmbed.delete()).then(adam => message.channel.send(embed3)).then(mr => sentEmbed.delete()).then(wb => { 
     process.exit(0);
     })
   } catch (err) {
