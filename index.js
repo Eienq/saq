@@ -120,11 +120,14 @@ process.exit(0)
 const bot = new Discord.Client();
 
 var oyun = [
-"🎀 Sponsor: glitch.com",
-"🔥 Yapımcı: Bay Ördekcik / Lord Creative",
-"✨ Yardım almak için | +yardım",
-"🌈 fynxmusic.tk",
-"🚀 Gelişmiş Müzik Botu"
+`🎀 Sponsor: glitch.com`,
+`🔥 Yapımcı: Bay Ördekcik / Lord Creative`,
+`✨ Yardım almak için | +yardım`,
+`🌈 fynxmusic.tk`,
+`🚀 Gelişmiş Müzik Botu`,
+``,
+``,
+``
 ]
 
 client.on("ready", () => {
