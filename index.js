@@ -117,15 +117,14 @@ process.exit(0)
 
 //------------------Değişen Oynuyor---------------------------\\
 
+const bot = new Discord.Client();
+
 var oyun = [
 "🎀 Sponsor: glitch.com",
 "🔥 Yapımcı: Bay Ördekcik / Lord Creative",
 "✨ Yardım almak için | +yardım",
 "🌈 fynxmusic.tk",
-"🚀 Gelişmiş Müzik Botu",
-`⚡️ ` +client.guilds.cache.size + ` Sunucu`,
-`☄️ ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`,
-`🎧 ` + client.voice.connections.cache.size + ` Dinleyici`
+"🚀 Gelişmiş Müzik Botu"
 ]
 
 client.on("ready", () => {
@@ -134,5 +133,5 @@ setInterval(function() {
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
         client.user.setActivity(oyun[random], "https://www.twitch.tv/fynx" );
-        }, 2 * 2500);
+        }, 2 * 5000);
 });
