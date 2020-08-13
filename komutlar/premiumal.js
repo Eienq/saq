@@ -1,7 +1,6 @@
 const db = require('quick.db')
 const Discord = require('discord.js')
 const client = new Discord.Client();
-
 const Fynx = "#36393e";
 const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";  
@@ -19,14 +18,13 @@ const dogru = Discord.MessageEmbed()
 .setColor(FynxDogru)
 .setTitle("Fynx Music - Başarılı")
 .setDescription(`<@${uye}> adlı kullanıcıya premium üyelik verildi!`)
-
-  if (!uye) return message.channel.send(hata)
+  if (!uye) return message.channel.send('Bir kullanıcının IDsini girmelisin?')
   
-  db.set(`premium_${uye}`, 'premium')
+  db.delete(`premium_${uye}`)
   
-  message.channel.send(dogru)//ıııııııııııııııııııııııı
+  message.channel.send(`**${uye}** IDli kullanıcı artık gold üye değil!`)
 }
 exports.config = {
-  name: 'premium-ver',   
-  aliases: ["premiumver"]
+  name: 'premuim-al',
+  aliases: ["premiumal"]
 };
