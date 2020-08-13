@@ -101,7 +101,6 @@ newState.setSelfDeaf(true);
 //---------------------------------------------------------\\
 
 client.on("ready", ready => { 
-client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 client.channels.cache.get("743218160672702608").setName(`🎀 ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`)
 client.channels.cache.get("743218148458889246").setName(`🎀 ${client.guilds.cache.size} Sunucu`);
 });
@@ -115,3 +114,23 @@ setInterval(function() {
 process.exit(0)
 }, 20000);
 })
+
+//------------------Değişen Oynuyor---------------------------\\
+
+var oynuyorkısımları = [
+"🎀 Sponsor: glitch.com",
+"🔥 Yapımcı: Bay Ördekcik / Lord Creative",
+"✨ Yardım almak için | +yardım",
+"🌈 fynxmusic.tk",
+"🚀 Gelişmiş Müzik Botu",
+`⚡️ ${client.guilds.cache.size} Sunucu`,
+`☄️ ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`
+]
+
+client.on("ready", () => {
+setInterval(function() {
+
+        var random = Math.floor(Math.random()*(oynuyorkısımları.length-0+1)+0);
+       client.user.setActivity(oynuyorkısımları[random], { type: 'LISTENING' });
+        }, 2 * 3000)
+});
