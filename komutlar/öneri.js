@@ -32,13 +32,15 @@ const onerili = new Discord.MessageEmbed()
  
       .setColor("RANDOM")
  
-      .addField("Eylem:", "Öneri",true)
+      .setAuthor("Yeni Bir Öneri!", client.user.avatarURL())
  
-      .addField("Kullanıcı:", message.author.tag, true)
+      .addField("• Öneren Kullanıcı:", message.author.tag, true)
  
-      .addField("ID", message.author.id,true)
+      .addField("• Öneren Kullanıcı ID:", message.author.id,true)
  
-      .addField("Öneri", öneri);
+      .addField("• Önerisi:", öneri)
+    
+      .setThumbnail(message.author.avatarURL());
  
     client.guilds
       .cache.get(guildID)
