@@ -117,20 +117,22 @@ process.exit(0)
 
 //------------------Değişen Oynuyor---------------------------\\
 
-var oynuyorkısımları = [
+var oyun = [
 "🎀 Sponsor: glitch.com",
 "🔥 Yapımcı: Bay Ördekcik / Lord Creative",
 "✨ Yardım almak için | +yardım",
 "🌈 fynxmusic.tk",
 "🚀 Gelişmiş Müzik Botu",
-`⚡️ ${client.guilds.cache.size} Sunucu`,
-`☄️ ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`
+`⚡️ ` +client.guilds.cache.size + ` Sunucu`,
+`☄️ ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`,
+`🎧 ` + client.voice.connections.cache.size + ` Dinleyici`
 ]
 
 client.on("ready", () => {
 setInterval(function() {
 
-        var random = Math.floor(Math.random()*(oynuyorkısımları.length-0+1)+0);
-       client.user.setActivity(oynuyorkısımları[random], { type: 'LISTENING' });
-        }, 2 * 3000)
+        var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
+
+        client.user.setActivity(oyun[random], "https://www.twitch.tv/fynx" );
+        }, 2 * 2500);
 });
