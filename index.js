@@ -51,8 +51,8 @@ response.sendStatus(200);
 });
 app.listen(fynx.fynxport);
 setInterval(() => {
-http.get(`http://coal-glitter.glitch.me/`);
-}, 1000 * 60 * 30);
+http.get(`http://coal-glitter-hoodie.glitch.me/`);
+}, 1000 * 30);
 
 //----------------------------------------------\\
 
