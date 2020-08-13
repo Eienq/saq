@@ -48,7 +48,7 @@ message.channel.send(new Discord.MessageEmbed()
  if(!args[0]) return message.channel.send(new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("Fynx Music - Hata")
-.setDescription(`Prefix Ayarlamak İçin ${p}prefix ayarla <prefix> / Sıfırlamak İçin ${p}prefix sıfırla Şuanki Prefix: ${p}`));
+.setDescription(`Fynx Music'in prefixini ayarlayabilmek için \`${p}prefix ayarla <prefix>\` \n Sıfırlayabilmek için \`${p}prefix sıfırla\` yazabilirsiniz.\n Fynx Music'in şu anki prefixi: \`${p}\``));                    
   
 };
 
