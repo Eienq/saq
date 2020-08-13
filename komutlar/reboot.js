@@ -9,18 +9,27 @@ const FynxHata = "#f30707";
 module.exports.run = async (bot, message, args) => { 
    
   var embed2 = new Discord.RichEmbed()   
+      .setColor(FynxHata)
       .setTitle('Fynx Music - Hata')
       .setDescription('Bu komutu kullanabilmek için bot yapımcısı olman gerekmektedir.\nBot yapımcıları; <@327064201245753344> <@236173144300191754>')
-      .setColor('RED') 
+      .setColor('RED'); 
+ var embed3 = new Discord.MessageEmbed()
+.setColor(FynxDogru)      
+.setTitle("Fynx Music - Başarılı")
+.setDescription("Fynx Music yeniden başlatılıyor.");
+var embed4 = new Discord.MessageEmbed()
+.setColor(FynxHata)
+.setTitle("Fynx Music - Hata")
+.setDescription("Fynx Music yeniden başlatılma işlemi iptal edildi.")
   
 
   if(message.author.id !== ["327064201245753344", "236173144300191754"]) return message.channel.sendEmbed(embed2)
      
   //Cortex botun reboot sistemi hadi h.o
   var embed = new Discord.RichEmbed()   
-      .setTitle('**Merhaba Sahibim Pudochu,**')
-      .setDescription('Beni yeniden başlatmak  istediğine eminsen aşağıdaki **TİK** işaretine, bir kere dokunur musun?')
-      .setColor('RANDOM')
+      .setTitle(`Merhaba ${message.author},`)
+      .setDescription(`Fynx Music'i yeniden başlatmak istediğine emin misin?`)
+      .setColor('#ffc000')
 message.channel.send(embed).then(async function (sentEmbed) {
 			const emojiArray = ["✅"];
 			const filter = (reaction, user) => emojiArray.includes(reaction.emoji.name) && user.id === message.author.id;
@@ -28,12 +37,12 @@ message.channel.send(embed).then(async function (sentEmbed) {
 			var reactions = sentEmbed.createReactionCollector(filter, {
 				time: 30000
 			});
-reactions.on("end", () => message.delete().then(mr => sentEmbed.delete()).then(m => message.delete()).then(m2 => message.author.send("Yeniden Başlatma İşlemi iptal ettim! "))) 
+reactions.on("end", () => message.delete().then(mr => sentEmbed.delete()).then(m => message.delete()).then(m2 => message.channel.send(embed4))) 
     reactions.on("collect", async function (reaction) {
 				if (reaction.emoji.name === "✅") {
   try {
     message.delete().then(mr => sentEmbed.delete()).then(wb => { 
- console.log(`BOT: Bot yeniden başlatılıyor...`);
+message.channel.send(embed3)
     process.exit(0);
     })
   } catch (err) {
