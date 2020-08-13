@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const ayarlar = require("../ayarlar.json")
+const ayarlar = require("../ayarlar/bot.json")
 const Fynx = "#36393e";
 const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";  
@@ -8,7 +8,7 @@ const FynxHata = "#f30707";
 
 module.exports.run = async (bot, message, args) => { 
    
-  var embed2 = new Discord.RichEmbed()   
+  var embed2 = new Discord.MessageEmbed()   
       .setColor(FynxHata)
       .setTitle('Fynx Music - Hata')
       .setDescription('Bu komutu kullanabilmek için bot yapımcısı olman gerekmektedir.\nBot yapımcıları; <@327064201245753344> <@236173144300191754>')
@@ -23,10 +23,10 @@ var embed4 = new Discord.MessageEmbed()
 .setDescription("Fynx Music yeniden başlatılma işlemi iptal edildi.")
   
 
-  if(message.author.id !== ["327064201245753344", "236173144300191754"]) return message.channel.sendEmbed(embed2)
+  if(message.author.id !== "327064201245753344") return message.channel.send(embed2)
      
   //Cortex botun reboot sistemi hadi h.o
-  var embed = new Discord.RichEmbed()   
+  var embed = new Discord.MessageEmbed()   
       .setTitle(`Merhaba ${message.author},`)
       .setDescription(`Fynx Music'i yeniden başlatmak istediğine emin misin?`)
       .setColor('#ffc000')
@@ -42,12 +42,12 @@ reactions.on("end", () => message.delete().then(mr => sentEmbed.delete()).then(m
 				if (reaction.emoji.name === "✅") {
   try {
     message.delete().then(mr => sentEmbed.delete()).then(wb => { 
-message.channel.send(embed3)
+ message.channel.send(embed3)
     process.exit(0);
     })
   } catch (err) {
   // Pudochu
-    message.channel.send(`**Hata:** \n\`\`\`js\n${err}\n\`\`\``);
+    console.log(`**Hata:** \n\`\`\`js\n${err}\n\`\`\``);
   
 };
 
