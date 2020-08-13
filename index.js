@@ -58,7 +58,7 @@ http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 //----------------------------------------------\\
 
 client.on("message", async message => {
-const prefix = fynx.prefix;
+const prefix = db.fetch(`prefix.${message.guild.id}`) || fynx.prefix;
 const messageArray = message.content.split(" ");
 const cmd = messageArray[0].toLowerCase();
 const args = messageArray.slice(1);
