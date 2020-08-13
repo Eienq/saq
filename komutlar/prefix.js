@@ -6,7 +6,7 @@ let a = ayarlar.prefix
     let p = await db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
  let o = await db.fetch(`prefix.${message.guild.id}`)
   if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(new Discord.MessageEmbed()
-.setDescription(`Bu Komutu Kullanabilmek İçin Sunucuyu Yönet Yetkisine Sahip Olmalısınız. Şuanki Prefix: ${p}`));
+.setDescription(`Bu Komutu Kullanabilmek İçin Sunucuyu Yönet Yetkisine Sahip Olmalısınız. Fynx Music'in Şuan kPrefixi: ${p}`));
   
 if(args[0] === "ayarla") {
 if(o) { return message.channel.send(new Discord.MessageEmbed()
