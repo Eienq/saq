@@ -140,3 +140,29 @@ setInterval(function() {
         client.user.setActivity(oyun[random], {"type": "LISTENING"});
         }, 2 * 5000);
 });
+
+//--------------------------Premium-----------------------------\\
+
+client.on("message", async msg => {
+const request = require('node-superfetch');
+const db = require('quick.db');
+const ms = require('parse-ms')
+let timeout = 600000
+let dakdest = await db.fetch(`goldzzz_${msg.author.id}`);
+let i = db.fetch(`premium_${msg.author.id}`)
+          if (i == 'premium') {
+    if (dakdest !== null && timeout - (Date.now() - dakdest) > 0) {
+        let time = ms(timeout - (Date.now() - dakdest));
+    } else {
+  if(msg.author.bot) return;   
+  if (msg.content.length > 1) {
+db.set(`goldzzz_${msg.author.id}`, Date.now());
+   msg.channel.send('**Sanirim burada bir premuim üye var**\n**Evet evet cidden var.**')
+  }
+};
+          }
+   else if (i == undefined) {           
+          }
+          if (!i) return;
+        
+});
