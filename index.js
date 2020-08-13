@@ -166,3 +166,248 @@ db.set(`goldzzz_${msg.author.id}`, Date.now());
           if (!i) return;
         
 });
+
+//------------------------Eklendim Atildim-------------------------------\\
+
+client.on('guildCreate', async guild => { 
+  client.channels.get('log kanal id').send(`${guild}, isimli sunucuya eklendim!`)
+})
+
+client.on('guildRemove', async guild => { 
+  client.channels.get('log kanal id').send(`${guild}, isimli sunucudan atıldım.. :(`)
+})
+
+//---------------------Ses log------------------------------------------\\
+
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+let saniye = db.fetch(`seslisaniye_${newMember.guild.id + newMember.id}`)
+let dakika = db.fetch(`seslidakika_${newMember.guild.id + newMember.id}`)
+let saat = db.fetch(`seslisaat_${newMember.guild.id + newMember.id}`)
+let gün = db.fetch(`sesligün_${newMember.guild.id + newMember.id}`)
+let dakikaek = Math.floor(saniye / 60)
+let saatek = Math.floor(dakika / 60 )
+let günek = Math.floor(saat / 24 )
+let dakikaeksi = saatek * 60
+let saateksi = günek * 24
+ let saniyeeksi = dakikaek * 60
+if(saniye => 60) {dakika = Math.floor(dakika + dakikaek) ; saniye = Math.floor(saniye - saniyeeksi)}
+if(dakika => 60) {saat = Math.floor(saat + saatek) ; dakika = Math.floor(dakika - dakikaeksi)}
+if(saat => 24) {gün = Math.floor(gün + günek) ; saat = Math.floor(saat - saateksi)}
+let rol = db.fetch(`sesödül_${newMember.guild.id}`)
+ 
+if(oldMember.voiceChannel && newMember.voiceChannel){
+if(oldMember.voiceChannelID === newMember.voiceChannelID) return ;
+}
+let saati = db.fetch(`seslisüredakikası_${newMember.guild.id}`)
+let dilimi = db.fetch(`seslisüredilimi_${newMember.guild.id}`)
+ 
+ let newUserChannel = newMember.voiceChannel
+  let oldUserChannel = oldMember.voiceChannel
+let ms1 = require('parse-ms')
+let süre = db.fetch(`seslisüre_${newMember.guild.id + newMember.id}`)
+ let timeObj = ms1(Date.now() - süre)
+let mlog =  db.fetch(`seslog_${oldMember.guild.id}`)
+if(!mlog) return
+if(oldMember.user.bot) return;
+if(newMember.user.bot) return;
+ 
+let kanal = client.channels.get(mlog)
+ if(oldUserChannel === undefined) {
+let embed = new Discord.RichEmbed()
+.setTitle("Bir Kullanıcı Sesli Kanala Girdi!")
+.setThumbnail(newMember.avatarURL||newMember.defaultAvatarURL)
+.setDescription(`Kullanıcı : ${newMember} \nKanalın Adı : ${newUserChannel}`)
+.setColor("#66ff00")
+.setTimestamp()
+kanal.send(embed)
+db.delete(`seslisüre_${newMember.guild.id + newMember.id}`)
+ db.set(`seslisüre_${newMember.guild.id + newMember.id}`, Date.now())
+ }
+if(newUserChannel === undefined) {
+let embed = new Discord.RichEmbed()
+.setTitle("Bir Kullanıcı Sesli Kanaldan Çıktı!")
+.setThumbnail(oldMember.avatarURL||oldMember.defaultAvatarURL)
+.setDescription(`Kullanıcı : ${oldMember} \nKanalın Adı : ${oldUserChannel}\n Sesli Kanalda Bulunma Süresi: **${timeObj.days} gün ${timeObj.hours} saat ${timeObj.minutes} dakika ${timeObj.seconds} saniye!**`)
+.setColor("#ff0000")
+.setTimestamp()
+kanal.send(embed)
+if (!newMember.roles.some(Rol => Rol.id === rol)) {
+if(dilimi == "saniye") {
+if(timeObj.seconds >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "dakika") {
+if(timeObj.minutes >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "saat") {
+if(timeObj.hours >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "gün") {
+if(timeObj.days >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+ }
+if (!newMember.roles.some(Rol => Rol.id === rol)) {
+if(dilimi == "saniye") {
+if(saniye >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "dakika") {
+if(dakika >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "saat") {
+if(saat >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "gün") {
+if(gün >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+ }
+ 
+db.add(`seslisaniye_${newMember.guild.id + newMember.id}`, timeObj.seconds)
+db.add(`seslidakika_${newMember.guild.id + newMember.id}`, timeObj.minutes)
+db.add(`seslisaat_${newMember.guild.id + newMember.id}`, timeObj.hours)
+db.add(`sesligün_${newMember.guild.id + newMember.id}`, timeObj.days)
+db.delete(`seslisüre_${newMember.guild.id + newMember.id}`)
+db.set(`seslisüre_${newMember.guild.id + newMember.id}`, Date.now())
+ }
+if(newUserChannel) {
+if(newUserChannel === undefined) return
+if(oldUserChannel === undefined) return
+ 
+ let embed = new Discord.RichEmbed()
+.setTitle("Bir Kullanıcı Başka Bir Sesli Kanala Geçti!")
+.setDescription(`Kullanıcı : ${newMember} \nEski Kanalın Adı : ${oldUserChannel}\nEski Kanalda Bulunma Süresi : **${timeObj.days} gün ${timeObj.hours} saat ${timeObj.minutes} dakika ${timeObj.seconds} saniye!**\nYeni Kanalın Adı : ${newUserChannel}`)
+.setColor("#ffff00")
+.setTimestamp()
+kanal.send(embed)
+if (!newMember.roles.some(Rol => Rol.id === rol)) {
+if(dilimi == "saniye") {
+if(saniye >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "dakika") {
+if(dakika >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "saat") {
+if(saat >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "gün") {
+if(gün >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+ }
+ 
+ 
+ if (!newMember.roles.some(Rol => Rol.id === rol)) {
+if(dilimi == "saniye") {
+if(timeObj.seconds >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "dakika") {
+if(timeObj.minutes >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "saat") {
+if(timeObj.hours >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+if(dilimi == "gün") {
+if(timeObj.days >= saati) {
+oldMember.addRole(rol)
+let embed = new Discord.RichEmbed()
+.setDescription(`${oldMember} Adlı Kullanıcı ${oldUserChannel} Sesli Kanalında ${saati} ${dilimi} Bulunarak <@&${rol}> Rolünü Kazandı!`)
+.setColor("RANDOM")
+kanal.send(embed)
+}
+}
+ }
+db.add(`seslisaniyeee_${newMember.guild.id + newMember.id}`, timeObj.seconds)
+db.add(`seslidakikaaa_${newMember.guild.id + newMember.id}`, timeObj.minutes)
+db.add(`seslisaat_${newMember.guild.id + newMember.id}`, timeObj.hours)
+db.add(`sesligün_${newMember.guild.id + newMember.id}`, timeObj.days)
+db.delete(`seslisüre_${newMember.guild.id + newMember.id}`)
+db.set(`seslisüre_${newMember.guild.id + newMember.id}`, Date.now())
+}
+})
