@@ -18,8 +18,8 @@ erimi sunarım`)
 .addField(`Fynx Music - Nasıl Kullanılır?`, `Fynx Music botun tüm özelliklerinden yararlanabilmek için sadece \`+yardım\` yazmanız gerekmektedir.`)
 .addField(`Fynx Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode`)
 .setFooter(`Fynx Music © 2020`)
-.setTimestamp()
-.setImage(`https://i.pinimg.com/originals/a7/2e/dd/a72eddb090f20f7f8dd535c8390c2fba.gif`);
+.setTimestamp();
+
 
 client.on("guildCreate", guild => {
 
@@ -51,8 +51,8 @@ response.sendStatus(200);
 });
 app.listen(fynx.fynxport);
 setInterval(() => {
-http.get(`http://coal-glitter-hoodie.glitch.me/`);
-}, 1000 * 30);
+http.get(`https://coal-glitter-hoodie.glitch.me/`);
+}, 1000 * 60 * 30);
 
 //----------------------------------------------\\
 
@@ -158,7 +158,11 @@ let i = db.fetch(`premium_${msg.author.id}`)
   if(msg.author.bot) return;   
   if (msg.content.length > 1) {
 db.set(`goldzzz_${msg.author.id}`, Date.now());
-   msg.channel.send('**Sanirim burada bir premuim üye var**\n**Evet evet cidden var.**')
+    const premiumembed = Discord.MessageEmbed()
+    .setTitle("Fynx Music")
+    .setDescription(`${msg.author} isiminde bir Premium üye belirdi! Teşekkür ederiz <:fynxcode_kalpsol:742831233708589168> <:fynxcode_kalpsag:742831233452605491>`)
+    
+   msg.channel.send(premiumembed)
   }
 };
           }
