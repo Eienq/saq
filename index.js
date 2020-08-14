@@ -158,7 +158,7 @@ let i = db.fetch(`premium_${msg.author.id}`)
   if(msg.author.bot) return;   
   if (msg.content.length > 1) {
 db.set(`goldzzz_${msg.author.id}`, Date.now());
-    const premiumembed = Discord.MessageEmbed()
+    const premiumembed = new Discord.MessageEmbed()
     .setTitle("Fynx Music")
     .setDescription(`${msg.author} isiminde bir Premium üye belirdi! Teşekkür ederiz <:fynxcode_kalpsol:742831233708589168> <:fynxcode_kalpsag:742831233452605491>`)
     
