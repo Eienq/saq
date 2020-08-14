@@ -182,6 +182,7 @@ client.on('guildRemove', async guild => {
   client.channels.get('log kanal id').send(`${guild}, isimli sunucudan atıldım.. :(`)
 })
 
+
 //
 
 client.on('guildMemberAdd', async member => {
