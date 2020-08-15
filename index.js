@@ -161,11 +161,11 @@ db.set(`goldzzz_${msg.author.id}`, Date.now());
 //------------------------Eklendim Atildim-------------------------------\\
 
 client.on('guildCreate', async guild => { 
-  client.channels.get('743094439500841042').send(`${guild}, isimli sunucuya eklendim!`)
+  client.channels.cache.get('743094439500841042').send(`${guild}, isimli sunucuya eklendim!`)
 })
 
 client.on('guildRemove', async guild => { 
-  client.channels.get('743094439500841042').send(`${guild}, isimli sunucudan atıldım.. :(`)
+  client.channels.cache.get('743094439500841042').send(`${guild}, isimli sunucudan atıldım.. :(`)
 })
 
 //-----------------Etiket Prefix-----------------\\
