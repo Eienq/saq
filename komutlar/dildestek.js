@@ -15,7 +15,7 @@ exports.run = async(client, message, args) => {
 	}
 
 	if (!lang) return message.reply(`Bir dil seçmelisin. \`EN\`, \`TR\``)
-	if (lang != 'EN' && lang != 'TR' && lang !='ES' && lang !='RUS' && lang !='') return message.reply(`Mevcut diller: \`EN\`, \`TR\``)	
+	if (lang != 'EN' && lang != 'TR' && lang !='ES' && lang !='RU' && lang !='DE') return message.reply(`Mevcut diller: \`EN\`, \`TR\``)	
 
 	if (lang === 'EN') {
 		let aktif = db.has(`lang_${message.guild.id}`, 'EN')
