@@ -170,11 +170,9 @@ client.on('guildRemove', async guild => {
 
 //-----------------Etiket Prefix-----------------\\
 
+
+
 client.on('message', async msg => {
-  let prefix = db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix;
-  const prefixembedd = new Discord.MessageEmbed()
-  .setColor("BLACK")
-  .setTitle("Fynx Music - Prefix")
-  .setDecription(`${msg.author} Sanırım beni etiketlediniz. Buyurun prefix(Ön ek)'im \`${prefix}\``);
-  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(prefixembedd);
+    let prefix = db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix;
+  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Fynx Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
