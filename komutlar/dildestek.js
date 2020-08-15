@@ -30,6 +30,24 @@ exports.run = async(client, message, args) => {
 		db.delete(`lang_${message.guild.id}`, 'TR')
 	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
 	}
+  	if (lang === 'ES') {
+		let deaktif = db.has(`lang_${message.guild.id}`, 'ES') 
+		if (deaktif) return message.reply(`El idioma de Fynx Music ya está configurado en español.`)
+		db.delete(`lang_${message.guild.id}`, 'ES')
+	    message.channel.send(`El idioma de Fynx Music se ha configurado correctamente en español.`)
+	}
+  	if (lang === 'RU') {
+		let deaktif = db.has(`lang_${message.guild.id}`, 'RU') 
+		if (deaktif) return message.reply(`Botun dili zaten türkçe.`)
+		db.delete(`lang_${message.guild.id}`, 'TR')
+	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
+	}
+  	if (lang === 'DE') {
+		let deaktif = db.has(`lang_${message.guild.id}`, 'DE') 
+		if (deaktif) return message.reply(`Botun dili zaten türkçe.`)
+		db.delete(`lang_${message.guild.id}`, 'TR')
+	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
+	}
 
 }
 
