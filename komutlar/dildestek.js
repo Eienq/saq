@@ -15,19 +15,19 @@ exports.run = async(client, message, args) => {
 	}
 
 	if (!lang) return message.reply(`Bir dil seçmelisin. \`EN\`, \`TR\``)
-	if (lang != 'EN' && lang != 'TR') return message.reply(`Mevcut diller: \`EN\`, \`TR\``)	
+	if (lang != 'EN' && lang != 'TR' && lang !='ES' && lang !='RUS' && lang !='') return message.reply(`Mevcut diller: \`EN\`, \`TR\``)	
 
 	if (lang === 'EN') {
-		let aktif = db.has(`lang_${message.guild.id}`) === true
+		let aktif = db.has(`lang_${message.guild.id}`, 'EN')
 		if (aktif) return message.reply(`Hey, Bot language is already in english.`)
-		db.set(`lang_${message.guild.id}`, true)
+		db.set(`lang_${message.guild.id}`, 'EN')
 	    message.channel.send(`Successfully updated the language to English.`)
 	}
 
 	if (lang === 'TR') {
-		let deaktif = db.has(`lang_${message.guild.id}`) === false
+		let deaktif = db.has(`lang_${message.guild.id}`, 'TR') 
 		if (deaktif) return message.reply(`Botun dili zaten türkçe.`)
-		db.delete(`lang_${message.guild.id}`)
+		db.delete(`lang_${message.guild.id}`, 'TR')
 	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
 	}
 
