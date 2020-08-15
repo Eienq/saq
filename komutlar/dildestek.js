@@ -18,35 +18,35 @@ exports.run = async(client, message, args) => {
 	if (lang != 'EN' && lang != 'TR' && lang !='ES' && lang !='RU' && lang !='DE') return message.reply(`Mevcut diller: \`EN\`, \`TR\``)	
 
 	if (lang === 'EN') {
-		let aktif = db.has(`lang_${message.guild.id}`, 'EN')
-		if (aktif) return message.reply(`Hey, Bot language is already in english.`)
+		let enable = db.has(`lang_${message.guild.id}`, 'EN')
+		if (enable) return message.reply(`Hey, Bot language is already in english.`)
 		db.set(`lang_${message.guild.id}`, 'EN')
 	    message.channel.send(`Successfully updated the language to English.`)
 	}
 
 	if (lang === 'TR') {
-		let deaktif = db.has(`lang_${message.guild.id}`, 'TR') 
-		if (deaktif) return message.reply(`Botun dili zaten türkçe.`)
-		db.delete(`lang_${message.guild.id}`, 'TR')
+		let aktif = db.has(`lang_${message.guild.id}`, 'TR') 
+		if (aktif) return message.reply(`Botun dili zaten türkçe.`)
+		db.set(`lang_${message.guild.id}`, 'TR')
 	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
 	}
   	if (lang === 'ES') {
-		let deaktif = db.has(`lang_${message.guild.id}`, 'ES') 
-		if (deaktif) return message.reply(`El idioma de Fynx Music ya está configurado en español.`)
-		db.delete(`lang_${message.guild.id}`, 'ES')
+		let activo = db.has(`lang_${message.guild.id}`, 'ES') 
+		if (activo) return message.reply(`El idioma de Fynx Music ya está configurado en español.`)
+		db.set(`lang_${message.guild.id}`, 'ES')
 	    message.channel.send(`El idioma de Fynx Music se ha configurado correctamente en español.`)
 	}
   	if (lang === 'RU') {
-		let deaktif = db.has(`lang_${message.guild.id}`, 'RU') 
-		if (deaktif) return message.reply(`Botun dili zaten türkçe.`)
-		db.delete(`lang_${message.guild.id}`, 'TR')
-	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
+		let ruru = db.has(`lang_${message.guild.id}`, 'RU') 
+		if (ruru) return message.reply(`Язык Fynx Music уже установлен на русский.`)
+		db.set(`lang_${message.guild.id}`, 'RU')
+	    message.channel.send(`Язык Fynx Music успешно установлен на русский.`)
 	}
   	if (lang === 'DE') {
-		let deaktif = db.has(`lang_${message.guild.id}`, 'DE') 
-		if (deaktif) return message.reply(`Botun dili zaten türkçe.`)
-		db.delete(`lang_${message.guild.id}`, 'TR')
-	    message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
+		let dede = db.has(`lang_${message.guild.id}`, 'DE') 
+		if (dede) return message.reply(`Die Sprache von Fynx Music ist bereits auf Russisch eingestellt.`)
+		db.set(`lang_${message.guild.id}`, 'DE')
+	    message.channel.send(`Die Sprache von Fynx Music wurde erfolgreich auf Deutsch eingestellt.`)
 	}
 
 }
