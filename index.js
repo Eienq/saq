@@ -41,19 +41,6 @@ defaultChannel.send(emmmmbed)
 const player = new Player(client, fynx.youtube_api);
 client.player = player;
 
-//-------------7/24 Komutu ---------------\\
-
-
-const http = require("http");
-app.get("/", (request, response) => {
-console.log(`${fynx.pingmesaj}`);
-response.sendStatus(200);
-});
-app.listen(fynx.fynxport);
-setInterval(() => {
-http.get(`https://coal-glitter-hoodie.glitch.me/`);
-}, 1000 * 60 * 30);
-
 //----------------------------------------------\\
 
 client.on("message", async message => {
@@ -175,11 +162,11 @@ db.set(`goldzzz_${msg.author.id}`, Date.now());
 //------------------------Eklendim Atildim-------------------------------\\
 
 client.on('guildCreate', async guild => { 
-  client.channels.get('log kanal id').send(`${guild}, isimli sunucuya eklendim!`)
+  client.channels.get('743094439500841042').send(`${guild}, isimli sunucuya eklendim!`)
 })
 
 client.on('guildRemove', async guild => { 
-  client.channels.get('log kanal id').send(`${guild}, isimli sunucudan atıldım.. :(`)
+  client.channels.get('743094439500841042').send(`${guild}, isimli sunucudan atıldım.. :(`)
 })
 
 
