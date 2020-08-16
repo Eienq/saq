@@ -6,48 +6,63 @@ const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";  
 
 exports.run = async(client, message, args) => {
-const enperm = Discord.MessageEmbed()
+const enperm = new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("Fynx Music - Error")
 .setDescription(`${message.author}, You can not use this command because you do not have administrator permission.`);
   
-const trperm = Discord.MessageEmbed()
+const trperm = new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("Fynx Music - Hata")
 .setDescription(`${message.author}, Bu komutu kullanabilmek için yönetici yetkisine sahip olmanız gerekmektedir.`);  
   
-const nolang = Discord.MessageEmbed()
+const nolang = new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("Fynx Music - Hata/Error")
-.setDescription(`TR: Lütfen bir dil seçiniz.\nMevcut diller; \`TR\`, \`EN\`\n\nEN: Please select a language.\nMevcut diller; \`TR\`, \`EN\` `);  
+.setDescription(`TR: Lütfen bir dil seçiniz.\nMevcut diller; \`TR\`, \`EN\`\n\nEN: Please select a language.\nAvailable languages; \`TR\`, \`EN\` `);  
+  
+const settr = new Discord.MessageEmbed()
+.setColor(FynxHata)
+.setTitle("Fynx Music - Başarılı")
+.setDescription(`Fynx Music'in dili başarılı bir şekilde \`Türkçe\` olarak ayarlandı!`);  
+  
+const tr = new Discord.MessageEmbed()
+.setColor(FynxHata)
+.setTitle("Fynx Music - Hata")
+.setDescription(`Fynx Music'in dili zaten \`Türkçe\` olarak ayarlanmış bulunmaktadır!`);  
+  
+const seten = new Discord.MessageEmbed()
+.setColor(FynxHata)
+.setTitle("Fynx Music - Successful")
+.setDescription(`Fynx Music's language has been successfully set to \`English\`!`);  
+  
+const en = new Discord.MessageEmbed()
+.setColor(FynxHata)
+.setTitle("Fynx Music - Error")
+.setDescription(`Fynx Music's language is already set to \`English\`!`);    
 	
 	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 	let color = db.fetch(`color_${message.guild.id}`) || '#fff000';
 	let lang = args[0];
 
-	if (db.has(`lang_${message.guild.id}`, 'EN')) {
-		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(enperm)
-	}
-  
-if (db.has(`lang_${message.guild.id}`, 'TR')) {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(trperm)
-	}
 
-	if (!lang) return message.reply(`Bir dil seçmelisin. \`EN\`, \`TR\``)
-	if (lang != 'EN' && lang != 'TR') return message.reply(`Mevcut diller: \`EN\`, \`TR\``)	
+
+	if (!lang) return message.channel.send(nolang)
+	if (lang != 'EN' && lang != 'TR') return message.channel.send(nolang)	
 
   	if (lang === 'TR') {
 		let aktif = db.has(`lang_${message.guild.id}`, 'TR') 
-		if (aktif) return message.reply(`Botun dili zaten türkçe.`)
+		if (aktif) return message.channel.send(tr)
 		db.set(`lang_${message.guild.id}`, 'TR')
-	  message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
+	  message.channel.send(settr)
 	}
   
 	if (lang === 'EN') {
 		let enable = db.has(`lang_${message.guild.id}`, 'EN')
-		if (enable) return message.reply(`Hey, Bot language is already in english.`)
+		if (enable) return message.reply(en)
 		db.set(`lang_${message.guild.id}`, 'EN')
-	    message.channel.send(`Successfully updated the language to English.`)
+	    message.channel.send(seten)
 	}
 
 }
@@ -75,12 +90,6 @@ aliases: ["dil"]
 
 //&& lang !='ES' && lang !='RU' && lang !='DE'
 
-	//if (lang === 'TR') {
-		//let aktif = db.has(`lang_${message.guild.id}`, 'TR') 
-		//if (aktif) return message.reply(`Botun dili zaten türkçe.`)
-	//	db.set(`lang_${message.guild.id}`, 'TR')
-	  //  message.channel.send(`Botun dili başarıyla Türkçe olarak ayarlandı.`)
-	//}
   	//if (lang === 'ES') {
 		//let activo = db.has(`lang_${message.guild.id}`, 'ES') 
 		//if (activo) return message.reply(`El idioma de Fynx Music ya está configurado en español.`)
