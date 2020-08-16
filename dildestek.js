@@ -17,7 +17,7 @@ const trperm = new Discord.MessageEmbed()
 const nolang = new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("Fynx Music - Hata/Error")
-.setDescription(`TR: Lütfen bir dil seçiniz.\nMevcut diller; \`TR\`, \`EN\`\nKullanım: \`${p}dil TR\` \n\nEN: Please select a language.\nAvailable languages; \`TR\`, \`EN\`\nUsage: \`{p}language EN\` `);  
+.setDescription(`TR: Lütfen bir dil seçiniz.\nMevcut diller; \`TR\`, \`EN\`\nKullanım: \`${p}dil TR\` \n\nEN: Please select a language.\nAvailable languages; \`TR\`, \`EN\`\nUsage: \`${p}language EN\` `);  
   
 const settr = new Discord.MessageEmbed()
 .setColor(FynxDogru)
@@ -57,7 +57,7 @@ const en = new Discord.MessageEmbed()
   
 	if (lang === 'EN') {
 		let enable = db.has(`lang_${message.guild.id}`, 'EN')
-		if (enable) return message.reply(en)
+		if (enable) return message.channel.send(en)
 		db.set(`lang_${message.guild.id}`, 'EN')
 	    message.channel.send(seten)
 	}
