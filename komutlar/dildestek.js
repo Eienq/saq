@@ -6,23 +6,20 @@ const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";  
 
 exports.run = async(client, message, args) => {
-const enperm = new Discord.MessageEmbed()
-.setColor(FynxHata)
-.setTitle("Fynx Music - Error")
-.setDescription(`${message.author}, You can not use this command because you do not have administrator permission.`);
+    let p = await db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
   
 const trperm = new Discord.MessageEmbed()
 .setColor(FynxHata)
-.setTitle("Fynx Music - Hata")
-.setDescription(`${message.author}, Bu komutu kullanabilmek için yönetici yetkisine sahip olmanız gerekmektedir.`);  
+.setTitle("Fynx Music - Hata/Error")
+.setDescription(`TR: ${message.author}, Bu komutu kullanabilmek için yönetici yetkisine sahip olmanız gerekmektedir.\n\nEN: ${message.author}, You can not use this command because you do not have administrator permission.`);  
   
 const nolang = new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("Fynx Music - Hata/Error")
-.setDescription(`TR: Lütfen bir dil seçiniz.\nMevcut diller; \`TR\`, \`EN\`\n\nEN: Please select a language.\nAvailable languages; \`TR\`, \`EN\` `);  
+.setDescription(`TR: Lütfen bir dil seçiniz.\nMevcut diller; \`TR\`, \`EN\`\nKullanım: \`${p}dil TR\` \n\nEN: Please select a language.\nAvailable languages; \`TR\`, \`EN\`\nUsage: \`{p}language EN\` `);  
   
 const settr = new Discord.MessageEmbed()
-.setColor(FynxHata)
+.setColor(FynxDogru)
 .setTitle("Fynx Music - Başarılı")
 .setDescription(`Fynx Music'in dili başarılı bir şekilde \`Türkçe\` olarak ayarlandı!`);  
   
@@ -32,7 +29,7 @@ const tr = new Discord.MessageEmbed()
 .setDescription(`Fynx Music'in dili zaten \`Türkçe\` olarak ayarlanmış bulunmaktadır!`);  
   
 const seten = new Discord.MessageEmbed()
-.setColor(FynxHata)
+.setColor(FynxDogru)
 .setTitle("Fynx Music - Successful")
 .setDescription(`Fynx Music's language has been successfully set to \`English\`!`);  
   
@@ -41,7 +38,6 @@ const en = new Discord.MessageEmbed()
 .setTitle("Fynx Music - Error")
 .setDescription(`Fynx Music's language is already set to \`English\`!`);    
 	
-	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 	let color = db.fetch(`color_${message.guild.id}`) || '#fff000';
 	let lang = args[0];
 

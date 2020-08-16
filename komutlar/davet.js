@@ -2,6 +2,8 @@ const Discord = require("discord.js")
 const fs = require("fs")
 
 exports.run = async (client, message, args) => {
+  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+
 const embed = new Discord.MessageEmbed()
 .setColor("BLUE")
 .setAuthor(`Fynx Music Linkler`, client.user.avatarURL())

@@ -114,7 +114,7 @@ var oyun = [
 `🚀 Gelişmiş Müzik Botu`,
 `⚡️ Botu eklemek için | +davet`,
 `🌟 Prefix ayarlamak için | +prefix`,
-`💫 +5 dil desteği yakında!`,
+`💫 İngilizce dil desteği yakında!`,
 `🌹 Destek olmak için | +destek `,
 `💡 Öneride bulunmak için | +öneri`
 ]
