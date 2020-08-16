@@ -3,8 +3,12 @@ const fs = require("fs")
 const Fynx = "#36393e";
 const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";
+const db = require("quick.db");
+const ayarlar = require("../ayarlar/bot.json");
 
 module.exports.run = async (client, message, args) => {
+  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+
 if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!` }})
 if (!args[0]) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!` }})  
 const SuAndaSarkiOynatilmaktadir = client.player.isPlaying(message.guild.id);

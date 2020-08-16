@@ -1,5 +1,7 @@
 const Discord = require("discord.js")
 const fs = require("fs")
+const db = require("quick.db");
+const ayarlar = require("../ayarlar/bot.json");
 
 exports.run = async (client, message, args) => {
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;

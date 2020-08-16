@@ -3,8 +3,12 @@ const fs = require("fs")
 const Fynx = "#36393e";
 const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";
+const db = require("quick.db");
+const ayarlar = require("../ayarlar/bot.json");
 
 module.exports.run = async (client, message) => {
+  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+
 const calan = await client.player.nowPlaying(message.guild.id); 
 const calanembed = new Discord.MessageEmbed()
 .setImage(`https://i.ytimg.com/vi/${calan.id}/default.jpg?width=1920&height=1080`)

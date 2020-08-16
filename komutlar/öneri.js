@@ -1,10 +1,13 @@
 const Discord = require("discord.js");
- 
 const Fynx = "#36393e";
 const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";  
+const db = require("quick.db");
+const ayarlar = require("../ayarlar/bot.json");
 
 exports.run = function(client, message, args) {
+  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+
 
 const onerisiz = new Discord.MessageEmbed()
 .setColor(FynxHata)

@@ -3,7 +3,8 @@ const fs = require("fs")
 const db = require("quick.db");
 const client = new Discord.Client();
 const fynx = require("../ayarlar/bot.json");
- 
+
+
 module.exports.run = (client, message, args) => { 
  const prefix = db.fetch(`prefix.${message.guild.id}`) || fynx.prefix; 
 let pages = [

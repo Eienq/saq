@@ -3,7 +3,12 @@ const fs = require("fs")
 const moment = require("moment");
 const os = require("os");
 require("moment-duration-format");
+const db = require("quick.db");
+const ayarlar = require("../ayarlar/bot.json");
+
 exports.run = async (client, message, args) => {
+  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+
 const seksizaman = moment
 .duration(client.uptime)
 .format(" D [gün], H [saat], m [dakika], s [saniye]");

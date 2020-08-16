@@ -6,6 +6,7 @@ const FynxDogru = "#22BF41";
 const FynxHata = "#f30707";  
 
 exports.run = async(client, message, args) => {
+
     let p = await db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
   
 const trperm = new Discord.MessageEmbed()
