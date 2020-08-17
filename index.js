@@ -8,6 +8,11 @@ const fynx = require("./ayarlar/bot.json");
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
 
+const Fynx = "#36393e";
+const FynxDogru = "#22BF41";
+const FynxHata = "#f30707";
+
+
 //-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
 
 const emmmmbed = new Discord.MessageEmbed()
@@ -176,4 +181,13 @@ client.on('guildRemove', async guild => {
 client.on('message', async msg => {
     let prefix = db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix;
   if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Fynx Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+});
+
+client.on('message', async message => {
+if (message.content == `atla`) { 
+ if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Oynatılan bir müziği atlayabilmek için bir ses kanalında olmanız gerekmektedir!` }})
+if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
+const sarki = await client.player.skip(message.guild.id);
+message.channel.send({embed: {color: FynxDogru, description: `<a:tik:734892939737694239>  | Müzik Atlandı:\n\`${sarki.name}\`` }})
+}
 });
