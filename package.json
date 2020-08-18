@@ -13,6 +13,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
     "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.3",
     "common-tags": "^1.8.0",
     "discord-akairo": "^8.0.0",
     "discord-anti-spam": "^2.4.1",
@@ -30,6 +31,8 @@
     "node-superfetch": "^0.1.10",
     "parse-ms": "^2.1.0",
     "quick.db": "^7.1.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "ytdl-core": "^2.1.2",
     "ytdl-core-discord": "^1.2.0"
   }
