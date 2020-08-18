@@ -191,15 +191,14 @@ client.on('message', async msg => {
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
+client.on("message", async message => {
+  
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = message.content.substring(message.content.indexOf(' ')+1);
 
-    if (cmd === '+abonesayaç'){
-        let youtubechannelurl = 'http://youtube.com/c/lordcreative';
+  if (message.content === 'abu32142ne') {
+        let youtubechannelurl = 'http://youtube.com/lordcreative';
         let response = await request(youtubechannelurl)
         let $ = cheerio.load(response)
         let subscriberCount = $('[class="yt-subscription-button-subscriber-count-branded-horizontal subscribed yt-uix-tooltip"]').attr('title');
@@ -207,6 +206,6 @@ const abonesayac = new Discord.MessageEmbed()
 .setColor("RED")
 .setTitle("Lord Creative - Abone Sayısı")
 .setDescription(`Lord Creative kanalı **\`${subscriberCount}\`** kişilik bir ailedir. :heart:`);
-message.channel.send(`${subscriberCount}`)
+message.channel.send(abonesayac)
     }
 })
