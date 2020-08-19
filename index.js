@@ -112,7 +112,7 @@ process.exit(0)
 const bot = new Discord.Client();
 
 var oyun = [
-`🎀 Sponsor: glitch.com`,
+`🎀 Sponsor: keyubu.com`,
 `🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
 `✨ Yardım almak için | +yardım`,
 `🌈 fynxmusic.tk`,
