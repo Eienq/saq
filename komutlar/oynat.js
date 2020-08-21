@@ -18,11 +18,6 @@ message.channel.send({embed: {color: FynxDogru, description: `<a:tik:73489293973
     } else {
 const sarki = await client.player.play(message.member.voice.channel, args.join(" "));
  message.channel.send({embed: {color: FynxDogru, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${sarki.name}\`` }})
-sarki.queue.on('end', () => {
-message.channel.send({embed: {color: FynxHata, description: `<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Fynx Music ses kanalından ayrılıyor!` }})
-
-
-})
 
     }    
 };

@@ -12,8 +12,14 @@ module.exports.run = async (client, message) => {
 if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Duraklatılan bir müziği devam ettirebilmek için bir ses kanalında olmanız gerekmektedir!` }})
 const sarki = await client.player.resume(message.guild.id);
 if(!sarki) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
-message.channel.send({embed: {color: FynxDogru, description: `<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik devam ettiriliyor.` }})
-};
+message.channel.send(embed)
+const embed = Discord.MessageEmbed
+.setColor(FynxDogru)
+.setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik devam ettiriliyor.\n\n${message.author} tarafından devam ettirildi!`) 
+.setThumbnail(client.user.avatarURL())
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
+message.channel.send(embed)
+}
 
 module.exports.config = {
     name: "devam",
