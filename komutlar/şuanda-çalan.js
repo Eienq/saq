@@ -7,17 +7,26 @@ const db = require("quick.db");
 const ayarlar = require("../ayarlar/bot.json");
 
 module.exports.run = async (client, message) => {
-  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+/// GEREKLİLER ///  
+if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda oynatılan bir müziği görebilmek için bir ses kanalında olmanız gerekmektedir!` }})
+if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
+/////////////////
 
+/// PREFİX ///
+let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+////////////
+
+/// Çalan Embed ///
 const calan = await client.player.nowPlaying(message.guild.id); 
 const calanembed = new Discord.MessageEmbed()
 .setThumbnail(calan.thumbnail)
 .setColor("#22BF41")
-.setDescription(`<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\nAdı: \`${calan.name}\`\n\nYükleyen Kanal: \`${calan.author}\` \n\nLinki: \`${calan.url}\`\n\nİsteyen kişi: \`${client.player.createProgressBar(message.guild.id)}\``)
-if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda oynatılan bir müziği görebilmek için bir ses kanalında olmanız gerekmektedir!` }})
-if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
+.setDescription(`<a:calan:735111831550427166>  | Şu Anda Oynatılan:\n\nMüziğin Adı: \n\`${calan.name}\`\n\nMüziği Yükleyen Kanal: \n\`${calan.author}\` \n\nMüziğin Linki: \n\`${calan.url}\``)
+.setFooter(`${client.user.name}`)
 message.channel.send(calanembed)
 };
+
+///////////////
 
 module.exports.config = {
     name: "çalan",
