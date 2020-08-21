@@ -41,6 +41,15 @@ defaultChannel.send(emmmmbed)
 });
 
 //----------------------------------------------------------------\\
+const http = require('http'); 
+app.get("/", (request, response) => { 
+  console.log(` pingleme işlemi başarılı başarılıysa bu yazıyı loglarda görürsün`); 
+  response.sendStatus(200); 
+}); 
+app.listen(process.env.PORT); 
+setInterval(() => { 
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); 
+}, 280000);
 
 const player = new Player(client, fynx.youtube_api);
 client.player = player;
