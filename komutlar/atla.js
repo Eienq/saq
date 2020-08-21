@@ -43,7 +43,7 @@ const sarki = await client.player.skip(message.guild.id);
 const embed = new Discord.MessageEmbed() 
 .setColor(FynxDogru) 
 .setDescription(`<a:tik:734892939737694239>  | Müzik Geçildi!\n\nGeçilen Müzik İsmi: \n\`${sarki.name}\`\n\n${message.author} tarafından geçildi!`) 
-.setThumbnail(client.user.avatarURL())
+.setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
 message.channel.send(embed)
 

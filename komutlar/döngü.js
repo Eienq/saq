@@ -7,6 +7,20 @@ const db = require("quick.db");
 const ayarlar = require("../ayarlar/bot.json");
 
 module.exports.run = async (client, message) => {
+
+  const embed = new Discord.MessageEmbed()
+.setColor(FynxDogru)
+.setDescription(`<a:tik:734892939737694239>  | ${message.author} tarafından döngü \`aktif\` edildi.`) 
+.setThumbnail(message.author.avatarURL())
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());
+  
+  const embedd = new Discord.MessageEmbed()
+.setColor(FynxDogru)
+.setDescription(`<a:tik:734892939737694239>  | ${message.author} tarafından döngü \`de-aktif\` edildi.`) 
+.setThumbnail(message.author.avatarURL())
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+  
+
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
 if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Döngüyü ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!` }})
@@ -14,10 +28,10 @@ if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embe
 const dongu = client.player.getQueue(message.guild.id).repeatMode;
 if(dongu){
 client.player.setRepeatMode(message.guild.id, false);
-return message.channel.send({embed: {color: FynxDogru, description: `<a:tik:734892939737694239>  | Döngü deaktif edildi!` }})
+return message.channel.send(embed)
     } else {
 client.player.setRepeatMode(message.guild.id, true);
-return message.channel.send({embed: {color: FynxDogru, description: `<a:tik:734892939737694239>  | Döngü aktif edildi!` }})
+return message.channel.send(embedd)
     }
 };
 
