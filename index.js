@@ -112,16 +112,17 @@ process.exit(0)
 const bot = new Discord.Client();
 
 var oyun = [
-`🎀 Sponsor: keyubu.com`,
-`🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
-`✨ Yardım almak için | +yardım`,
-`🌈 fynxmusic.tk`,
-`🚀 Gelişmiş Müzik Botu`,
-`⚡️ Botu eklemek için | +davet`,
-`🌟 Prefix ayarlamak için | +prefix`,
-`💫 İngilizce dil desteği yakında!`,
-`🌹 Destek olmak için | +destek `,
-`💡 Öneride bulunmak için | +öneri`
+  "Bot bakımdadır!"
+//`🎀 Sponsor: keyubu.com`,
+//`🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
+////`✨ Yardım almak için | +yardım`,
+//`🌈 fynxmusic.tk`,
+//`🚀 Gelişmiş Müzik Botu`,
+//`⚡️ Botu eklemek için | +davet`,
+//`🌟 Prefix ayarlamak için | +prefix`,
+//`💫 İngilizce dil desteği yakında!`,
+//`🌹 Destek olmak için | +destek `,
+//`💡 Öneride bulunmak için | +öneri`
 ]
 
 client.on("ready", () => {
@@ -134,35 +135,6 @@ setInterval(function() {
 });
 
 
-//--------------------------Premium-----------------------------\\
-
-client.on("message", async msg => {
-const request = require('node-superfetch');
-const db = require('quick.db');
-const ms = require('parse-ms')
-let timeout = 600000
-let dakdest = await db.fetch(`goldzzz_${msg.author.id}`);
-let i = db.fetch(`premium_${msg.author.id}`)
-          if (i == 'premium') {
-    if (dakdest !== null && timeout - (Date.now() - dakdest) > 0) {
-        let time = ms(timeout - (Date.now() - dakdest));
-    } else {
-  if(msg.author.bot) return;   
-  if (msg.content.length > 1) {
-db.set(`goldzzz_${msg.author.id}`, Date.now());
-    const premiumembed = new Discord.MessageEmbed()
-    .setTitle("Musicdddddd")
-    .setDescription(`${msg.author} isiminde bir Premium üye belirdi! Teşekkür ederiz <:fynxcode_kalpsol:742831233708589168> <:fynxcode_kalpsag:742831233452605491>`)
-    
-   msg.channel.send(premiumembed)
-  }
-};
-          }
-   else if (i == undefined) {           
-          }
-          if (!i) return;
-        
-});
 
 //------------------------Eklendim Atildim-------------------------------\\
 
