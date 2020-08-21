@@ -17,11 +17,11 @@ const FynxHata = "#f30707";
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail(`https://cdn.discordapp.com/app-icons/522870338867167254/c82cd947b45d9d3a0f34ba8aaf0422ee.png`)
-.addField(`Fynx Music - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Fynx Music Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
-.addField(`Fynx - Prefix(Ön Ek)`, `Fynx Music botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
-.addField(`Fynx Music - Nasıl Kullanılır?`, `Fynx Music botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
-.addField(`Fynx Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
-.setFooter(`Fynx Music © 2020`)
+.addField(`Musicdddddd - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Musicdddddd Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
+.addField(`Fynx - Prefix(Ön Ek)`, `Musicdddddd botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
+.addField(`Musicdddddd - Nasıl Kullanılır?`, `Musicdddddd botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
+.addField(`Musicdddddd - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
+.setFooter(`Musicdddddd © 2020`)
 .setTimestamp();
 
 
@@ -151,7 +151,7 @@ let i = db.fetch(`premium_${msg.author.id}`)
   if (msg.content.length > 1) {
 db.set(`goldzzz_${msg.author.id}`, Date.now());
     const premiumembed = new Discord.MessageEmbed()
-    .setTitle("Fynx Music")
+    .setTitle("Musicdddddd")
     .setDescription(`${msg.author} isiminde bir Premium üye belirdi! Teşekkür ederiz <:fynxcode_kalpsol:742831233708589168> <:fynxcode_kalpsag:742831233452605491>`)
     
    msg.channel.send(premiumembed)
@@ -180,32 +180,10 @@ client.on('guildRemove', async guild => {
 
 client.on('message', async msg => {
     let prefix = db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix;
-  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Fynx Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Musicdddddd - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 
 
 //---------------------------------------------------\\
 
-
-const request = require('request-promise');
-const cheerio = require('cheerio');
-
-client.on("message", async message => {
-  
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = message.content.substring(message.content.indexOf(' ')+1);
-
-  if (message.content === 'abu32142ne') {
-        let youtubechannelurl = 'http://youtube.com/lordcreative';
-        let response = await request(youtubechannelurl)
-        let $ = cheerio.load(response)
-        let subscriberCount = $('[class="yt-subscription-button-subscriber-count-branded-horizontal subscribed yt-uix-tooltip"]').attr('title');
-const abonesayac = new Discord.MessageEmbed()
-.setColor("RED")
-.setTitle("Lord Creative - Abone Sayısı")
-.setDescription(`Lord Creative kanalı **\`${subscriberCount}\`** kişilik bir ailedir. :heart:`);
-message.channel.send(abonesayac)
-    }
-})
