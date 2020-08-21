@@ -115,7 +115,7 @@ var oyun = [
 `🎀 Sponsor: keyubu.com`,
 `🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
 `✨ Yardım almak için | +yardım`,
-`🌈 Sitemiz çok yakında! | fynxmusic.tk`,
+`🌈 fynxmusic.tk`,
 `🚀 Gelişmiş Müzik Botu`,
 `⚡️ Botu eklemek için | +davet`,
 `🌟 Prefix ayarlamak için | +prefix`,
@@ -125,12 +125,11 @@ var oyun = [
 ]
 
 client.on("ready", () => {
-  client.user.setStatus('idle')
 setInterval(function() {
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
+         client.user.setActivity(oyun[random], {"type": "LISTENING"});
 
-        client.user.setActivity(oyun[random], {"type": "LISTENING"});
         }, 2 * 5000);
 });
 
