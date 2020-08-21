@@ -41,15 +41,7 @@ defaultChannel.send(emmmmbed)
 });
 
 //----------------------------------------------------------------\\
-const http = require('http'); 
-app.get("/", (request, response) => { 
-  console.log(fynx.pingmesaj); 
-  response.sendStatus(200); 
-}); 
-app.listen(process.env.PORT); 
-setInterval(() => { 
-  http.get(`http://fynxmusicbots.glitch.me/`); 
-}, 280000);
+
 
 const player = new Player(client, fynx.youtube_api);
 client.player = player;
@@ -134,6 +126,17 @@ var oyun = [
 ]
 
 client.on("ready", () => {
+  
+  const http = require('http'); 
+app.get("/", (request, response) => { 
+  console.log(fynx.pingmesaj); 
+  response.sendStatus(200); 
+}); 
+app.listen(9000); 
+setInterval(() => { 
+  http.get(`http://fynxmusicbots.glitch.me/`); 
+}, 300000);
+  
 setInterval(function() {
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
