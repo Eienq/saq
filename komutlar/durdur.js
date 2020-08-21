@@ -15,7 +15,7 @@ client.player.stop(message.guild.id);
   const embed = new Discord.MessageEmbed()
 .setColor(FynxDogru)
   .setTitle("Fynx Music - Durdur")
-.setDescription(`<a:tik:734892939737694239>  | Müzik durduruldu. Fynx Music ses kanalından ayrılıyor.\n\n${message.author} tarafından durduruldu!`) 
+.setDescription(`<a:tik:734892939737694239>  | Müzik durduruldu. Fynx Music ses kanalından ayrılıyor.\n\n${message.author} tarafından durduruldu!\n\nFynx Music'i tercih ettiğiniz için teşekkür ederiz.  <a:ucankalpler:735102535974780968>`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
 message.channel.send(embed)

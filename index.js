@@ -112,17 +112,16 @@ process.exit(0)
 const bot = new Discord.Client();
 
 var oyun = [
-  "Bot bakımdadır!"
-//`🎀 Sponsor: keyubu.com`,
-//`🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
-////`✨ Yardım almak için | +yardım`,
-//`🌈 fynxmusic.tk`,
-//`🚀 Gelişmiş Müzik Botu`,
-//`⚡️ Botu eklemek için | +davet`,
-//`🌟 Prefix ayarlamak için | +prefix`,
-//`💫 İngilizce dil desteği yakında!`,
-//`🌹 Destek olmak için | +destek `,
-//`💡 Öneride bulunmak için | +öneri`
+`🎀 Sponsor: keyubu.com`,
+`🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
+`✨ Yardım almak için | +yardım`,
+`🌈 fynxmusic.tk`,
+`🚀 Gelişmiş Müzik Botu`,
+`⚡️ Botu eklemek için | +davet`,
+`🌟 Prefix ayarlamak için | +prefix`,
+`💫 İngilizce dil desteği yakında!`,
+`🌹 Destek olmak için | +destek `,
+`💡 Öneride bulunmak için | +öneri`
 ]
 
 client.on("ready", () => {

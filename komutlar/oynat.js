@@ -17,7 +17,7 @@ const sarki = await client.player.addToQueue(message.guild.id, args.join(" "));
   const kuyrukekle = new Discord.MessageEmbed()
   .setColor(FynxDogru)
   .setTitle("Fynx Music - Kuyruğa Ekle")
-  .setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik, ${message.author} tarafından kuyruğa eklendi!`)
+  .setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik,\n${message.author} tarafından kuyruğa eklendi!`)
   .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());   
 message.channel.send(kuyrukekle)
@@ -31,8 +31,14 @@ const sarki = await client.player.play(message.member.voice.channel, args.join("
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());   
 message.channel.send(oynanan)
 sarki.queue.on('end', () => {
-message.channel.send({embed: {color: FynxHata, description: `<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Fynx Music ses kanalından ayrılıyor!` }})
-    })
+  const bitti = new Discord.MessageEmbed()
+  .setColor(FynxDogru)
+  .setTitle("Fynx Music - Kuyruk Bitti!")
+  .setDescription(`<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Fynx Music kanaldan ayrılıyor.\n\nFynx Music'i tercih ettiğiniz için teşekkür ederiz.  <a:ucankalpler:735102535974780968>`)
+  .setThumbnail(client.user.avatarURL())
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());   
+message.channel.send(bitti)
+})
     }    
 };
 
