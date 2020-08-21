@@ -10,12 +10,14 @@ module.exports.run = async (client, message) => {
 
   const embed = new Discord.MessageEmbed()
 .setColor(FynxDogru)
+.setTitle("Fynx Music - Döngü")
 .setDescription(`<a:tik:734892939737694239>  | ${message.author} tarafından döngü \`aktif\` edildi.`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());
   
   const embedd = new Discord.MessageEmbed()
 .setColor(FynxDogru)
+.setTitle("Fynx Music - Döngü")
 .setDescription(`<a:tik:734892939737694239>  | ${message.author} tarafından döngü \`de-aktif\` edildi.`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
@@ -28,10 +30,10 @@ if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embe
 const dongu = client.player.getQueue(message.guild.id).repeatMode;
 if(dongu){
 client.player.setRepeatMode(message.guild.id, false);
-return message.channel.send(embed)
+return message.channel.send(embedd)
     } else {
 client.player.setRepeatMode(message.guild.id, true);
-return message.channel.send(embedd)
+return message.channel.send(embed)
     }
 };
 

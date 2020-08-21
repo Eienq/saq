@@ -14,6 +14,7 @@ if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embe
 const sarki = await client.player.pause(message.guild.id);
 const embed = new Discord.MessageEmbed()
 .setColor(FynxDogru)
+.setTitle("Fynx Music - Duraklat")
 .setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik duraklatıldı.\n\n${message.author} tarafından duraklatıldı!`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())

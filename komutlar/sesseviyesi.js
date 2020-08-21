@@ -16,7 +16,13 @@ if (!sesseviyesi) return message.channel.send({embed: {color: FynxHata, descript
 if (args > 200) return message.channel.send({embed: {color: FynxHata, description: `Ses seviyesini sadece \`0\` ile \`200\` arasında ayarlayabilirsiniz. `}})
 if (args < 0) return message.channel.send({embed: {color: FynxHata, description: `Ses seviyesini sadece \`0\` ile \`200\` arasında ayarlayabilirsiniz. ` }})
   client.player.setVolume(message.guild.id, sesseviyesi);
-message.channel.send({embed: {color: FynxDogru, description: `<a:tik:734892939737694239>  | Ses seviyesi, başarılı bir şekilde \`${args.join(" ")}\` olarak ayarlandı! ` }})
+      const embedd = new Discord.MessageEmbed()
+.setColor(FynxDogru)
+.setTitle("Fynx Music - Ses Seviyesi")
+.setDescription(`<a:tik:734892939737694239>  | Ses seviyesi, ${message.author} tarafından \`${args.join(" ")}\` olarak ayarlandı.`) 
+.setThumbnail(message.author.avatarURL())
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());   
+message.channel.send(embedd)
 }
 
 module.exports.config = {

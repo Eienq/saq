@@ -14,6 +14,7 @@ const sarki = await client.player.resume(message.guild.id);
 if(!sarki) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
 const embed = new Discord.MessageEmbed()
 .setColor(FynxDogru)
+.setTitle("Fynx Music - Devam Et")
 .setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik devam ettiriliyor.\n\n${message.author} tarafından devam ettirildi!`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
