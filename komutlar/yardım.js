@@ -24,9 +24,9 @@ const embed = new Discord.MessageEmbed()
 message.channel.send(embed).then(msg => {
 msg.react('⬅')
 .then(r => {
-msg.react(':heavy_plus_sign:')
+msg.react('➡')
 const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
-const forwardsFilter = (reaction, user) => reaction.emoji.name === ':heavy_plus_sign:' && user.id === message.author.id;
+const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
 const backwards = msg.createReactionCollector(backwardsFilter, { time: 100000 });
 const forwards = msg.createReactionCollector(forwardsFilter, { time: 100000 });
 forwards.on('collect', r => {
