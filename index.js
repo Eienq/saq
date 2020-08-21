@@ -17,11 +17,11 @@ const FynxHata = "#f30707";
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail(`https://cdn.discordapp.com/app-icons/522870338867167254/c82cd947b45d9d3a0f34ba8aaf0422ee.png`)
-.addField(`Musicdddddd - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Musicdddddd Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
-.addField(`Fynx - Prefix(Ön Ek)`, `Musicdddddd botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
-.addField(`Musicdddddd - Nasıl Kullanılır?`, `Musicdddddd botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
-.addField(`Musicdddddd - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
-.setFooter(`Musicdddddd © 2020`)
+.addField(`Fynx Music - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Fynx Music Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
+.addField(`Fynx - Prefix(Ön Ek)`, `Fynx Music botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
+.addField(`Fynx Music - Nasıl Kullanılır?`, `Fynx Music botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
+.addField(`Fynx Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
+.setFooter(`Fynx Music © 2020`)
 .setTimestamp();
 
 
@@ -152,7 +152,7 @@ client.on('guildRemove', async guild => {
 
 client.on('message', async msg => {
     let prefix = db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix;
-  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Musicdddddd - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Fynx Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 
