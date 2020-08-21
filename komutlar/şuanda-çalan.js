@@ -21,8 +21,8 @@ const calan = await client.player.nowPlaying(message.guild.id);
 const calanembed = new Discord.MessageEmbed()
 .setThumbnail(calan.thumbnail)
 .setColor("#22BF41")
-.setDescription(`<a:calan:735111831550427166>  | Şu Anda Oynatılan:\n\nMüziğin Adı: \n\`${calan.name}\`\n\nMüziği Yükleyen Kanal: \n\`${calan.author}\` \n\nMüziğin Durumu: \n\`${client.player.createProgressBar(message.guild.id)}\``)
-.setFooter(`[${client.player.createProgressBar(message.guild.id)}] [${calan.durationMS}]`)
+.setDescription(`<a:calan:735111831550427166>  | Şu Anda Oynatılan:\n\nMüziğin Adı: \n\`${calan.name}\`\n\nMüziği Yükleyen Kanal: \n\`${calan.author}\` \n\nMüziğin Durumu: \n${client.player.createProgressBar(message.guild.id)}`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`)
 message.channel.send(calanembed)
 };
 
