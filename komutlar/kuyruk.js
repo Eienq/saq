@@ -13,7 +13,7 @@ if(!message.member.voice.channel) return message.channel.send({embed: {color: Fy
 const kuyruk = client.player.getQueue(message.guild.id);
 if(!kuyruk) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
 let q = kuyruk.songs.map((song, i) => {
-return `${i === 0 ? '<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik' : `\nKuyruk No: ${i}`} \n**Müzik:** \`${song.name}\` \n**Kanal:** \`${song.author}\``
+return `${i === 0 ? '<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik' : `\nKuyruk No: ${i}`} \n\n**Müziğin Adı:** \`${song.name}\` \n**Müziği Yükleyen Kanal:** \`${song.author}\``
     }).join('\n');  
 message.channel.send({embed: {color: FynxDogru, title: `Fynx Music Müzik Kuyruğu`, description: `${q}`}})
 }
