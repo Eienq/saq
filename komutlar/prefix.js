@@ -14,7 +14,7 @@ let a = ayarlar.prefix
 .setColor(FynxHata)
 .setTitle("Fynx Music - Hata")
 .setDescription(`Bu komutu kullanabilmek için;\n**Sunucuyu Yönet** yetkisine sahip olmanız gerekmektedir. \nFynx Music'in şu anki prefixi: \`${p}\``));
-  
+
 if(args[0] === "ayarla") {
 if(o) { return message.channel.send(new Discord.MessageEmbed()
 .setColor(FynxHata)
