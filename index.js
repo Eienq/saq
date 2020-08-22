@@ -140,7 +140,7 @@ setInterval(() => {
 setInterval(function() {
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-         client.user.setActivity(oyun[random], "https://twitch.tv/lordcreative", {"type": "LISTENING"});
+         client.user.setActivity(oyun[random], {"type": "LISTENING"});
 
         }, 2 * 5000);
 });
