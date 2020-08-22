@@ -9,8 +9,27 @@ const ayarlar = require("../ayarlar/bot.json");
 module.exports.run = async (client, message, args) => {
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
-if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!` }})
-if (!args[0]) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!` }})  
+//------------------------------------------------//
+
+const hata1 = new Discord.MessageEmbed()
+.setColor(FynxHata) 
+.setTitle("• Hata: 001 •")
+.setThumbnail(message.author.avatarURL())
+.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+if(!message.member.voice.channel) return message.channel.send(hata1)
+
+//------------------------------------------------//
+  
+const hata3 = new Discord.MessageEmbed()
+.setColor(FynxHata) 
+.setTitle("• Hata: 003 •")
+.setThumbnail(message.author.avatarURL())
+.setDescription(`<a:yanlis:734892943332212764>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+  if (!args[0]) return message.channel.send(hata3)
+
+//------------------------------------------------//  
 const SuAndaSarkiOynatilmaktadir = client.player.isPlaying(message.guild.id);
 if(SuAndaSarkiOynatilmaktadir){
 const sarki = await client.player.addToQueue(message.guild.id, args.join(" "));

@@ -9,8 +9,27 @@ const ayarlar = require("../ayarlar/bot.json");
 module.exports.run = async (client, message, args) => {
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
-if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Ses seviyesini ayarlabilmek için bir ses kanalında olmanız gerekmektedir!` }})  
-if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
+//------------------------------------------------//
+
+const hata1 = new Discord.MessageEmbed()
+.setColor(FynxHata) 
+.setTitle("• Hata: 001 •")
+.setThumbnail(message.author.avatarURL())
+.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+if(!message.member.voice.channel) return message.channel.send(hata1)
+
+//------------------------------------------------//
+  
+const hata2 = new Discord.MessageEmbed()
+.setColor(FynxHata) 
+.setTitle("• Hata: 002 •")
+.setThumbnail(message.author.avatarURL())
+.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
+
+//------------------------------------------------//  
 let sesseviyesi = parseInt(args.join(" "));
 if (!sesseviyesi) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Ses seviyesini ayarlayabilmek için sadece pozitif bir doğal sayı giriniz.` }})
 if (args > 200) return message.channel.send({embed: {color: FynxHata, description: `Ses seviyesini sadece \`0\` ile \`200\` arasında ayarlayabilirsiniz. `}})
