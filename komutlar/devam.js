@@ -9,13 +9,33 @@ const ayarlar = require("../ayarlar/bot.json");
 module.exports.run = async (client, message) => {
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
-if(!message.member.voice.channel) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Duraklatılan bir müziği devam ettirebilmek için bir ses kanalında olmanız gerekmektedir!` }})
+//------------------------------------------------//
+
+const hata1 = new Discord.MessageEmbed()
+.setColor(FynxHata) 
+.setTitle("• Hata: 001 •")
+.setThumbnail(message.author.avatarURL())
+.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+if(!message.member.voice.channel) return message.channel.send(hata1)
+
+//------------------------------------------------//
+  
+const hata2 = new Discord.MessageEmbed()
+.setColor(FynxHata) 
+.setTitle("• Hata: 002 •")
+.setThumbnail(message.author.avatarURL())
+.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
+
+//------------------------------------------------//  
+  
 const sarki = await client.player.resume(message.guild.id);
-if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: FynxHata, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
 const embed = new Discord.MessageEmbed()
 .setColor(FynxDogru)
 .setTitle("Fynx Music - Devam Et")
-.setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik devam ettiriliyor.\n\n${message.author} tarafından devam ettirildi!`) 
+.setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik ${message.author} tarafından devam ettirildi!`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
 message.channel.send(embed)
