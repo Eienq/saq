@@ -12,13 +12,13 @@ let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
 //------------------------------------------------//
 
-const hata1 = new Discord.MessageEmbed()
+const hata4 = new Discord.MessageEmbed()
 .setColor(FynxHata) 
-.setTitle("• Hata: 001 •")
+.setTitle("• Hata: 004 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
-if(!message.member.voice.channel) return message.channel.send(hata1)
+if(!message.member.voice.channel) return message.channel.send(hata4)
 
 //------------------------------------------------//
   
