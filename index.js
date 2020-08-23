@@ -49,7 +49,7 @@ client.player = player;
 //----------------------------------------------\\
 
 client.on("message", async message => {
-let prefix = db.fetch(`prefix.${message.guild.id}`) || fynx.prefix;
+let prefix = fynx.prefix;
 const messageArray = message.content.split(" ");
 const cmd = messageArray[0].toLowerCase();
 const args = messageArray.slice(1);
@@ -162,7 +162,7 @@ client.on('guildRemove', async guild => {
 
 
 client.on('message', async msg => {
-    let prefix = db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix;
+    let prefix = fynx.prefix;
   if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Fynx Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
