@@ -140,8 +140,7 @@ setInterval(() => {
 setInterval(function() {
 
          var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-         bot.user.setPresence({ status: 'online' });
-         client.user.setActivity(oyun[random], {"status": "IDLE", "type": "LISTENING"});
+         client.user.setActivity(oyun[random], {"type": "LISTENING"});
 
         }, 2 * 5000);
 });
