@@ -151,8 +151,8 @@ setInterval(function() {
 //------------------------Eklendim Atildim-------------------------------\\
 
 client.on("guildCreate", guild => {
-  let log = client.channels.get("743094439500841042");
-  const embed = new Discord.RichEmbed()
+  let log = client.channels.cache.get("743094439500841042");
+  const embed = new Discord.MessageEmbed()
     .setAuthor("Yeni bir sunucuya eklendim!")
     .setThumbnail(
       guild.iconURL || client.user.avatarURL()
@@ -162,15 +162,15 @@ client.on("guildCreate", guild => {
     .addField("» Sunucu ID:", `\`\`\`${guild.id}\`\`\``)
     .addField(
       "Sunucu Bilgisi:",
-      `**Sunucu Sahibi: \`${guild.owner}\`\nSunucu Bölgesi: \`${guild.region}\`\nÜye Sayısı: \`${guild.members.size}\`\nKanal Sayısı: \`${guild.channels.size}\`**`
+      `**Sunucu Sahibi: ${guild.owner}\nSunucu Bölgesi: \`${guild.region}\`\nÜye Sayısı: \`${guild.members.cache.size}\`\nKanal Sayısı: \`${guild.channels.cache.size}\`**`
     )
     .setTimestamp()
     .setFooter(client.user.username, client.user.avatarURL);
   log.send(embed);
 });
 client.on("guildDelete", guild => {
-  let log = client.channels.get("743094439500841042");
-  const embed = new Discord.RichEmbed()
+  let log = client.channels.cache.get("743094439500841042");
+  const embed = new Discord.MessageEmbed()
     .setAuthor("Bir sunucudan atıldım -_-")
     .setThumbnail(
       guild.iconURL || client.user.avatarURL()
@@ -180,7 +180,7 @@ client.on("guildDelete", guild => {
     .addField("» Sunucu ID:", `\`\`\`${guild.id}\`\`\``)
     .addField(
       "Sunucu Bilgisi:",
-      `**Sunucu Sahibi: \`${guild.owner}\`\nSunucu Bölgesi: \`${guild.region}\`\nÜye Sayısı: \`${guild.members.size}\`\nKanal Sayısı: \`${guild.channels.size}\`**`
+      `**Sunucu Sahibi: ${guild.owner}\nSunucu Bölgesi: \`${guild.region}\`\nÜye Sayısı: \`${guild.members.cache.size}\`\nKanal Sayısı: \`${guild.channels.cache.size}\`**`
     )
     .setTimestamp()
     .setFooter(client.user.username, client.user.avatarURL);
