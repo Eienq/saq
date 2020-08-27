@@ -8,13 +8,10 @@ exports.run = async (client, message, args) => {
   var page = 0;
   var embed = new Discord.MessageEmbed()
                        .setColor("RANDOM")
-                       .setDescription(`
-                       [**Kaynak**](${bilgi.articles[0].url})
-                       **Yazan:** ${bilgi.articles[0].author}
-                       **Başlık:** ${bilgi.articles[0].title}
-                       **Açıklama:** ${bilgi.articles[0].description}`)
+                       .setTitle("Fynx Music - Haberler")
+                       .setDescription(`**Yazan:**\n \`${bilgi.articles[0].author}\`\n\n**Başlık:**\n \`${bilgi.articles[0].title}\`\n\n**Açıklama:**\n ${bilgi.articles[0].description}\n\n[**Habere Gitmek İçin Tıklayın.**](${bilgi.articles[0].url})`)
                        .setThumbnail(bilgi.articles[0].urlToImage)
-                       .setFooter(`Sayfa ${page} / ${bilgi.articles.length}`)
+                       .setFooter(`Fynx Music - Tüm hakları saklıdır. [Sayfa ${page} / ${bilgi.articles.length}]`, client.user.avatarURL())
   message.channel.send(embed).then(async msg => {
     await msg.react("⬅")
     await msg.react("➡")
@@ -27,13 +24,10 @@ exports.run = async (client, message, args) => {
 forwards.on('collect', async (reaction, user) => {
         if(page === bilgi.articles.length) return;
         page++;
-        embed.setDescription(`
-                       [**Kaynak**](${bilgi.articles[page-1].url})
-                       **Yazan:** ${bilgi.articles[page-1].author}
-                       **Başlık:** ${bilgi.articles[page-1].title}
-                       **Açıklama:** ${bilgi.articles[page-1].description}]`);
+        embed.setDescription(`**Yazan:**\n \`${bilgi.articles[page-1].author}\`\n\n**Başlık:**\n \`${bilgi.articles[page-1].title}\`\n\n**Açıklama:**\n ${bilgi.articles[page-1].description}\n\n[**Habere Gitmek İçin Tıklayın.**](${bilgi.articles[page-1].url})`);
         embed.setColor('RANDOM')
-        embed.setFooter(`Sayfa ${page} / ${bilgi.articles.length}`)
+        embed.setTitle("Fynx Music - Haberler")
+        embed.setFooter(`Fynx Music - Tüm hakları saklıdır. [Sayfa ${page} / ${bilgi.articles.length}]`, client.user.avatarURL())
         embed.setThumbnail(bilgi.articles[page-1].urlToImage)
         msg.edit(embed)
       })
@@ -41,12 +35,9 @@ forwards.on('collect', async (reaction, user) => {
         if(page === 1) return;
         page--;
         embed.setColor('RANDOM')
-        embed.setDescription(`
-                       [**Kaynak**](${bilgi.articles[page+1].url})
-                       **Yazan:** ${bilgi.articles[page+1].author}
-                       **Başlık:** ${bilgi.articles[page+1].title}
-                       **Açıklama:** ${bilgi.articles[page+1].description}]`);
-        embed.setFooter(`Sayfa ${page} / ${bilgi.articles.length}`)
+        embed.setTitle("Fynx Music - Haberler")
+        embed.setDescription(`**Yazan:**\n ${bilgi.articles[page+1].author}\n\n**Başlık:**\n ${bilgi.articles[page+1].title}\n\n**Açıklama:**\n ${bilgi.articles[page+1].description}\n\n[**Habere Gitmek İçin Tıklayın.**](${bilgi.articles[page+1].url})`);
+        embed.setFooter(`Fynx Music - Tüm hakları saklıdır. [Sayfa ${page} / ${bilgi.articles.length}]`, client.user.avatarURL())
         embed.setThumbnail(bilgi.articles[page+1].urlToImage)
         msg.edit(embed)
       })
