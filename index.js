@@ -94,6 +94,7 @@ newState.setSelfDeaf(true);
 //---------------------------------------------------------\\
 
 client.on("ready", ready => { 
+client.channels.cache.get("743216768092209153").join();  
 client.channels.cache.get("743218160672702608").setName(`🎀 ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`)
 client.channels.cache.get("743218148458889246").setName(`🎀 ${client.guilds.cache.size} Sunucu`);
 });
