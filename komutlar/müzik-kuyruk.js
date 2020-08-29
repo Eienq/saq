@@ -14,7 +14,7 @@ module.exports.run = async (client, message) => {
 const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 010 •")
-.setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setDescription(`<a:pirate:749380925619437619>  | Kuyruğu görüntüleyebilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
@@ -24,7 +24,7 @@ if(!message.member.voice.channel) return message.channel.send(hata1)
 const hata3 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 001 •")
-.setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setDescription(`<a:pirate:749380925619437619>   | Şu anda hiçbir müzik çalmamaktadır!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
 if(!kuyruk) return message.channel.send()

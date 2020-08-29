@@ -7,7 +7,7 @@ let yardım = new Discord.MessageEmbed()
 .setAuthor(`Pirate Yardım Menüsü`)
 .setColor('#ffd100')
 .addField('Sunucununuz Artık  Pirate ile 7/24 Güvenli',`
-<a:pirate:749380925619437619> ** | **__**${prefix}müzik**__ **| Müzik Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}MÜZİK**__ **| Müzik Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}SUNUCU**__ **| Sunucu Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}SUNUCU**__ **| Sunucu Komutları**`)
 .addField('<a:pirate:749380925619437619> | Pirate Bot',`  [Botumuza Oy Ver](https://top.gg/bot/713713727794446397) **|**  [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8) **|** [Destek](https://discord.gg/HRC9Yyp)`)

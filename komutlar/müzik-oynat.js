@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 003 •")
-.setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setDescription(`<a:pirate:749380925619437619>  | Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
@@ -24,7 +24,7 @@ if(!message.member.voice.channel) return message.channel.send(hata1)
 const hata3 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 002 •")
-.setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setDescription(`<a:pirate:749380925619437619>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
   if (!args[0]) return message.channel.send(hata3)
@@ -37,7 +37,7 @@ const sarki = await client.player.addToQueue(message.guild.id, args.join(" "));
   .setColor(AloneDogru)
   .setTitle("Pirate |  Kuyruğa Ekle")
   .setDescription(`<a:pirate:749380925619437619> | \`${sarki.name}\` adlı müzik,\n${message.author} tarafından kuyruğa eklendi!`)
-  .setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(kuyrukekle)
     } else {
