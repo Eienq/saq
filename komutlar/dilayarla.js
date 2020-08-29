@@ -16,7 +16,7 @@ exports.run = async function(client, message, args) {
   
 let dil = await db.fetch(`dil_${message.guild.id}`);
 const secenek = args[0]
-  if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`/**SUNUCUYU-YONET**/ yetkin yok.`)
+  if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send()
 if(!secenek) return message.channel.send(seceneksiz)
 
 if(secenek == 'TR'){
