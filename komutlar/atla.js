@@ -16,7 +16,7 @@ const hata4 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 004 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setDescription(`<a:pirate:749380925619437619>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata4)
 
@@ -26,7 +26,7 @@ const hata2 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setDescription(`<a:pirate:749380925619437619>  | Şu anda hiçbir müzik çalmamaktadır!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
@@ -39,7 +39,7 @@ const sarki = await client.player.skip(message.guild.id);
 const embed = new Discord.MessageEmbed() 
 .setColor(AloneDogru) 
 .setTitle("Pirate | Atla")
-.setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik ${message.author} tarafından geçildi!`) 
+.setDescription(`<a:pirate:749380925619437619>  | \`${sarki.name}\` adlı müzik ${message.author} tarafından geçildi!`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL())
 message.channel.send(embed)
