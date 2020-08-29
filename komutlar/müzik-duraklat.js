@@ -33,7 +33,7 @@ if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2
 const sarki = await client.player.pause(message.guild.id);
 const embed = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-.setTitle("Pirate |Duraklat")
+.setTitle("Pirate |   Duraklat")
 .setDescription(`<a:pirate:749380925619437619>   | \`${sarki.name}\` adlı müzik ${message.author} tarafından duraklatıldı!`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL())
