@@ -11,7 +11,7 @@ exports.run = async function(client, message, args) {
   .setColor(FynxHata)
   .setTitle("• Hata/Error: 015 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`**__Türkçe__**\n<a:yanlis:734892943332212764>  | Fynx Music'in dilini ayarlayabilmek için bir dil belirtiniz.\nMevcut Diller: \`Türkçe\`, \`English\`\n\n**__English:__**\n<a:yanlis:734892943332212764>  | To be able to set the language of Fynx Music, you must specify a language.\nAvailable languages:\`English\`, \`Turkish\` `)
+.setDescription(`**__Türkçe__**\n<a:yanlis:734892943332212764>  | Fynx Music'in dilini ayarlayabilmek için bir dil belirtiniz.\nMevcut Diller: \`TR\`, \`EN\`\n\n**__English:__**\n<a:yanlis:734892943332212764>  | To be able to set the language of Fynx Music, you must specify a language.\nAvailable languages:\`EN\`, \`TR\` `)
 .setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
   
 let dil = await db.fetch(`dil_${message.guild.id}`);
@@ -19,12 +19,12 @@ const secenek = args[0]
   if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`/**SUNUCUYU-YONET**/ yetkin yok.`)
 if(!secenek) return message.channel.send(seceneksiz)
 
-if(secenek == 'tr' || "TR" || "Turkish" || "Türk"|| "türk" || "türkçe" || "Türkçe"){
+if(secenek == 'TR'){
 db.set(`dil_${message.guild.id}`, 'turkce')
 message.channel.send(`Fynx Music'in dili başarılı bir şekilde \`Türkçe\` olarak ayarlandı!`)
 }
 
-if(secenek == 'EN' || "en" || "English" || "english"){
+if(secenek == 'EN'){
 db.set(`dil_${message.guild.id}`, 'english')
 message.channel.send(`Fynx Music's language has been successfully set to \`English\`!`)
 }   
