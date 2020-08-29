@@ -55,7 +55,7 @@ sarki.queue.on('end', () => {
   .setTitle("Fynx Music - Kuyruk Bitti!")
   .setDescription(`<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Fynx Music kanaldan ayrılıyor.\n\nFynx Music'i tercih ettiğiniz için teşekkür ederiz.  <a:ucankalpler:735102535974780968>`)
   .setThumbnail(client.user.avatarURL())
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());   
+.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
 message.channel.send(bitti)
 })
     }    
