@@ -16,7 +16,7 @@ const hata1 = new Discord.MessageEmbed()
 .setTitle("• Hata: 003 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());  
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -26,7 +26,7 @@ const hata3 = new Discord.MessageEmbed()
 .setTitle("• Hata: 002 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());    
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
   if (!args[0]) return message.channel.send(hata3)
 
 //------------------------------------------------//  
@@ -35,27 +35,27 @@ if(SuAndaSarkiOynatilmaktadir){
 const sarki = await client.player.addToQueue(message.guild.id, args.join(" "));
   const kuyrukekle = new Discord.MessageEmbed()
   .setColor(AloneDogru)
-  .setTitle("Alone Music - Kuyruğa Ekle")
+  .setTitle("Pirate |  Kuyruğa Ekle")
   .setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik,\n${message.author} tarafından kuyruğa eklendi!`)
   .setThumbnail(message.author.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());   
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(kuyrukekle)
     } else {
 const sarki = await client.player.play(message.member.voice.channel, args.join(" "));
   const oynanan = new Discord.MessageEmbed()
   .setColor(AloneDogru)
-  .setTitle("Alone Music - Oynatılan Şarkı")
+  .setTitle("Pirate |  Oynatılan Şarkı")
   .setDescription(`<a:calan:735111831550427166>  | \`${sarki.name}\` adlı müzik şu anda oynatılıyor.`)
   .setThumbnail(client.user.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());   
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(oynanan)
 sarki.queue.on('end', () => {
   const bitti = new Discord.MessageEmbed()
   .setColor(AloneDogru)
-  .setTitle("Alone Music - Kuyruk Bitti!")
-  .setDescription(`<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Alone Music kanaldan ayrılıyor.\n\nAlone Music'i tercih ettiğiniz için teşekkür ederiz.  <a:ucankalpler:735102535974780968>`)
+  .setTitle("Pirate | Kuyruk Bitti!")
+  .setDescription(`<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Pirate kanaldan ayrılıyor.\n\nPirate Tercih ettiğiniz için teşekkür ederiz.`)
   .setThumbnail(client.user.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());  
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 message.channel.send(bitti)
 })
     }    

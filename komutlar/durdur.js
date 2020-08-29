@@ -15,8 +15,8 @@ const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 007 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği durdurabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());  
+.setDescription(`<a:pirate:749380925619437619>  | Oynatılan bir müziği durdurabilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -25,18 +25,18 @@ const hata2 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());    
+.setDescription(`<a:pirate:749380925619437619>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  
   client.player.stop(message.guild.id);
   const embed = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-  .setTitle("Alone Music - Durdur")
-.setDescription(`<a:tik:734892939737694239>  | Müzikler ${message.author} tarafından durduruldu! Alone Music ses kanalından ayrılıyor.\n\nAlone Music'i tercih ettiğiniz için teşekkür ederiz.  <a:ucankalpler:735102535974780968>`) 
+  .setTitle("Pirate | Durdur")
+.setDescription(`<a:pirate:749380925619437619>  | Müzikler ${message.author} tarafından durduruldu! Pirate ses kanalından ayrılıyor.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL())
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL())
 message.channel.send(embed)
 };
 

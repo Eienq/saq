@@ -10,17 +10,17 @@ module.exports.run = async (client, message) => {
 
   const embed = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-.setTitle("Alone Music - Döngü")
-.setDescription(`<a:tik:734892939737694239>  | Müzik döngüsü, ${message.author} tarafından \`aktif\` edildi.`) 
+.setTitle("Pirate |  Döngü")
+.setDescription(`<a:pirate:749380925619437619> | Müzik döngüsü, ${message.author} tarafından \`aktif\` edildi.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());
   
   const embedd = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-.setTitle("Alone Music - Döngü")
-.setDescription(`<a:tik:734892939737694239>  | Müzik döngüsü, ${message.author} tarafından \`de-aktif\` edildi.`) 
+.setTitle("Pirate | Döngü")
+.setDescription(`<a:pirate:749380925619437619> | Müzik döngüsü, ${message.author} tarafından \`de-aktif\` edildi.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());  
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
   
 
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
@@ -31,8 +31,8 @@ const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 008 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Döngüyü ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());  
+.setDescription(`<a:pirate:749380925619437619>  | Döngüyü ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -41,8 +41,8 @@ const hata2 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());    
+.setDescription(`<a:pirate:749380925619437619>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  

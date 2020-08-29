@@ -10,10 +10,10 @@ module.exports.run = async (client, message) => {
 
   const embedd = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-.setTitle("Alone Music - Karıştır")
-.setDescription(`<a:tik:734892939737694239>  | Müzik Kuyruğu, ${message.author} tarafından karıştırıldı.`) 
+.setTitle("Pirate |  Karıştır")
+.setDescription(`<a:pirate:749380925619437619> | Müzik Kuyruğu, ${message.author} tarafından karıştırıldı.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());    
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
   
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
@@ -23,8 +23,8 @@ const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 009 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Müzik kuyruğunu karıştırabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());  
+.setDescription(`<a:pirate:749380925619437619> | Müzik kuyruğunu karıştırabilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -33,8 +33,8 @@ const hata2 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Alone Music © 2020 - All right reserved.`, client.user.avatarURL());    
+.setDescription(`<a:pirate:749380925619437619>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  
