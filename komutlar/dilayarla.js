@@ -9,10 +9,10 @@ exports.run = async function(client, message, args) {
 
   const seceneksiz = new Discord.MessageEmbed()
   .setColor(FynxHata)
-  .setTitle("• Hata: 015 •")
+  .setTitle("• Hata/Error: 015 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`**__Türkçe__**\n<a:yanlis:734892943332212764>  | Fynx Music'in dilini ayarlayabilmek için bir dil belirtiniz.\nMevcut Diller: \`Türkçe\`, \`English\`\n\n**__English:__**\n<a:yanlis:734892943332212764>  | To be able to set the language of Fynx Music, you must specify a language.\nAvailable languages:\`English\`, \`Turkish\` `)
-.setFooter(`Fynx Music - All right reserved.`, client.user.avatarURL());  
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
   
 let dil = await db.fetch(`dil_${message.guild.id}`);
 const secenek = args[0]

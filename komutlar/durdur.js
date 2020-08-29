@@ -16,7 +16,7 @@ const hata1 = new Discord.MessageEmbed()
 .setTitle("• Hata: 007 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği durdurabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -26,7 +26,7 @@ const hata2 = new Discord.MessageEmbed()
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  
@@ -36,7 +36,7 @@ if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2
   .setTitle("Fynx Music - Durdur")
 .setDescription(`<a:tik:734892939737694239>  | Müzikler ${message.author} tarafından durduruldu! Fynx Music ses kanalından ayrılıyor.\n\nFynx Music'i tercih ettiğiniz için teşekkür ederiz.  <a:ucankalpler:735102535974780968>`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL())
 message.channel.send(embed)
 };
 

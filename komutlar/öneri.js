@@ -12,12 +12,14 @@ exports.run = function(client, message, args) {
 const onerisiz = new Discord.MessageEmbed()
 .setColor(FynxHata)
 .setTitle("• Hata: 0014 •")
-.setDescription("Öneri gönderebilmek için bir öneri belirtiniz.");
+.setDescription("Öneri gönderebilmek için bir öneri belirtiniz.")
+.setFooter(`Fynx Music © 2020 - All right reserved.`);
 
 const onerili = new Discord.MessageEmbed()
 .setColor(FynxDogru)
 .setTitle("Fynx Music - Başarılı")
-.setDescription("Öneriniz alınmıştır! Teşekkür ederiz.");  
+.setDescription("Öneriniz alınmıştır! Teşekkür ederiz.")
+.setFooter(`Fynx Music © 2020 - All right reserved.`);  
   
 
   var öneri = args.slice(0).join(" ");

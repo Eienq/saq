@@ -15,7 +15,7 @@ const hata1 = new Discord.MessageEmbed()
 .setTitle("• Hata: 013 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Şu anda çalan müziği görebilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -25,7 +25,7 @@ const hata2 = new Discord.MessageEmbed()
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  
@@ -41,7 +41,7 @@ const calanembed = new Discord.MessageEmbed()
 .setThumbnail(calan.thumbnail)
 .setColor("#22BF41")
 .setDescription(`<a:calan:735111831550427166>  | Şu Anda Oynatılan:\n\nMüziğin Adı: \n\`${calan.name}\`\n\nMüziği Yükleyen Kanal: \n\`${calan.author}\` \n\nMüziğin Linki: \n[Youtube'den dinlemek için tıkla!](${calan.url})`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL())
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL())
 message.channel.send(calanembed)
 };
 

@@ -13,14 +13,14 @@ module.exports.run = async (client, message) => {
 .setTitle("Fynx Music - Döngü")
 .setDescription(`<a:tik:734892939737694239>  | Müzik döngüsü, ${message.author} tarafından \`aktif\` edildi.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());
   
   const embedd = new Discord.MessageEmbed()
 .setColor(FynxDogru)
 .setTitle("Fynx Music - Döngü")
 .setDescription(`<a:tik:734892939737694239>  | Müzik döngüsü, ${message.author} tarafından \`de-aktif\` edildi.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
   
 
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
@@ -32,7 +32,7 @@ const hata1 = new Discord.MessageEmbed()
 .setTitle("• Hata: 008 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Döngüyü ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -42,7 +42,7 @@ const hata2 = new Discord.MessageEmbed()
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  

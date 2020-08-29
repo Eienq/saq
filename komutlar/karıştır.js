@@ -13,7 +13,7 @@ module.exports.run = async (client, message) => {
 .setTitle("Fynx Music - Karıştır")
 .setDescription(`<a:tik:734892939737694239>  | Müzik Kuyruğu, ${message.author} tarafından karıştırıldı.`) 
 .setThumbnail(message.author.avatarURL())
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());    
   
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
@@ -24,7 +24,7 @@ const hata1 = new Discord.MessageEmbed()
 .setTitle("• Hata: 009 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Müzik kuyruğunu karıştırabilmek için bir ses kanalında olmanız gerekmektedir!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
 //------------------------------------------------//
@@ -34,7 +34,7 @@ const hata2 = new Discord.MessageEmbed()
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
-.setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
+.setFooter(`Fynx Music © 2020 - All right reserved.`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  
