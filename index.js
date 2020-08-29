@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+  const Discord = require("discord.js");
 const fs = require("fs");
 const client = new Discord.Client();
 const express = require("express");
@@ -142,3 +142,86 @@ client.on('message', async msg => {
 //---------------------------------------------------\\
 
 
+// MOD LOG
+
+client.on('messageDelete', async message   => { // mod-log
+      let modlogs = db.get(`log_${message.guild.id}`)
+    const modlogkanal = message.guild.channels.cache.find(kanal => kanal.id === modlogs);    
+if (!modlogkanal) return;
+  const embed = new Discord.MessageEmbed()
+  .setColor("#6278c5")
+  .setTitle("MESAJ SİLİNDİ")
+.setDescription(`<@!${message.author.id}> adlı kullanıcı tarafından <#${message.channel.id}> kanalına gönderilen mesaj silindi!\n\nSilinen Mesaj: **${message.content}**`)
+  .setFooter("Pirate Bot | Log Sistemi")
+  modlogkanal.send(embed);
+  })
+
+client.on('guildBanAdd', async message  => {
+      let modlogs = db.get(`log_${message.guild.id}`)
+    const modlogkanal = message.guild.channels.cache.find(kanal => kanal.id === modlogs);    
+if (!modlogkanal) return;
+  const embed = new Discord.MessageEmbed()
+  .setColor("#6278c5")
+
+    .setDescription(`Üye Sunucudan Yasaklandı! \n<@!${message.user.id}>, ${message.user.tag}`)
+        .setThumbnail(message.user.avatarURL)
+  .setFooter("Pirate Bot | Log Sistemi")
+  modlogkanal.send(embed);
+  })
+client.on('channelCreate', async channel  => {
+      let modlogs = db.get(`log_${channel.guild.id}`)
+    const modlogkanal = channel.guild.channels.cache.find(kanal => kanal.id === modlogs);    
+if (!modlogkanal) return;
+    if (channel.type === "text") {
+                let embed = new Discord.MessageEmbed()
+                    .setColor('#6278c5')
+                .setDescription(`${channel.name} adlı metin kanalı oluşturuldu.`)
+                .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
+                modlogkanal.send({embed});
+            };
+            if (channel.type === "voice") {
+                let embed = new Discord.MessageEmbed()
+                .setColor('#6278c5')
+.setTitle("SES KANALI OLUŞTURULDU")
+                .setDescription(`${channel.name} adlı ses kanalı oluşturuldu!`)
+                .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
+
+                modlogkanal.send({embed});
+            }
+        
+    })
+client.on('channelDelete', async channel  => {
+      let modlogs = db.get(`log_${channel.guild.id}`)
+    const modlogkanal = channel.guild.channels.cache.find(kanal => kanal.id === modlogs);    
+if (!modlogkanal) return;
+    if (channel.type === "text") {
+                let embed = new Discord.MessageEmbed()
+                    .setColor('#6278c5')
+                .setDescription(`${channel.name} adlı metin kanalı silini!`)
+                .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
+                modlogkanal.send({embed});
+            };
+            if (channel.type === "voice") {
+                let embed = new Discord.MessageEmbed()
+                .setColor('#6278c5')
+.setTitle("SES KANALI SİLİNDİ")
+                .setDescription(`${channel.name} adlı ses kanalı silindi`)
+            .setFooter(`Pirate Bot | Log Sistemi  Kanal ID: ${channel.id}`)
+                modlogkanal.send({embed});
+            }
+    })
+client.on("messageUpdate", async (oldMsg, newMsg) => {
+  if (oldMsg.author.bot) return;
+  var user = oldMsg.author;
+  if (db.has(`log_${oldMsg.guild.id}`) === false) return;
+  var kanal = oldMsg.guild.channels.get(db.fetch(`log_${oldMsg.guild.id}`).replace("<#", "").replace(">", ""))
+  if (!kanal) return;
+  const embed = new Discord.MessageEmbed()
+  .setColor("#6278c5")
+  .addField("Kullanıcı", oldMsg.author.tag, true)
+  .addField("Eski Mesaj",`  ${oldMsg.content}  `)
+  .addField("Yeni Mesaj", `${newMsg.content}`)
+  .setThumbnail(oldMsg.author.avatarURL)
+  kanal.send(embed);  
+        
+    })
