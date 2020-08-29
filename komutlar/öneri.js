@@ -11,8 +11,8 @@ exports.run = function(client, message, args) {
 
 const onerisiz = new Discord.MessageEmbed()
 .setColor(FynxHata)
-.setTitle("Fynx Music - Hata")
-.setDescription("Lütfen bir öneri belirtiniz.");
+.setTitle("• Hata: 0014 •")
+.setDescription("Öneri gönderebilmek için bir öneri belirtiniz.");
 
 const onerili = new Discord.MessageEmbed()
 .setColor(FynxDogru)

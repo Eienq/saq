@@ -29,7 +29,7 @@ module.exports.run = async (client, message) => {
 
 const hata1 = new Discord.MessageEmbed()
 .setColor(FynxHata) 
-.setTitle("• Hata: 001 •")
+.setTitle("• Hata: 008 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Döngüyü ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
@@ -39,7 +39,7 @@ if(!message.member.voice.channel) return message.channel.send(hata1)
   
 const hata2 = new Discord.MessageEmbed()
 .setColor(FynxHata) 
-.setTitle("• Hata: 002 •")
+.setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
 .setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());    
