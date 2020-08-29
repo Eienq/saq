@@ -5,8 +5,8 @@ module.exports.run = async (client, message, args) => {
   let prefix = (await db.fetch(`prefix.${message.guild.id}`)) || fynx.prefix;
   if (!message.member.hasPermission("BAN_MEMBERS")) {
     const embed = new Discord.MessageEmbed()
-      .setDescription("Ne yazık ki bu komutu kullanmaya yetkin yok.```")
-      .setColor("BLACK");
+      .setDescription("<a:pirate:749380925619437619> **Ne yazık ki bu komutu kullanmaya yetkin yok**")
+      .setColor("#ffd100");
 
     message.channel.send(embed);
     return;
@@ -16,15 +16,15 @@ module.exports.run = async (client, message, args) => {
   if (!u) {
     return message.channel.send(
       new Discord.MessageEmbed()
-        .setDescription("Lütfen sunucudan yasaklanacak kişiyi etiketleyiniz!")
-        .setColor("BLACK")
+        .setDescription("<a:pirate:749380925619437619> **Lütfen sunucudan yasaklanacak kişiyi etiketleyiniz!**")
+        .setColor("#ffd100")
         .setFooter(client.user.username, client.user.avatarURL)
     );
   }
 
   const embed = new Discord.MessageEmbed()
-    .setColor("BLACK")
-    .setDescription(`${u} Adlı şahsın yasaklanmasını onaylıyor musunuz?`)
+    .setColor("#ffd100")
+    .setDescription(`<a:pirate:749380925619437619> ${u} **Adlı şahsın yasaklanmasını onaylıyor musunuz?**`)
     .setFooter(client.user.username, client.user.avatarURL);
   message.channel.send(embed).then(async function(sentEmbed) {
     const emojiArray = ["✅"];
@@ -34,14 +34,14 @@ module.exports.run = async (client, message, args) => {
     var reactions = sentEmbed.createReactionCollector(filter, {
       time: 30000
     });
-    reactions.on("end", () => sentEmbed.edit("İşlem iptal oldu!"));
+    reactions.on("end", () => sentEmbed.edit("<a:pirate:749380925619437619> **İşlem iptal oldu!**"));
     reactions.on("collect", async function(reaction) {
       if (reaction.emoji.name === "✅") {
         message.channel.send(
-          `İşlem onaylandı! ${u} adlı şahıs sunucudan yasaklandı!`
+          `<a:pirate:749380925619437619> **İşlem onaylandı!** ${u} **adlı şahıs sunucudan yasaklandı!**`
         );
 
-        message.guild.ban(u, 2);
+        u.ban(u, 2);
       }
     });
   });
