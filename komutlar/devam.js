@@ -15,7 +15,7 @@ const hata1 = new Discord.MessageEmbed()
 .setColor(FynxHata) 
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği geçebilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziği devam ettirebilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`Fynx Music - Tüm hakları saklıdır.`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
