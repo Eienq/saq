@@ -20,7 +20,7 @@ const emmmmbed = new Discord.MessageEmbed()
 .addField(`Alone Music - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Alone Music Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
 .addField(`Alone - Prefix(Ön Ek)`, `Alone Music botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
 .addField(`Alone Music - Nasıl Kullanılır?`, `Alone Music botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
-.addField(`Alone Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
+.addField(`Alone Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/skU8tqY\n\nWebsitemiz: https://alonemusicbot.tk/`)
 .setFooter(`Alone Music © 2020`)
 .setTimestamp();
 
@@ -117,7 +117,7 @@ var oyun = [
 `🎀 Sponsor: keyubu.com`,
 `🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
 `✨ Yardım almak için | +yardım`,
-`🌈 alonemusic.tk`,
+`🌈 alonemusicbot.tk`,
 `🚀 Gelişmiş Müzik Botu`,
 `⚡️ Botu eklemek için | +davet`,
 `🌟 Prefix ayarlamak için | +prefix`,
@@ -135,8 +135,8 @@ app.get("/", (request, response) => {
 }); 
 app.listen(9000); 
 setInterval(() => { 
-  http.get(`http://fynxmusicbots.glitch.me/`); 
-}, 300000);
+  http.get(`http://alonemusicbots.glitch.me/`); 
+}, 180000);
   
 setInterval(function() {
 
