@@ -8,8 +8,8 @@ exports.run = async (client, message, args) => {
 
 const embed = new Discord.MessageEmbed()
 .setColor("BLUE")
-.setAuthor(`Alone Music Linkler`, client.user.avatarURL())
-.setDescription('**• [Alone Music`i Ekleyin.](https://discord.com/oauth2/authorize?client_id=511593657711722523&scope=bot&permissions=8)**\n\n**• [Alone Music Websitesi](https://alonemusicbot.tk/)**')
+.setAuthor(`Pirate Linkler`, client.user.avatarURL())
+.setDescription('**• [Pirate`i Ekleyin.](https://discord.com/oauth2/authorize?client_id=511593657711722523&scope=bot&permissions=8)**\n\n**• [Alone Music Websitesi](https://alonemusicbot.tk/)**')
 .setFooter(`${message.author.username} tarafından istendi!`) 
 .setTimestamp()
 .setThumbnail(client.user.avatarURL())

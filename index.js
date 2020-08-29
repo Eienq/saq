@@ -17,10 +17,10 @@ const AloneHata = "#f30707";
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail()
-.addField(`Alone Music - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Alone Music Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
-.addField(`Alone - Prefix(Ön Ek)`, `Alone Music botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
-.addField(`Alone Music - Nasıl Kullanılır?`, `Alone Music botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
-.addField(`Alone Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/skU8tqY\n\nWebsitemiz: https://alonemusicbot.tk/`)
+.addField(`Pirate | Teşekkürler`, `**Selamlar, Ben Lord Craetive (Pirate'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
+.addField(`Alone | Prefix`, `**Pirate Botun Prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` Yazabilirsiniz.**`)
+.addField(`Pirate | Nasıl Kullanılır?`, `**Pirate botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.**`)
+.addField(`Pirate | Linkler`, `**Sohbet Kanalına -davet Yazmanız Yeterlidir**`)
 .setFooter(`Alone Music © 2020`)
 .setTimestamp();
 
@@ -93,17 +93,12 @@ newState.setSelfDeaf(true);
 });
 //---------------------------------------------------------\\
 
-client.on("ready", ready => { 
-client.channels.cache.get("743216768092209153").join(); 
-client.channels.cache.get("743218160672702608").setName(`🎀 ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`)
-client.channels.cache.get("743218148458889246").setName(`🎀 ${client.guilds.cache.size} Sunucu`);
-});
 
 client.login(fynx.fynxtoken)
 .then(function() {
-console.log('[AloneCode] Token doğru. Bot aktif ediliyor.')
+console.log('Token doğru. Bot aktif ediliyor.')
 }, function(err) {
-console.log("[Hata] Tokeniniz yanlış. Bot başlatılamıyor.")
+console.log("Tokeniniz yanlış. Bot başlatılamıyor.")
 setInterval(function() {
 process.exit(0)
 }, 20000);
@@ -114,30 +109,13 @@ process.exit(0)
 const bot = new Discord.Client();
 
 var oyun = [
-`🎀 Sponsor: keyubu.com`,
-`🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
-`✨ Yardım almak için | +yardım`,
-`🌈 alonemusicbot.tk`,
-`🚀 Gelişmiş Müzik Botu`,
-`⚡️ Botu eklemek için | +davet`,
-`🌟 Prefix ayarlamak için | +prefix`,
-`💫 İngilizce dil desteği yakında!`,
-`🌹 Destek olmak için | +destek `,
-`💡 Öneride bulunmak için | +öneri`
+`✨ Yardım almak için | -yardım`,
+`🚀 Gelişmiş Türkçe Bot`,
+`⚡️ Botu eklemek için | -davet`,
+`🌟 Prefix ayarlamak için | -prefix`,
 ]
 
 client.on("ready", () => {
-  
-  const http = require('http'); 
-app.get("/", (request, response) => { 
-  console.log(fynx.pingmesaj); 
-  response.sendStatus(200); 
-}); 
-app.listen(9000); 
-setInterval(() => { 
-  http.get(`http://alonemusicbots.glitch.me/`); 
-}, 180000);
-  
 setInterval(function() {
 
          var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
@@ -151,7 +129,7 @@ setInterval(function() {
 //------------------------Eklendim Atildim-------------------------------\\
 
 client.on("guildCreate", guild => {
-  let log = client.channels.cache.get("743094439500841042");
+  let log = client.channels.cache.get("718509292675923998");
   const embed = new Discord.MessageEmbed()
     .setAuthor("Yeni bir sunucuya eklendim!")
     .setThumbnail(
@@ -169,7 +147,7 @@ client.on("guildCreate", guild => {
   log.send(embed);
 });
 client.on("guildDelete", guild => {
-  let log = client.channels.cache.get("743094439500841042");
+  let log = client.channels.cache.get("718509292675923998");
   const embed = new Discord.MessageEmbed()
     .setAuthor("Bir sunucudan atıldım -_-")
     .setThumbnail(
@@ -194,7 +172,7 @@ client.on("guildDelete", guild => {
 
 client.on('message', async msg => {
     let prefix = fynx.prefix;
-  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Alone Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@713713727794446397>`) return msg.channel.send(`> **Prefix | Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 
