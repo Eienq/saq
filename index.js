@@ -126,45 +126,7 @@ setInterval(function() {
 
 
 
-//------------------------Eklendim Atildim-------------------------------\\
 
-client.on("guildCreate", guild => {
-  let log = client.channels.cache.get("718509292675923998");
-  const embed = new Discord.MessageEmbed()
-    .setAuthor("Yeni bir sunucuya eklendim!")
-    .setThumbnail(
-      guild.iconURL || client.user.avatarURL()
-    )
-    .setColor("GREEN")
-         .addField("» Sunucu İsmi:", `**${guild.name}**`)
-    .addField("» Sunucu ID:", `\`\`\`${guild.id}\`\`\``)
-    .addField(
-      "Sunucu Bilgisi:",
-      `**Sunucu Sahibi: ${guild.owner}\nSunucu Bölgesi: \`${guild.region}\`\nÜye Sayısı: \`${guild.members.cache.size}\`\nKanal Sayısı: \`${guild.channels.cache.size}\`**`
-    )
-    .setTimestamp()
-    .setFooter(client.user.username, client.user.avatarURL());
-  log.send(embed);
-});
-client.on("guildDelete", guild => {
-  let log = client.channels.cache.get("718509292675923998");
-  const embed = new Discord.MessageEmbed()
-    .setAuthor("Bir sunucudan atıldım -_-")
-    .setThumbnail(
-      guild.iconURL || client.user.avatarURL()
-    )
-    .setColor("RED")
-       .addField("» Sunucu İsmi:", `**${guild.name}**`)
-    .addField("» Sunucu ID:", `\`\`\`${guild.id}\`\`\``)
-    .addField(
-      "Sunucu Bilgisi:",
-      `**Sunucu Sahibi: ${guild.owner}\nSunucu Bölgesi: \`${guild.region}\`\nÜye Sayısı: \`${guild.members.cache.size}\`\nKanal Sayısı: \`${guild.channels.cache.size}\`**`
-    )
-    .setTimestamp()
-    .setFooter(client.user.username, client.user.avatarURL());
-  log.send(embed);
-});
- 
 
 //-----------------Etiket Prefix-----------------\\
 
