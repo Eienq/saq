@@ -1,38 +1,23 @@
-const Discord = require("discord.js")
-const fs = require("fs")
-const moment = require("moment");
-const os = require("os");
-require("moment-duration-format");
-const db = require("quick.db");
-const ayarlar = require("../ayarlar/bot.json");
+const Discord = require('discord.js');
+const moment = require('moment');
+const ayarlar = require('../ayarlar/bot.json');
+require('moment-duration-format');
+exports.run = async(client, message, args) => {
 
-exports.run = async (client, message, args) => {
-  	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
+let batuhan = new Discord.MessageEmbed()
+.setThumbnail(message.author.displayAvatarURL())
+.setAuthor(client.user.username, client.user.avatarURL)
+.addField("Bot Verileri", `<a:pirate:749380925619437619> **Toplam Sunucu** **|**  **${client.guilds.cache.size}** \n <a:pirate:749380925619437619> Toplam kullanıcı: **${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}** \nToplam kanal: **${client.channels.cache.size}**`)
+.addField("Bot Geliştiricisi", `Bot geliştiricisi ➡ <@424512092742352897> | **' ֎Batuhan#0008** \n Bot geliştiricisi ➡ <@618860034499149859> | **' Miran#0139**`)
+.addField("Sürümler", `Discord.js sürümü: **v${Discord.version}** \nNode.js sürümü: **${process.version}**`)
+.addField("Gecikmeler", `Bot pingi: **${client.ws.ping}** \nMesaj gecikmesi: **${new Date().getTime() - message.createdTimestamp}**`)
 
-const seksizaman = moment
-.duration(client.uptime)
-.format(" D [gün], H [saat], m [dakika], s [saniye]");
-const istatistikler = new Discord.MessageEmbed()
-.setColor("RANDOM")
 .setTimestamp()
-.setFooter("Pirate © 2020", client.user.avatarURL())
-.addField("<a:pirate:749380925619437619> | **Botun Sahibi**", "<@236173144300191754> <@327064201245753344>")
-.addField("<a:pirate:749380925619437619>   | **Gecikme süreleri**","Mesaj Gecikmesi: {ping1} ms \nBot Gecikmesi: {ping2} ms"
-.replace("{ping1}", new Date().getTime() - message.createdTimestamp)
-.replace("{ping2}", client.ws.ping),true)
-.addField("<a:pirate:749380925619437619>   | **Bellek kullanımı**",(process.memoryUsage().heapUsed / 1024 / 512).toFixed(2) + " MB",true)
-.addField("<a:pirate:749380925619437619>  | **Çalışma süresi**", seksizaman, true)
-.addField("<a:pirate:749380925619437619>   | **Discord.JS sürüm**", "v" + Discord.version, true)
-.addField("<a:pirate:749380925619437619>   | **Node.JS sürüm**", `${process.version}`, true)
-.addField("<a:pirate:749380925619437619>   | **Müzik Oynatılan Sunucu Sayısı**", client.voice.connections.size, true)
-.addField(`<a:pirate:749380925619437619>  | **Sunucu Sayısı**`, client.guilds.cache.size, true)
-.addField(`<a:pirate:749380925619437619>  | **Kullanıcı Sayısı**`, client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)
-.addField(`<a:pirate:749380925619437619>  | **Sunucu Lokasyonu**`, `<a:turkiye:734888652827656262>  Turkey, Izmir`, true)
-return message.channel.send(istatistikler);
-};
+.setColor("RANDOM")
+message.channel.send(batuhan)
+}
 
 exports.config = {
-name: "istatistik",
-aliases: ["i"]
-};
-
+name: "i",
+  aliases: []
+}
