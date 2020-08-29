@@ -8,20 +8,20 @@ const fynx = require("./ayarlar/bot.json");
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
 
-const Fynx = "#36393e";
-const FynxDogru = "#22BF41";
-const FynxHata = "#f30707";
+const Alone = "#36393e";
+const AloneDogru = "#22BF41";
+const AloneHata = "#f30707";
 
 
 //-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail(`https://cdn.discordapp.com/app-icons/522870338867167254/c82cd947b45d9d3a0f34ba8aaf0422ee.png`)
-.addField(`Fynx Music - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Fynx Music Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
-.addField(`Fynx - Prefix(Ön Ek)`, `Fynx Music botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
-.addField(`Fynx Music - Nasıl Kullanılır?`, `Fynx Music botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
-.addField(`Fynx Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
-.setFooter(`Fynx Music © 2020`)
+.addField(`Alone Music - Teşekkürler`, `Selamlar, ben Bay Ördekcik(Alone Music Geliştiricisi) öncelikle botumuzu eklediğiniz ve bize destek olduğunuz için sizlere teşekkürlerimi sunarım`)
+.addField(`Alone - Prefix(Ön Ek)`, `Alone Music botun prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` yazabilirsiniz.`)
+.addField(`Alone Music - Nasıl Kullanılır?`, `Alone Music botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.`)
+.addField(`Alone Music - Linkler`, `Destek Sunucumuz:\nhttps://discord.gg/fynxcode\n\nWebsitemiz: https://fynxmusic.tk/`)
+.setFooter(`Alone Music © 2020`)
 .setTimestamp();
 
 
@@ -101,7 +101,7 @@ client.channels.cache.get("743218148458889246").setName(`🎀 ${client.guilds.ca
 
 client.login(fynx.fynxtoken)
 .then(function() {
-console.log('[FynxCode] Token doğru. Bot aktif ediliyor.')
+console.log('[AloneCode] Token doğru. Bot aktif ediliyor.')
 }, function(err) {
 console.log("[Hata] Tokeniniz yanlış. Bot başlatılamıyor.")
 setInterval(function() {
@@ -117,7 +117,7 @@ var oyun = [
 `🎀 Sponsor: keyubu.com`,
 `🔨 Yapımcı: Bay Ördekcik / Lord Creative`,
 `✨ Yardım almak için | +yardım`,
-`🌈 fynxmusic.tk`,
+`🌈 alonemusic.tk`,
 `🚀 Gelişmiş Müzik Botu`,
 `⚡️ Botu eklemek için | +davet`,
 `🌟 Prefix ayarlamak için | +prefix`,
@@ -194,7 +194,7 @@ client.on("guildDelete", guild => {
 
 client.on('message', async msg => {
     let prefix = fynx.prefix;
-  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Fynx Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@!522870338867167254>`) return msg.channel.send(`> **Alone Music - Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 

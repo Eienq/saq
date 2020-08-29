@@ -15,7 +15,7 @@ const seksizaman = moment
 const istatistikler = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setTimestamp()
-.setFooter("Fynx Music © 2020", client.user.avatarURL())
+.setFooter("Alone Music © 2020", client.user.avatarURL())
 .addField("<a:coder:734885134800519288>  | **Botun Sahibi**", "<@236173144300191754> <@327064201245753344>")
 .addField("<:ping:735102803340558336>  | **Gecikme süreleri**","Mesaj Gecikmesi: {ping1} ms \nBot Gecikmesi: {ping2} ms"
 .replace("{ping1}", new Date().getTime() - message.createdTimestamp)

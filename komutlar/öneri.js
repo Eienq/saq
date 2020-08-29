@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
-const Fynx = "#36393e";
-const FynxDogru = "#22BF41";
-const FynxHata = "#f30707";  
+const Alone = "#36393e";
+const AloneDogru = "#22BF41";
+const AloneHata = "#f30707";  
 const db = require("quick.db");
 const ayarlar = require("../ayarlar/bot.json");
 
@@ -10,16 +10,16 @@ exports.run = function(client, message, args) {
 
 
 const onerisiz = new Discord.MessageEmbed()
-.setColor(FynxHata)
+.setColor(AloneHata)
 .setTitle("• Hata: 0014 •")
 .setDescription("Öneri gönderebilmek için bir öneri belirtiniz.")
-.setFooter(`Fynx Music © 2020 - All right reserved.`);
+.setFooter(`Alone Music © 2020 - All right reserved.`);
 
 const onerili = new Discord.MessageEmbed()
-.setColor(FynxDogru)
-.setTitle("Fynx Music - Başarılı")
+.setColor(AloneDogru)
+.setTitle("Alone Music - Başarılı")
 .setDescription("Öneriniz alınmıştır! Teşekkür ederiz.")
-.setFooter(`Fynx Music © 2020 - All right reserved.`);  
+.setFooter(`Alone Music © 2020 - All right reserved.`);  
   
 
   var öneri = args.slice(0).join(" ");
