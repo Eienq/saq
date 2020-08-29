@@ -49,7 +49,7 @@ client.player = player;
 //----------------------------------------------\\
 
 client.on("message", async message => {
-let prefix = fynx.prefix;
+  let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 const messageArray = message.content.split(" ");
 const cmd = messageArray[0].toLowerCase();
 const args = messageArray.slice(1);

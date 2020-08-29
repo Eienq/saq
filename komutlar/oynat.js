@@ -15,7 +15,7 @@ const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 003 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setDescription(`<a:pirate:749380925619437619>  | Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
@@ -25,7 +25,7 @@ const hata3 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 002 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!`)
+.setDescription(`<a:pirate:749380925619437619>  | Müzik oynatabilmek için aranacak kelime veyahut kelimeler giriniz!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
   if (!args[0]) return message.channel.send(hata3)
 
