@@ -149,9 +149,9 @@ client.on('messageDelete', async message   => { // mod-log
     const modlogkanal = message.guild.channels.cache.find(kanal => kanal.id === modlogs);    
 if (!modlogkanal) return;
   const embed = new Discord.MessageEmbed()
-  .setColor("#6278c5")
+  .setColor("#ffd100")
   .setTitle("MESAJ SİLİNDİ")
-.setDescription(`<@!${message.author.id}> adlı kullanıcı tarafından <#${message.channel.id}> kanalına gönderilen mesaj silindi!\n\nSilinen Mesaj: **${message.content}**`)
+.setDescription(`<a:pirate:749380925619437619> <@!${message.author.id}> **adlı kullanıcı tarafından** <#${message.channel.id}> **kanalına gönderilen mesaj silindi!** \n\nSilinen Mesaj: **${message.content}**`)
   .setFooter("Pirate Bot | Log Sistemi")
   modlogkanal.send(embed);
   })
@@ -161,9 +161,9 @@ client.on('guildBanAdd', async message  => {
     const modlogkanal = message.guild.channels.cache.find(kanal => kanal.id === modlogs);    
 if (!modlogkanal) return;
   const embed = new Discord.MessageEmbed()
-  .setColor("#6278c5")
+  .setColor("#ffd100")
 
-    .setDescription(`Üye Sunucudan Yasaklandı! \n<@!${message.user.id}>, ${message.user.tag}`)
+    .setDescription(`<a:pirate:749380925619437619> **Üye Sunucudan Yasaklandı!** \n<@!${message.user.id}>, ${message.user.tag}`)
         .setThumbnail(message.user.avatarURL)
   .setFooter("Pirate Bot | Log Sistemi")
   modlogkanal.send(embed);
@@ -174,16 +174,17 @@ client.on('channelCreate', async channel  => {
 if (!modlogkanal) return;
     if (channel.type === "text") {
                 let embed = new Discord.MessageEmbed()
-                    .setColor('#6278c5')
-                .setDescription(`${channel.name} adlı metin kanalı oluşturuldu.`)
+                    .setColor('#ffd100')
+                .setTitle("METİN KANALI OLUŞTURULDU")
+                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlı Metin Kanalı Oluşturuldu!**`)
                 .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             };
             if (channel.type === "voice") {
                 let embed = new Discord.MessageEmbed()
-                .setColor('#6278c5')
+                .setColor('#ffd100')
 .setTitle("SES KANALI OLUŞTURULDU")
-                .setDescription(`${channel.name} adlı ses kanalı oluşturuldu!`)
+                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlı Ses Kanalı Oluşturuldu!**`)
                 .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
 
                 modlogkanal.send({embed});
@@ -196,16 +197,16 @@ client.on('channelDelete', async channel  => {
 if (!modlogkanal) return;
     if (channel.type === "text") {
                 let embed = new Discord.MessageEmbed()
-                    .setColor('#6278c5')
-                .setDescription(`${channel.name} adlı metin kanalı silini!`)
+                    .setColor('#ffd100')
+                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlın Metin Kanalı  Silindi**`)
                 .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             };
             if (channel.type === "voice") {
                 let embed = new Discord.MessageEmbed()
-                .setColor('#6278c5')
+                .setColor('#ffd100')
 .setTitle("SES KANALI SİLİNDİ")
-                .setDescription(`${channel.name} adlı ses kanalı silindi`)
+                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlı Ses Kanalı Silindi**`)
             .setFooter(`Pirate Bot | Log Sistemi  Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             }
@@ -217,7 +218,7 @@ client.on("messageUpdate", async (oldMsg, newMsg) => {
   var kanal = oldMsg.guild.channels.get(db.fetch(`log_${oldMsg.guild.id}`).replace("<#", "").replace(">", ""))
   if (!kanal) return;
   const embed = new Discord.MessageEmbed()
-  .setColor("#6278c5")
+  .setColor("#ffd100")
   .addField("Kullanıcı", oldMsg.author.tag, true)
   .addField("Eski Mesaj",`  ${oldMsg.content}  `)
   .addField("Yeni Mesaj", `${newMsg.content}`)
