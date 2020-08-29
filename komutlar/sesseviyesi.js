@@ -15,7 +15,7 @@ const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 012 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Oynatılan bir müziğin ses seviyesini ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!`)
+.setDescription(`<a:pirate:749380925619437619> | Oynatılan bir müziğin ses seviyesini ayarlayabilmek için bir ses kanalında olmanız gerekmektedir!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
 
@@ -25,20 +25,20 @@ const hata2 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 001 •")
 .setThumbnail(message.author.avatarURL())
-.setDescription(`<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!`)
+.setDescription(`<a:pirate:749380925619437619> | Şu anda hiçbir müzik çalmamaktadır!`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());    
 if(!client.player.isPlaying(message.guild.id)) return message.channel.send(hata2)
 
 //------------------------------------------------//  
 let sesseviyesi = parseInt(args.join(" "));
-if (!sesseviyesi) return message.channel.send({embed: {color: AloneHata, description: `<a:yanlis:734892943332212764>  | Ses seviyesini ayarlayabilmek için sadece pozitif bir doğal sayı giriniz.` }})
+if (!sesseviyesi) return message.channel.send({embed: {color: AloneHata, description: `<a:pirate:749380925619437619> | Ses seviyesini ayarlayabilmek için sadece pozitif bir doğal sayı giriniz.` }})
 if (args > 200) return message.channel.send({embed: {color: AloneHata, description: `Ses seviyesini sadece \`0\` ile \`200\` arasında ayarlayabilirsiniz. `}})
 if (args < 0) return message.channel.send({embed: {color: AloneHata, description: `Ses seviyesini sadece \`0\` ile \`200\` arasında ayarlayabilirsiniz. ` }})
   client.player.setVolume(message.guild.id, sesseviyesi);
       const embedd = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-.setTitle("Alone Music - Ses Seviyesi")
-.setDescription(`<a:tik:734892939737694239>  | Ses seviyesi, ${message.author} tarafından \`${args.join(" ")}\` olarak ayarlandı.`) 
+.setTitle("Pirate |  Ses Seviyesi")
+.setDescription(`<a:pirate:749380925619437619> | Ses seviyesi, ${message.author} tarafından \`${args.join(" ")}\` olarak ayarlandı.`) 
 .setThumbnail(message.author.avatarURL())
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(embedd)

@@ -13,20 +13,20 @@ const onerisiz = new Discord.MessageEmbed()
 .setColor(AloneHata)
 .setTitle("• Hata: 0014 •")
 .setDescription("Öneri gönderebilmek için bir öneri belirtiniz.")
-.setFooter(`Alone Music © 2020 - All right reserved.`);
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`);
 
 const onerili = new Discord.MessageEmbed()
 .setColor(AloneDogru)
-.setTitle("Alone Music - Başarılı")
+.setTitle("Pirate | Başarılı")
 .setDescription("Öneriniz alınmıştır! Teşekkür ederiz.")
-.setFooter(`Alone Music © 2020 - All right reserved.`);  
+.setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`);  
   
 
   var öneri = args.slice(0).join(" ");
  
-  var guildID = "724723032140152862"; // Sunucu ID
+  var guildID = "666967704569380864"; // Sunucu ID
  
-  var channelID = "743532361974808607"; // Kanal ID
+  var channelID = "718509292675923998"; // Kanal ID
  
   if (!öneri) {
     return message.channel.send(embed);
@@ -37,13 +37,13 @@ const onerili = new Discord.MessageEmbed()
  
       .setColor("RANDOM")
  
-      .setAuthor("Yeni Bir Öneri!", client.user.avatarURL())
+      .setAuthor("<a:pirate:749380925619437619> Yeni Bir Öneri!", client.user.avatarURL())
  
-      .addField("• Öneren Kullanıcı:", message.author.tag, true)
+      .addField("<a:pirate:749380925619437619> • Öneren Kullanıcı:", message.author.tag, true)
  
-      .addField("• Öneren Kullanıcı ID:", message.author.id,true)
+      .addField("<a:pirate:749380925619437619> • Öneren Kullanıcı ID:", message.author.id,true)
  
-      .addField("• Önerisi:", öneri)
+      .addField("<a:pirate:749380925619437619> • Önerisi:", öneri)
     
       .setThumbnail(message.author.avatarURL());
  

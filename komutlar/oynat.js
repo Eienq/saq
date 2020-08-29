@@ -36,7 +36,7 @@ const sarki = await client.player.addToQueue(message.guild.id, args.join(" "));
   const kuyrukekle = new Discord.MessageEmbed()
   .setColor(AloneDogru)
   .setTitle("Pirate |  Kuyruğa Ekle")
-  .setDescription(`<a:tik:734892939737694239>  | \`${sarki.name}\` adlı müzik,\n${message.author} tarafından kuyruğa eklendi!`)
+  .setDescription(`<a:pirate:749380925619437619> | \`${sarki.name}\` adlı müzik,\n${message.author} tarafından kuyruğa eklendi!`)
   .setThumbnail(message.author.avatarURL())
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(kuyrukekle)
@@ -45,7 +45,7 @@ const sarki = await client.player.play(message.member.voice.channel, args.join("
   const oynanan = new Discord.MessageEmbed()
   .setColor(AloneDogru)
   .setTitle("Pirate |  Oynatılan Şarkı")
-  .setDescription(`<a:calan:735111831550427166>  | \`${sarki.name}\` adlı müzik şu anda oynatılıyor.`)
+  .setDescription(`<a:pirate:749380925619437619>| \`${sarki.name}\` adlı müzik şu anda oynatılıyor.`)
   .setThumbnail(client.user.avatarURL())
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(oynanan)
@@ -53,7 +53,7 @@ sarki.queue.on('end', () => {
   const bitti = new Discord.MessageEmbed()
   .setColor(AloneDogru)
   .setTitle("Pirate | Kuyruk Bitti!")
-  .setDescription(`<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Pirate kanaldan ayrılıyor.\n\nPirate Tercih ettiğiniz için teşekkür ederiz.`)
+  .setDescription(`<a:pirate:749380925619437619> | Kuyruktaki tüm müzikler oynatıldı. Pirate kanaldan ayrılıyor.\n\nPirate Tercih ettiğiniz için teşekkür ederiz.`)
   .setThumbnail(client.user.avatarURL())
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 message.channel.send(bitti)
