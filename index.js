@@ -58,13 +58,13 @@ const commandfile =
 client.commands.get(cmd.slice(prefix.length)) ||
 client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
 if (commandfile) commandfile.run(client, message, args);
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
 });
 
 
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
-  
+
 
 fs.readdir("./komutlar/", (err, files) => {
 const jsfiles = files.filter(f => f.split(".").pop() === "js");
