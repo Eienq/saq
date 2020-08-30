@@ -237,15 +237,13 @@ client.on("message", async msg => {
   
   let a = await db.fetch(`kufur_${msg.guild.id}`)
     if (a == 'acik') {
-      const küfür = [
-        "yarak","mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git","31","ananın amına yarak"
-                  ]
+      const küfür = ["yarak","mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git","31","ananın amına yarak"]
             if (küfür.some(word => msg.content.includes(word))) {
           try {
             if (!msg.member.hasPermission("MANAGE_GUILD")) {
                   msg.delete();
                           
-                    return msg.channel.send(`<a:pirate:749380925619437619> **Dostum Sunucuda Küfür Etme Lütfen**`).then(msg => msg.delete(10000));
+                    return msg.channel.send(`<a:pirate:749380925619437619> **Hey ${msg.author} Dur! Bu Sunucuda Küfürü Engelliyorum!**`).then(msg => msg.delete(10000));
             }              
                 } catch(err) {
                   console.log(err);
@@ -261,15 +259,13 @@ client.on("messageUpdate", async (newMessage, oldMessage) => {
   
   let a = await db.fetch(`kufur_${newMessage.guild.id}`)
     if (a == 'acik') {
-      const küfür = [
-        "yarak","mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git","31","ananın amına yarak"
-                  ]
+      const küfür = ["yarak","mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git","31","ananın amına yarak"]
             if (küfür.some(word => newMessage.content.includes(word))) {
           try {
             if (!newMessage.member.hasPermission("MANAGE_GUILD")) {
                   newMessage.delete();
                           
-                    return newMessage.channel.send(`<a:pirate:749380925619437619> **Dostum Sunucuda Küfür Etme Lütfen**`).then(msg => msg.delete(10000));
+                    return newMessage.channel.send(`<a:pirate:749380925619437619> **Hey ${newMessage.author} Dur! Bu Sunucuda Küfürü Engelliyorum!**`).then(msg => msg.delete(10000));
             }              
                 } catch(err) {
                   console.log(err);
@@ -290,13 +286,13 @@ client.on("message", async message => {
   
   const lus = await db.fetch(`reklamengel_${message.guild.id}`)
   if (lus) {
-    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glicht.me/", ".rf.gd", ".biz", "www.", "www"];
+    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glitch.me/", ".rf.gd", ".biz", "www.", "www", ".gg", ".tk", ".tr.ht", ".ml", ".ga", ".cf", ".cq"];
     if (reklamengel.some(word => message.content.toLowerCase().includes(word))) {
       try {
         if (!message.member.permissions.has('KICK_MEMBERS')) {
           message.delete();
           
-          return message.reply('<a:pirate:749380925619437619> **Hey Dur! Bu Sunucuda Reklamı Engelliyorum**').then(message => message.delete(3000));
+          return message.channel.send(`<a:pirate:749380925619437619> **Hey ${message.author} Dur! Bu Sunucuda Reklamı Engelliyorum!**`).then(message => message.delete(3000));
           
         }
       } catch(err) {
@@ -306,17 +302,17 @@ client.on("message", async message => {
 }
 if (!lus) return;
 });
-client.on("messageUpdate", async message => {
+client.on("messageUpdate", async (newMessage, oldMessage) => {
   
-  const lus = await db.fetch(`reklamengel_${message.guild.id}`)
+  const lus = await db.fetch(`reklamengel_${newMessage.guild.id}`)
   if (lus) {
-    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glicht.me/", ".rf.gd", ".biz", "www.", "www"];
-    if (reklamengel.some(word => message.content.toLowerCase().includes(word))) {
+    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glitch.me/", ".rf.gd", ".biz", "www.", "www", ".gg", ".tk", ".tr.ht", ".ml", ".ga", ".cf", ".cq"];
+    if (reklamengel.some(word => newMessage.content.toLowerCase().includes(word))) {
       try {
-        if (!message.member.permissions.has('KICK_MEMBERS')) {
-          message.delete();
+        if (!newMessage.member.permissions.has('KICK_MEMBERS')) {
+         newMessage.delete();
           
-          return message.reply('<a:pirate:749380925619437619> **Hey Dur! Bu Sunucuda Reklamı Engelliyorum**').then(message => message.delete(3000));
+          return newMessage.channel.send(`<a:pirate:749380925619437619> **Hey ${newMessage.author} Dur! Bu Sunucuda Reklamı Engelliyorum!**`).then(message => message.delete(3000));
           
         }
       } catch(err) {
@@ -349,3 +345,5 @@ client.on("message", async msg => {
     if (!i) return;
 
     });
+
+// SAYAÇ SİSTEMİ
