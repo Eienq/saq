@@ -55,7 +55,7 @@ exports.run = async (client, message, args, tools) => {
       const embed = new Discord.MessageEmbed()
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
-        .setColor("ORANGE")
+        .setColor("#ffd100")
 .setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
 
       message.channel.send(embed);
@@ -65,7 +65,7 @@ exports.run = async (client, message, args, tools) => {
       const embed = new Discord.MessageEmbed()
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
-        .setColor("ORANGE")
+        .setColor("#ffd100")
 .setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
         .setFooter(client.user.username, client.user.avatarURL())
 
