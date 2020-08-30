@@ -17,6 +17,6 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(
   
 };
 exports.config = {
-  name: 'sayaç-bb-msj',
+  name: 'sayaç-bb-mesaj',
   aliases: ['sayaç-bb-msg']
 };

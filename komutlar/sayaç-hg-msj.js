@@ -14,7 +14,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(
   
 };
 exports.config = {
-  name: 'sayac-hg-msj',
+  name: 'sayac-hg-mesaj',
   aliases: ['sayac-hg-msg']
 };
 
