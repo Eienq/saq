@@ -16,6 +16,6 @@ let eklenti = new Discord.MessageEmbed()
  message.channel.send(eklenti) 
   };
 exports.config = {
-name: "eklenti",
+name: "sayaç",
   aliases: []
 }

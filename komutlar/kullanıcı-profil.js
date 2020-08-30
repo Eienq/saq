@@ -80,8 +80,8 @@ exports.run = async (bot, msg, args) => {
         .addField(`Katılım Tarihi (Sunucu)`, userinfo.dctarihkatilma, false)
         .addField(`Katılım Tarihi (Discord)`, userinfo.dctarih, false)
         .addField(`Kimlik`, userinfo.id, true)
-        .addField(`Botmu`, userinfo.bot, true)
-        .setFooter(`Pirate Bot Kullanıcı Bilgi Sistemi`)
+        .addField(`Bot mu?`, userinfo.bot, true)
+        .setFooter(`Pirate Bot | Kullanıcı Bilgi Sistemi`)
         msg.channel.send(uembed)
     }
 
