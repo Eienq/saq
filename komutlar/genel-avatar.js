@@ -1,15 +1,15 @@
-const Discord = require('discord.js')
-exports.run = function(client, message, args) {
-const codework = message.mentions.users.first()
-let user;
-if (message.mentions.users.first())  {user = message.mentions.users.first();}
- else {user = message.author;}
-return message.channel.send(new Discord.MessageEmbed()
-.setDescription(`**${user.tag}** Avatarın;`)
-.setImage(user.avatarURL()))
+const Discord = require('discord.js');
+
+exports.run = (client, message, args) => {
+  let kişicikabi = message.mentions.users.first() || message.author
+ let avatarcım = new Discord.MessageEmbed()
   
-};
+  .setImage(kişicikabi.avatarURL())
+  
+  message.channel.send(avatarcım)
+  
+  };
 exports.config = {
 name: "avatar",
-aliases: ["pp"]
+aliases: [""]
 }

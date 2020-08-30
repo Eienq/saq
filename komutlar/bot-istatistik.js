@@ -7,7 +7,7 @@ const ayarlar = require('../ayarlar/bot.json');
 require('moment-duration-format');
 exports.run = async(client, message, args) => {
 
-let batuhan = new Discord.MessageEmbed()
+let lordcreative = new Discord.MessageEmbed()
 .setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
 .addField("__**Bot Verileri**__", `<a:pirate:749380925619437619> **Toplam Sunucu** **|**  **${client.guilds.cache.size}** \n <a:pirate:749380925619437619> **Toplam Kullanıcı** **|** **${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}** \n <a:pirate:749380925619437619> **Toplam Kanal** **|** **${client.channels.cache.size}**`)
 .addField("__**Bot Geliştiricisi**__", `<a:pirate:749380925619437619> **Bot Sahibi**  <@236173144300191754> **|** **Lord Creative#0001** \n <a:pirate:749380925619437619> **Bot geliştiricisi**  <@327064201245753344> **|** **Bay Ördekcik#0001**`)
@@ -16,7 +16,7 @@ let batuhan = new Discord.MessageEmbed()
 .addField("<a:pirate:749380925619437619> **Müzik Oynatılan Sunucu Sayısı**", client.voice.connections.size, true)
 .setTimestamp()
 .setColor("#ffd100")
-message.channel.send(batuhan)
+message.channel.send(lordcreative)
 }
 
 exports.config = {
