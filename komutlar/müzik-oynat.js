@@ -37,7 +37,7 @@ const sarki = await client.player.addToQueue(message.guild.id, args.join(" "));
   .setColor(AloneDogru)
   .setTitle("Pirate | Kuyruğa Ekle")
   .setDescription(`<a:pirate:749380925619437619> **|** \`${sarki.name}\` **adlı müzik,**\n${message.author} **tarafından kuyruğa eklendi!**`)
-.setThumbnail(`https://i.hizliresim.com/4Q3agT.jpg`)
+.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());   
 message.channel.send(kuyrukekle)
     } else {

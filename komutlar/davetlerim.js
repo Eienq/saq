@@ -28,7 +28,7 @@ exports.run = async (client, message, args, tools) => {
       .setFooter(client.user.username, client.user.avatarURL());
     message.channel.send(embed);
   }
-  if (message.member.roles.has(veri2)) {
+  if (message.member.roles.cache.has(veri2)) {
     const embed = new Discord.MessageEmbed()
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
@@ -38,7 +38,7 @@ exports.run = async (client, message, args, tools) => {
     message.channel.send(embed);
     return;
   }
-  if (!message.member.roles.has(veri)) {
+  if (!message.member.roles.cache.has(veri)) {
     const embed = new Discord.MessageEmbed()
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
@@ -53,7 +53,7 @@ exports.run = async (client, message, args, tools) => {
     message.channel.send(embed);
     return;
   }
-  if (message.member.roles.has(veri)) {
+  if (message.member.roles.cache.has(veri)) {
     if (!veri2) {
       const embed = new Discord.MessageEmbed()
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
