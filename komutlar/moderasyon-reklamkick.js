@@ -10,6 +10,7 @@ let prefix = ayarlar.prefix
   if (!args[0]) {
     const sa = new Discord.MessageEmbed()
     .setDescription(`<a:pirate:749380925619437619>  **Bunu mu Arıyorsun?** ${prefix}reklam-kick aç/kapat`)
+    .setColor('#ffd100')
     .setTimestamp()
     return message.channel.send(sa)
   }
@@ -18,6 +19,7 @@ let prefix = ayarlar.prefix
     db.set(`reklamkick_${message.guild.id}`, "Aktif")
        const sa = new Discord.MessageEmbed()
     .setDescription(`<a:pirate:749380925619437619>  **Reklam Kick Başarıyla Açıldı!**`)
+    .setColor('#ffd100')
     .setTimestamp()
     return message.channel.send(sa)
   }
@@ -26,11 +28,12 @@ let prefix = ayarlar.prefix
     db.delete(`reklamkick_${message.guild.id}`)
        const sa = new Discord.MessageEmbed()
     .setDescription(`<a:pirate:749380925619437619>  **Reklam Kick Başarıyla Kapatıldı!**`)
+       .setColor('#ffd100')
     .setTimestamp()
     return message.channel.send(sa)
   }
 };
 exports.config = {
-  name: "reklamkick",
+  name: "reklam-kick",
   aliases: []
 };

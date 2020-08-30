@@ -520,6 +520,7 @@ let a = message.author
           if (sayı == null) {
             const sa = new Discord.MessageEmbed()
             .setDescription(`<a:pirate:749380925619437619>  **Hey! <@${message.author.id}> Bu İlk Uyarın Lütfen Tekrarlama!**`)
+            .setColor('#ffd100')
             message.channel.send(sa)
             message.delete()
             a.send(`**Bu İlk Uyarın Lütfen Tekrarlama**`)
@@ -528,6 +529,7 @@ let a = message.author
          if (sayı === 1) {
                const sa = new Discord.MessageEmbed()
             .setDescription(`<a:pirate:749380925619437619> **Hey! <@${message.author.id}> Bu İkinci Uyarın Lütfen Tekrarlama!**`)
+               .setColor('#ffd100')
             message.channel.send(sa)
             message.delete()
             a.send(`**Bu İkinci Uyarın Lütfen Tekrarlama**`)
@@ -536,6 +538,7 @@ let a = message.author
             if (sayı > 2) {
                const sa = new Discord.MessageEmbed()
             .setDescription(`<a:pirate:749380925619437619>  **Hey! <@${message.author.id}> Reklamdan Dolayı Kickledim!**`)
+               .setColor('#ffd100')
             message.channel.send(sa)
             message.delete()
             a.send(`${message.guild.name} **Sunucusundan Reklam Yaptığın İçin Kicklendin!**`)

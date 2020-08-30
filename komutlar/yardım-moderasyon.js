@@ -16,7 +16,7 @@ let yardım = new Discord.MessageEmbed()
 <a:pirate:749380925619437619> ** | **__**${prefix}SA-AS**__ **|Sa Yazan Kişilere Cevap Verir.**
 <a:pirate:749380925619437619> ** | **__**${prefix}KÜFÜRENGEL**__ **|  Küfür Edilmesini Tamamen Yasaklar.**
 <a:pirate:749380925619437619> ** | **__**${prefix}REKLAMENGEL**__ **| Reklam Yapılmasını Tamamen Yasaklar.**
-<a:pirate:749380925619437619> ** | **__**${prefix}REKLAME-KİCK**__ **| Reklam Yapan Kişiyi 3 Uyarıdan Sonra Kickler**
+<a:pirate:749380925619437619> ** | **__**${prefix}REKLAM-KİCK**__ **| Kişiyi 3 Uyarıdan Sonra Kickler**
 <a:pirate:749380925619437619> ** | **__**${prefix}YAVAŞMOD**__ **| Kanala Yazı Süre Limiti Koyar.**`)
 .addField('<a:pirate:749380925619437619> | Pirate Bot',`  [Botumuza Oy Ver](https://top.gg/bot/713713727794446397) **|**  [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8) **|** [Destek](https://discord.gg/HRC9Yyp)`)
   .setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
