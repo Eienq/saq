@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 const hata1 = new Discord.MessageEmbed()
 .setColor(AloneHata) 
 .setTitle("• Hata: 003 •")
-.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
+.setThumbnail(message.author.avatarURL())
 .setDescription(`<a:pirate:749380925619437619>  **| Müzik oynatabilmek için bir ses kanalında olmanız gerekmektedir!**`)
 .setFooter(`©️ Tüm hakları saklıdır | Yeni Nesil Gelişmiş Bot | 2020`, client.user.avatarURL());  
 if(!message.member.voice.channel) return message.channel.send(hata1)
