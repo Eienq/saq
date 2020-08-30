@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
 
 if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:pirate:749380925619437619>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
  const rol = db.fetch(`kayitKanal_${message.guild.id}`)  
- if(!rol) return message.channel.send(`<a:pirate:749380925619437619>  **Bu özellik zaten kapalı :wink: **`)
+ if(!rol) return message.channel.send(`<a:pirate:749380925619437619>  **Bu özellik zaten kapalı! :wink: **`)
  
  
   message.channel.send(`<a:pirate:749380925619437619>  **Kayıt Sistemi başarılı bir şekilde kapatıldı.**`)
