@@ -21,5 +21,5 @@ message.channel.send(lordcreative)
 
 exports.config = {
 name: "i",
-  aliases: []
+aliases: []
 }

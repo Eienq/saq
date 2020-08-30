@@ -29,7 +29,7 @@ message.channel.send(new Discord.MessageEmbed()
   }
  
  if(!args[0]) return message.channel.send(new Discord.MessageEmbed()        
-.setDescription(`<a:pirate:749380925619437619> **Prefix Ayarlamak İçin** ${p}**prefix ayarla** <prefix> / **Sıfırlamak İçin** ${p}**prefix sıfırla | Şuanki Prefix:** ${p}`));
+.setDescription(`<a:pirate:749380925619437619> **Prefix Ayarlamak İçin** ${p}**prefix ayarla <prefix>**\n  **Sıfırlamak İçin** ${p}**prefix sıfırla | Şuanki Prefix:** \`${p}\``));
   
 };
 exports.config = {

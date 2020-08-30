@@ -17,11 +17,11 @@ const AloneHata = "#f30707";
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail()
-.addField(`Pirate | Teşekkürler`, `**Selamlar, Ben Lord Craetive (Pirate'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
+.addField(`Pirate | Teşekkürler`, `**Selamlar, Ben Lord Creative (Pirate'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
 .addField(`Alone | Prefix`, `**Pirate Botun Prefixi(ön eki) = \`${fynx.prefix}\`\n\n Değiştirebilmek için \`${fynx.prefix}prefix\` Yazabilirsiniz.**`)
 .addField(`Pirate | Nasıl Kullanılır?`, `**Pirate botun tüm özelliklerinden yararlanabilmek için sadece \`${fynx.prefix}yardım\` yazmanız yeterlidir.**`)
 .addField(`Pirate | Linkler`, `**Sohbet Kanalına -davet Yazmanız Yeterlidir**`)
-.setFooter(`Alone Music © 2020`)
+.setFooter(`Pirate | Gelişmiş Türkçe Bot | 2020`)
 .setTimestamp();
 
 
@@ -58,11 +58,13 @@ const commandfile =
 client.commands.get(cmd.slice(prefix.length)) ||
 client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
 if (commandfile) commandfile.run(client, message, args);
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 });
 
 
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
+
+  
 
 fs.readdir("./komutlar/", (err, files) => {
 const jsfiles = files.filter(f => f.split(".").pop() === "js");
@@ -134,7 +136,7 @@ setInterval(function() {
 
 client.on('message', async msg => {
     let prefix = fynx.prefix;
-  if(msg.content == `<@713713727794446397>`) return msg.channel.send(`> **Prefix | Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@!713713727794446397>`) return msg.channel.send(`> **Pirate | Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 
