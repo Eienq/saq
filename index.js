@@ -394,3 +394,21 @@ client.on("guildMemberRemove", async member => {
     return client.channels.get(kanal).send(mesaj31);
   }
 });
+
+//KAYIT SİSTEMİ
+
+client.on("guildMemberAdd", async member => {
+  let kanal = await db.fetch(`kayitKanal_${member.guild.id}`);
+    let mesaj = db.fetch(`kayitGM_${member.guild.id}`);
+  if (!kanal) return;
+
+  if (!mesaj) {
+    client.channels.get(kanal).send(":loudspeaker: :inbox_tray: Selam! `" + member.user.username + "`!kayıtol yazarak kayıt olabilirsin!");
+    
+  }
+
+  if (mesaj) {
+    var mesajs = mesaj.replace("-uye-", `${member.user.username}`).replace("-uyetag-", `${member.user.tag}`);
+    return client.channels.get(kanal).send(mesajs);
+     }
+});
