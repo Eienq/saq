@@ -434,3 +434,16 @@ client.on("guildMemberAdd", async member => {
 });
 
 //OTO CEVAP SİSTEMİ
+client.on('message', async msg => {
+  let ozelkomut = await db.fetch(`sunucuKomut_${msg.guild.id}`);
+  let ozelkomutYazi;
+  if (ozelkomut == null) ozelkomutYazi = 'Pirate | Böyle Bir OtoCevap Komutu Bulunamadı!'
+  else ozelkomutYazi = ''+ ozelkomut +''
+  if (msg.content.toLowerCase() === `${ozelkomutYazi}`) {
+      let mesaj = await db.fetch(`sunucuMesaj_${msg.guild.id}`);
+  let mesajYazi;
+  if (mesaj == null) mesajYazi = 'Pirate | Böyle Bir OtoCevap Komutu Bulunamadı!'
+  else mesajYazi = ''+ mesaj +''
+    msg.channel.send(mesajYazi)
+  }
+});
