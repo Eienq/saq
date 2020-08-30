@@ -5,11 +5,15 @@ exports.run = async(bot, message, args) => {
   const fynx = require("../ayarlar/bot.json");
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 
+  const embeddd = new Discord.MessageEmbed()
+  .setDescription('Bu Komutu Kullanmak İçin `Sunucuyu Yönet` Yetkisi Lazım!')
+  .setColor("RED");
+
                 let mentionEmbed = new Discord.MessageEmbed()
                      .setDescription(`Lütfen \`komut\` - \`gönderilecek şey\` olarak kullanınız.\nÖrnek: \`${prefix}özel-komut-ekle minecraft-ip play.serveripniz.com\``)
                      .setColor('RED')
                var user = message.mentions.users.first() || message.author;
-if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.sendEmbed(new Discord.MessageEmbed().setDescription('Bu Komutu Kullanmak İçin `Sunucuyu Yönet` Yetkisi Lazım!').setColor("RED"));
+if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(embeddd)
                      if (!args[0]) return message.channel.send(mentionEmbed)
                      if (!args[1]) return message.channel.send(mentionEmbed) 
                 

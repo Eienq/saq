@@ -8,7 +8,7 @@ exports.run = async(bot, message, args) => {
                      if(!komut) await db.set(`sunucuKomut_${message.guild.id}`, 'Bulunmuyor.')
                   
                   
-                     let welcomeEmbed = new Discord.RichEmbed()
+                     let welcomeEmbed = new Discord.MessageEmbed()
                      .addField(`Mevcut özel komutlar.`, `\`${komut}\``)
                      .setColor('GREEN')
                         message.channel.send(welcomeEmbed)

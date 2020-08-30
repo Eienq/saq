@@ -168,6 +168,7 @@ if (!modlogkanal) return;
   .setFooter("Pirate Bot | Log Sistemi")
   modlogkanal.send(embed);
   })
+
 client.on('channelCreate', async channel  => {
       let modlogs = db.get(`log_${channel.guild.id}`)
     const modlogkanal = channel.guild.channels.cache.find(kanal => kanal.id === modlogs);    
@@ -370,7 +371,7 @@ client.on("guildMemberAdd", async member => {
   }
   if (mesaj) {
     const mesaj31 = mesaj.replace("-uyetag-", `${member.user.tag}`).replace("-server-", `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-", `${member.guild.members.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-", `${member.guild.channels.size}`).replace("-kalanuye-", `${sonuç}`).replace("-hedefuye-", `${sayaç}`)
-    return client.channels.get(kanal).send(mesaj31);
+    return client.channels.cache.get(kanal).send(mesaj31);
     
   }
 });
@@ -386,12 +387,12 @@ client.on("guildMemberRemove", async member => {
     ///....
 
   if (!mesaj) {
-    return client.channels.get(kanal).send(":loudspeaker: :outbox_tray: `" + member.user.username + "` Adlı Kullanıcı Aramızdan Ayrıldı.`" + sayaç + "` Kişi Olmamıza `" + sonuç + "` Kişi Kaldı. `" + member.guild.memberCount + "` Kişiyiz!");
+    return client.channels.cache.get(kanal).send(":loudspeaker: :outbox_tray: `" + member.user.username + "` Adlı Kullanıcı Aramızdan Ayrıldı.`" + sayaç + "` Kişi Olmamıza `" + sonuç + "` Kişi Kaldı. `" + member.guild.memberCount + "` Kişiyiz!");
       }
 
   if (mesaj) {
     const mesaj31 = mesaj.replace("-uye-", `${member.user.tag}`).replace("-server-", `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-", `${member.guild.members.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-", `${member.guild.channels.cache.size}`).replace("-kalanuye-", `${sonuç}`).replace("-hedefuye-", `${sayaç}`)
-    return client.channels.get(kanal).send(mesaj31);
+    return client.channels.cache.get(kanal).send(mesaj31);
   }
 });
 
@@ -422,27 +423,26 @@ client.on("guildMemberAdd", async member => {
   if (!rol) return;
 
   if (!mesaj) {
-    client.channels.get(kanal).send(":loudspeaker: :inbox_tray: `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` Kişiyiz!");
+    client.channels.cache.get(kanal).send(":loudspeaker: :inbox_tray: `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` Kişiyiz!");
     return member.addRole(rol);
   }
 
   if (mesaj) {
     var mesajs = mesaj.replace("-uye-", `${member.user}`).replace("-uyetag-", `${member.user.tag}`).replace("-rol-", `${member.guild.roles.get(rol).name}`).replace("-server-", `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-", `${member.guild.members.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-", `${member.guild.channels.size}`);
     member.addRole(rol);
-    return client.channels.get(kanal).send(mesajs);
+    return client.channels.cache.get(kanal).send(mesajs);
      }
 });
 
-//OTO CEVAP SİSTEMİ
 client.on('message', async msg => {
   let ozelkomut = await db.fetch(`sunucuKomut_${msg.guild.id}`);
   let ozelkomutYazi;
-  if (ozelkomut == null) ozelkomutYazi = 'Pirate | Böyle Bir OtoCevap Komutu Bulunamadı!'
+  if (ozelkomut == null) ozelkomutYazi = 'Burayı silme yoksa hatalı olur'
   else ozelkomutYazi = ''+ ozelkomut +''
-  if (msg.content.toLowerCase() === `${ozelkomutYazi}`) {
+  if (msg.content.toLowerCase() === ozelkomutYazi) {
       let mesaj = await db.fetch(`sunucuMesaj_${msg.guild.id}`);
   let mesajYazi;
-  if (mesaj == null) mesajYazi = 'Pirate | Böyle Bir OtoCevap Komutu Bulunamadı!'
+  if (mesaj == null) mesajYazi = 'Burayı silme yoksa hatalı olur'
   else mesajYazi = ''+ mesaj +''
     msg.channel.send(mesajYazi)
   }
