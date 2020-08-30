@@ -6,10 +6,10 @@ exports.run = async (client, message, args) => {
         return message.channel.send("<a:pirate:749380925619437619>**Yetersiz **yetki!**")
   
   if (!args[0]){
-    message.channel.send('<a:pirate:749380925619437619> Küfür-engel aç/kapat Yazmalısın**')
+    message.channel.send('<a:pirate:749380925619437619> **Küfür-engel aç/kapat Yazmalısın**')
   }
   if (args[0] === 'aç'){
-    message.channel.send("<a:pirate:749380925619437619> Sunucunuzda Küfür Engelleme Aktif**")
+    message.channel.send("<a:pirate:749380925619437619> **Sunucunuzda Küfür Engelleme Aktif**")
     
     db.set(`kufur_${message.guild.id}`, "acik")
   }
@@ -21,5 +21,5 @@ exports.run = async (client, message, args) => {
 }
  exports.config = {
       name: 'küfür-engel',
-   aliases: ["invitation","site"]
+   aliases: [""]
  };
