@@ -8,10 +8,14 @@ let yardım = new Discord.MessageEmbed()
 .setAuthor(`Pirate Yardım Menüsü`)
 .setColor('#ffd100')
 .addField('Sunucununuz Artık  Pirate ile 7/24 Güvenli',`
-<a:pirate:749380925619437619> ** | **__**${prefix}MÜZİK**__ **| Müzik Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}MODERASYON**__ **| Moderasyon Komutları**
-<a:pirate:749380925619437619> ** | **__**${prefix}SUNUCU**__ **| Sunucu Komutları**
-<a:pirate:749380925619437619> ** | **__**${prefix}EKLENTİ**__ **| Eklenti Komutları**`)
+<a:pirate:749380925619437619> ** | **__**${prefix}MODERASYON2**__ **| Sunucu Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}MÜZİK**__ **| Müzik Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}DAVETSİSTEMİ**__ **| Davet Sistemi Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}KAYITSİSTEMİ**__ **| Kayıt Sistemi Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}OTOCEVAP**__ **| OtoCevap Sistemi Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}SAYAÇ**__ **| Sayaç Sistemi Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}OTOROL**__ **| OtoRol Sistemi Komutları**`)
 .addField('<a:pirate:749380925619437619> | Pirate Bot',`  [Botumuza Oy Ver](https://top.gg/bot/713713727794446397) **|**  [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8) **|** [Destek](https://discord.gg/HRC9Yyp)`)
 .setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setThumbnail(client.user.avatarURL)
