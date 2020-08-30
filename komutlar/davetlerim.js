@@ -23,7 +23,9 @@ exports.run = async (client, message, args, tools) => {
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
       .setColor("ORANGE")
-      .setFooter(client.user.username, client.user.avatarURL);
+          .setThumbnail(message.author.avatarURL())
+
+      .setFooter(client.user.username, client.user.avatarURL());
     message.channel.send(embed);
   }
   if (message.member.roles.has(veri2)) {
@@ -31,7 +33,8 @@ exports.run = async (client, message, args, tools) => {
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
       .setColor("ORANGE")
-      .setFooter(client.user.username, client.user.avatarURL);
+      .setThumbnail(message.author.avatarURL())
+      .setFooter(client.user.username, client.user.avatarURL());
     message.channel.send(embed);
     return;
   }
@@ -40,8 +43,11 @@ exports.run = async (client, message, args, tools) => {
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
       .setColor("ORANGE")
+          .setThumbnail(message.author.avatarURL())
+        .setFooter(client.user.username, client.user.avatarURL())
+
       .setDescription(
-        `${message.guild.roles.get(veri).name} rolü için son ${-sayı2 -
+        `${message.guild.roles.cache.get(veri).name} rolü için son ${-sayı2 -
           -veri12} davet!`
       );
     message.channel.send(embed);
@@ -53,7 +59,9 @@ exports.run = async (client, message, args, tools) => {
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
         .setColor("ORANGE")
-        .setFooter(client.user.username, client.user.avatarURL);
+            .setThumbnail(message.author.avatarURL())
+
+        .setFooter(client.user.username, client.user.avatarURL());
       message.channel.send(embed);
       return;
     }
@@ -62,8 +70,11 @@ exports.run = async (client, message, args, tools) => {
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
         .setColor("ORANGE")
+            .setThumbnail(message.author.avatarURL())
+        .setFooter(client.user.username, client.user.avatarURL())
+
         .setDescription(
-          `${message.guild.roles.get(veri2).name} rolü için son ${-sayı2 -
+          `${message.guild.roles.cache.get(veri2).name} rolü için son ${-sayı2 -
             -veri21} davet!`
         );
       message.channel.send(embed);
