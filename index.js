@@ -449,3 +449,28 @@ client.on('message', async msg => {
     msg.channel.send(mesajYazi)
   }
 });
+
+//Anti Raid Bot Sistemi
+
+client.on("guildMemberAdd", async (member, message) => {
+let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
+let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
+  if (!kanal) return;  
+  var cod = member.guild.owner
+  if (member.user.bot === true) {
+     if (db.fetch(`botizin_${member.guild.id}.${member.id}`) == "aktif") {
+    let are = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(member.user.avatarURL)
+      .setDescription(`**${member.user.tag}** (${member.id}) adlı bota bir yetkili verdi eğer kaldırmak istiyorsanız **${prefix}bot-izni kaldır botun_id**.`);
+    cod.send(are);
+     } else {
+       let izinverilmemişbot = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(member.user.avatarURL)
+      .setDescription("**" + member.user.tag +"**" + " (" + member.id+ ") " + "adlı bot sunucuya eklendi ve kickledim eğer izin vermek istiyorsanız **" + prefix + "bot-izni ver botun_id**")
+       member.kick();
+       cod.send(izinverilmemişbot)
+}
+  }
+});
