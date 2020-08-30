@@ -432,3 +432,5 @@ client.on("guildMemberAdd", async member => {
     return client.channels.get(kanal).send(mesajs);
      }
 });
+
+//OTO CEVAP SİSTEMİ
