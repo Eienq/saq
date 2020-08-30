@@ -7,7 +7,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(
  if(!rol) return message.reply(`<a:pirate:749380925619437619>  **Bu özellik zaten kapalı! :wink: **`)
  
  
-  message.channel.send(`<a:pirate:749380925619437619>  **Kayıt Sistemi başarılı bir şekilde kapatıldı.**`)
+  message.channel.send(`<a:pirate:749380925619437619>  **Sayaç başarılı bir şekilde kapatıldı.**`)
 
  
   db.delete(`sayacS_${message.guild.id}`)  

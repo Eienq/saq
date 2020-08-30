@@ -13,7 +13,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(
   
 };
 exports.config = {
-  name: 'otorol-msg', 
-  aliases: ['otorol-msj']
+  name: 'otorol-mesaj', 
+  aliases: ['otorolmesaj','otorol-mesaj-ayarla','otorolmesaj-ayarla', 'otorolmesajayarla']
 };
 
