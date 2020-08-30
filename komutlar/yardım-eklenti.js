@@ -6,8 +6,8 @@ let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix
 let yardım = new Discord.MessageEmbed()  
 .setAuthor(`Pirate Yardım Menüsü`)
 .setColor('#ffd100')
-.addField('Sunuzunuzu 7/24 Koruyun',`
-<a:pirate:749380925619437619> ** | **__**${prefix}BAN**__ **| Belirtiğiniz Kişiyi Yasaklar**
+.addField('Sunuzunuzu 7/24 Denetleyin',`
+<a:pirate:749380925619437619> ** | **__**${prefix}SAYAÇ-AYARLA**__ **| Sunucunuzda Sayaç **
 <a:pirate:749380925619437619> ** | **__**${prefix}UNBAN**__ **| Belirtiğiniz Kişinin Banını Açar**
 <a:pirate:749380925619437619> ** | **__**${prefix}MODLOG**__ **| Sunucunuzda Log Tuttar**
 <a:pirate:749380925619437619> ** | **__**${prefix}BANSAY**__ **| Sunucuzdan Banlananlar**
@@ -25,6 +25,6 @@ let yardım = new Discord.MessageEmbed()
  message.channel.send(yardım) 
   };
 exports.config = {
-name: "moderasyon",
+name: "eklenti",
   aliases: []
 }
