@@ -1,7 +1,8 @@
 const db = require("quick.db");
 const Discord = require('discord.js');
-const fynx = require("../ayarlar/bot.json");
+
 exports.run = async (client, message, args) => { 
+  const fynx = require("../ayarlar/bot.json");
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 let yardım = new Discord.MessageEmbed()  
 .setAuthor(`Pirate Yardım Menüsü`)

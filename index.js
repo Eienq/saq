@@ -326,3 +326,26 @@ client.on("messageUpdate", async message => {
 }
 if (!lus) return;
 });
+
+// SA-AS SİSTEMİ
+
+client.on("message", async msg => {
+
+
+  const i = await db.fetch(`ssaass_${msg.guild.id}`);
+    if (i == 'acik') {
+      if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm' || msg.content.toLowerCase() == 'sea' || msg.content.toLowerCase() == 's.a.' || msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'slm') {
+          try {
+
+                  return msg.reply('**<a:pirate:749380925619437619> Aleyküm Selam, Hoşgeldin.** ')
+          } catch(err) {
+            console.log(err);
+          }
+      }
+    }
+    else if (i == 'kapali') {
+    
+    }
+    if (!i) return;
+
+    });
