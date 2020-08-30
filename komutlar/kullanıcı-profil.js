@@ -12,14 +12,14 @@ exports.run = async (bot, msg, args) => {
         let user = msg.mentions.users.first() || msg.author;
   
         let userinfo = {};
-        userinfo.avatar= user.displayAvatarURL;
+        userinfo.avatar= user.avatarURL();
         userinfo.id = user.id;
         userinfo.od1 = msg.guild.members.cache.get(user.id).user.presence.game || "Oynadığı bir oyun yok"
         userinfo.status = user.presence.status.toString()
-        .replace("dnd", `Rahatsız Etmeyin`)
-        .replace("online", `Çevrimiçi`)
-        .replace("idle", `Boşta`)
-        .replace("offline", `Çevrimdışı`)
+        .replace("dnd", `<:rahatsizetmeyin:749747908756111420>  | **Rahatsız Etmeyin**`)
+        .replace("online", `<:cevrimici:749747908466966580>  | **Çevrimiçi**`)
+        .replace("idle", `<:bosta:749747908529619105>  | **Boşta**`)
+        .replace("offline", `<:cevrimdisi:749748262717882389>  | **Çevrimdışı**`)
 
         userinfo.bot = user.bot.toString()
         .replace("false", `Hayır`)
@@ -81,7 +81,6 @@ exports.run = async (bot, msg, args) => {
         .addField(`Katılım Tarihi (Discord)`, userinfo.dctarih, false)
         .addField(`Kimlik`, userinfo.id, true)
         .addField(`Botmu`, userinfo.bot, true)
-        .addField(`Roller`, `${msg.guild.members.cache.get(user.id).roles.filter(r => r.name !== "@everyone").map(r => r).join(' **|** ') || "**Bu kullanıcıda hiçbir rol bulunmuyor**"}`, false)
         .setFooter(`Pirate Bot Kullanıcı Bilgi Sistemi`)
         msg.channel.send(uembed)
     }
