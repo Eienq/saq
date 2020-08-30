@@ -502,3 +502,77 @@ user.send(new Discord.MessageEmbed()
 await user.ban() } }
   
 })
+
+
+/////reklam kick
+client.on("message", async message => {
+  
+  const lus = await db.fetch(`reklamkick_${message.guild.id}`)
+    let sayı = await db.fetch(`sayı_${message.author.id}`);
+let a = message.author
+  if (lus) {
+    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glicht.me/", ".rf.gd", ".biz", "www.", "www"];
+    if (reklamengel.some(word => message.content.toLowerCase().includes(word))) {
+      try {
+        if (!message.member.permissions.has('KICK_MEMBERS')) {
+          message.delete();
+          db.add(`sayı_${message.author.id}`, 1)
+          if (sayı == null) {
+            const sa = new Discord.MessageEmbed()
+            .setDescription(`<a:pirate:749380925619437619>  **Hey! <@${message.author.id}> Bu İlk Uyarın Lütfen Tekrarlama!**`)
+            message.channel.send(sa)
+            message.delete()
+            a.send(`**Bu İlk Uyarın Lütfen Tekrarlama**`)
+            return 
+          }
+         if (sayı === 1) {
+               const sa = new Discord.MessageEmbed()
+            .setDescription(`<a:pirate:749380925619437619> **Hey! <@${message.author.id}> Bu İkinci Uyarın Lütfen Tekrarlama!**`)
+            message.channel.send(sa)
+            message.delete()
+            a.send(`**Bu İkinci Uyarın Lütfen Tekrarlama**`)
+            return 
+         }
+            if (sayı > 2) {
+               const sa = new Discord.MessageEmbed()
+            .setDescription(`<a:pirate:749380925619437619>  **Hey! <@${message.author.id}> Reklamdan Dolayı Kickledim!**`)
+            message.channel.send(sa)
+            message.delete()
+            a.send(`${message.guild.name} **Sunucusundan Reklam Yaptığın İçin Kicklendin!**`)
+                db.delete(`sayı_${message.author.id}`)
+message.guild.member(a).kick();     
+              return
+            }
+          
+        }
+      } catch(err) {
+        console.log(err);
+    }
+  }
+}
+if (!lus) return;
+});
+
+
+
+// DBL OY TAKİP SİSTEMİ
+
+const DBL = require('dblapi.js'); 
+const dbl = new DBL('DBLTOKEN', { 
+  webhookPort: 5000, 
+  webhookAuth: 'DBLWEBHOOKŞIFRE' 
+}); 
+dbl.webhook.on('ready', hook => { 
+  console.log(`Webhook: http://${hook.hostname}:${hook.port}${hook.path}`);
+}) 
+dbl.webhook.on('vote', vote => { 
+  client.channels.cache.get('749744127800901633').createWebhook(vote.user.username)
+    .then(webhook => webhook.edit(vote.user.username)
+          .then(wb => { 
+    const hook = new Discord.WebhookClient('DBLTOKEN', wb.id, wb.token); 
+    
+    hook.send(`\`${vote.user}\` Oy verdi!`); 
+    hook.delete() 
+  })) 
+});
+
