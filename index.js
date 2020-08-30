@@ -422,7 +422,7 @@ client.on("guildMemberAdd", async member => {
   if (!rol) return;
 
   if (!mesaj) {
-    client.channels.get(kanal).send(":loudspeaker: :inbox_tray: Otomatik Rol Verildi Seninle Beraber `" + member.guild.memberCount + "` Kişiyiz! Hoşgeldin! `" + member.user.username + "`");
+    client.channels.get(kanal).send(":loudspeaker: :inbox_tray: `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` Kişiyiz!");
     return member.addRole(rol);
   }
 
