@@ -474,3 +474,31 @@ let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
 }
   }
 });
+
+/// YASAKLI TAG
+
+client.on('guildMemberAdd', async member => {
+let guild = member.guild; 
+let user = guild.members.get(member.id);
+
+const tag = await db.fetch(`banned-tag.${guild.id}`)
+const sayı = await db.fetch(`atıldın.${guild.id}.${user.id}`)
+if(user.user.username.includes(tag)) {
+  
+if(sayı === null) {
+await db.add(`atıldın.${guild.id}.${user.id}`, 1)
+user.send(new Discord.MessageEmbed()
+.setColor('RED')
+.setAuthor(guild.name, guild.iconURL)
+.setDescription(`Sunucumuzun yasaklı tagında bulunduğunuz için atıldınız, tekrar giriş yapmayı denerseniz **yasaklanacaksınız**!`))
+await user.kick() }
+
+if(sayı === 1) {
+await db.delete(`atıldın.${guild.id}.${user.id}`)
+user.send(new Discord.MessageEmbed()
+.setColor('RED')
+.setAuthor(guild.name, guild.iconURL)
+.setDescription(`Sunucumuzun yasaklı tagında bulunduğunuz için atılmıştınız, tekrar giriş yapmayı denediğiniz için **${guild.name}** sunucusundan kalıcı olarak **yasaklandınız**!`))
+await user.ban() } }
+  
+})
