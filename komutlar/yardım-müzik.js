@@ -19,7 +19,7 @@ let yardım = new Discord.MessageEmbed()
 <a:pirate:749380925619437619> ** | **__**${prefix}KUYRUK-TEMİZLE**__ **| Kuyruğu Temizler**
 <a:pirate:749380925619437619> ** | **__**${prefix}RANDOM**__ **| Kuyruktaki Müzikleri Karıştırır**`)
 .addField('<a:pirate:749380925619437619> | Pirate Bot',`  [Botumuza Oy Ver](https://top.gg/bot/713713727794446397) **|**  [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8) **|** [Destek](https://discord.gg/HRC9Yyp)`)
-  .setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
+.setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(yardım) 
   };

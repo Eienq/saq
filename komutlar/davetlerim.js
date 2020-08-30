@@ -22,19 +22,17 @@ exports.run = async (client, message, args, tools) => {
     const embed = new Discord.MessageEmbed()
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
-      .setColor("ORANGE")
-          .setThumbnail(message.author.avatarURL())
+      .setColor("#ffd100")
+.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
 
-      .setFooter(client.user.username, client.user.avatarURL());
     message.channel.send(embed);
   }
   if (message.member.roles.cache.has(veri2)) {
     const embed = new Discord.MessageEmbed()
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
-      .setColor("ORANGE")
-      .setThumbnail(message.author.avatarURL())
-      .setFooter(client.user.username, client.user.avatarURL());
+      .setColor("#ffd100")
+.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
     message.channel.send(embed);
     return;
   }
@@ -42,9 +40,8 @@ exports.run = async (client, message, args, tools) => {
     const embed = new Discord.MessageEmbed()
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
-      .setColor("ORANGE")
-          .setThumbnail(message.author.avatarURL())
-        .setFooter(client.user.username, client.user.avatarURL())
+      .setColor("#ffd100")
+.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
 
       .setDescription(
         `${message.guild.roles.cache.get(veri).name} rolü için son ${-sayı2 -
@@ -59,9 +56,8 @@ exports.run = async (client, message, args, tools) => {
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
         .setColor("ORANGE")
-            .setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
 
-        .setFooter(client.user.username, client.user.avatarURL());
       message.channel.send(embed);
       return;
     }
@@ -70,7 +66,7 @@ exports.run = async (client, message, args, tools) => {
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
         .setColor("ORANGE")
-            .setThumbnail(message.author.avatarURL())
+.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
         .setFooter(client.user.username, client.user.avatarURL())
 
         .setDescription(

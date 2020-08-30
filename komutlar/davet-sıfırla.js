@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     );
   }
   const embed = new Discord.MessageEmbed()
-    .setColor("ORANGE")
+    .setColor("#ffd100")
     .setDescription(
       `${u} Adlı şahsın davetlerinin sıfırlanmasını onaylıyor musunuz?`
     )

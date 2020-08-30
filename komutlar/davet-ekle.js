@@ -4,9 +4,9 @@ module.exports.run = async (bot, message, args) => {
   let prefix = (await db.fetch(`prefix.${message.guild.id}`)) || "-";
   if (!message.member.hasPermission("KICK_MEMBERS")) {
     const embed = new Discord.MessageEmbed()
-      .setDescription("Ne yazık ki bu komutu kullanmaya yetkin yok. Yönetici yetkisine sahip olmanız gerekmektedir.")
+      .setDescription("**Ne yazık ki bu komutu kullanmaya yetkin yok. Yönetici yetkisine sahip olmanız gerekmektedir.**")
     .setFooter(bot.user.username, bot.user.avatarURL)
-      .setColor("RED");
+      .setColor("#ffd100");
     message.channel.send(embed);
     return;
   }
@@ -16,20 +16,20 @@ let m = args.slice(1).join(" ")
     return message.channel.send(
       new Discord.MessageEmbed()
       .setFooter(bot.user.username, bot.user.avatarURL)
-        .setDescription("Lütfen davet eklenecek kişiyi etiketleyiniz!")
-        .setColor("RED")
+        .setDescription("**Lütfen davet eklenecek kişiyi etiketleyiniz!**")
+        .setColor("#ffd100")
     );
   }
     if (!m) {
     return message.channel.send(
       new Discord.MessageEmbed()
       .setFooter(bot.user.username, bot.user.avatarURL)
-        .setDescription("Lütfen eklenecek davet sayısını giriniz.")
-        .setColor("RED")
+        .setDescription("**Lütfen eklenecek davet sayısını giriniz.**")
+        .setColor("#ffd100")
     );
   }
   const embed = new Discord.MessageEmbed()
-    .setColor("GREEN")
+    .setColor("#ffd100")
   .setFooter(bot.user.username, bot.user.avatarURL)
     .setDescription(`${u} Adlı şahsa; ${m} davet eklendi!`);
   message.channel.send(embed);
