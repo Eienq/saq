@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar/bot.json');
 
 exports.run = async(client, message, args) => {
 
-  let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
+  let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
 
   if (!message.member.permissions.has('KICK_MEMBERS')) return message.channel.send(`<a:pirate:749380925619437619> **Hey Sen** Evet Sen! Bu Komut İçin Yeterli Yetkin Yok!`)
 if (!args[0])  {

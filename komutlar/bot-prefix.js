@@ -10,26 +10,32 @@ let a = ayarlar.prefix
   
 if(args[0] === "ayarla") {
 if(o) { return message.channel.send(new Discord. MessageEmbed()
+                                         .setColor("#ffd100")
 .setDescription(`**Ayarlanmış Şeyi Tekrar Ayarlıyamassın | Şuanki Prefix:** ${p} **Sıfırlamak İçin** ${p}**prefix sıfırla**`));
       }
 if(!args[1]) return message.channel.send(new Discord.MessageEmbed()
+                                              .setColor("#ffd100")
 .setDescription(`<a:pirate:749380925619437619>  **Bir Prefix Girip Tekrar Dene |  Şuanki Prefix:** ${p}`));
 db.set(`prefix.${message.guild.id}`, args[1])
 message.channel.send(new Discord.MessageEmbed()
+                          .setColor("#ffd100")
 .setDescription(`<a:pirate:749380925619437619>  **Prefix Başarıyla Ayarlandı | Şuanki Prefix:** ${args[1]}`));
 }
     if(args[0] === "sıfırla") {
     if(!o) {
        return message.channel.send(new Discord.MessageEmbed()
+                                        .setColor("#ffd100")
 .setDescription(`<a:pirate:749380925619437619> **Ayarlanmayan Prefixi Sıfırlayamazsınız | Şuanki Prefix:** ${p}`));
     }
     db.delete(`prefix.${message.guild.id}`)       
    return message.channel.send(new Discord.MessageEmbed()
+                                    .setColor("#ffd100")
 .setDescription(`<a:pirate:749380925619437619> **Prefix Başarıyla Sıfırlandı | Şuanki Prefix:** ${a}`));
   }
  
- if(!args[0]) return message.channel.send(new Discord.MessageEmbed()        
-.setDescription(`<a:pirate:749380925619437619> **Prefix Ayarlamak İçin** ${p}**prefix ayarla <prefix>**\n  **Sıfırlamak İçin** ${p}**prefix sıfırla | Şuanki Prefix:** \`${p}\``));
+ if(!args[0]) return message.channel.send(new Discord.MessageEmbed()     
+                  .setColor("#ffd100")                             
+.setDescription(`<a:pirate:749380925619437619> **Prefix Ayarlamak İçin** ${p}**prefix ayarla <prefix>**\n <a:pirate:749380925619437619> **Sıfırlamak İçin** ${p}**prefix sıfırla | Şuanki Prefix:** \`${p}\``));
   
 };
 exports.config = {
