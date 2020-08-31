@@ -14,7 +14,7 @@ const Discord = require('discord.js');
 
        const embed = new Discord.MessageEmbed()
 
-       .setColor("#6278c5")
+       .setColor("#ffd100")
        .setThumbnail(client.user.avatarURL)
        .setTimestamp()
        .setFooter('Pirate', client.user.avatarURL)

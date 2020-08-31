@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
 
   let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
 
-  if (!message.member.permissions.has('BAN_MEMBERS')) return message.channel.send(`<a:hypesquad1:750076071721828452> **Hey Sen** Evet Sen! Bu Komut İçin Yeterli Yetkin Yok!`)
+  if (!message.member.permissions.has('ADMINISTRATOR')) return message.channel.send(`<a:hypesquad1:750076071721828452> **Hey Sen** Evet Sen! Bu Komut İçin Yeterli Yetkin Yok!`)
 if (!args[0])  {
     const küfürcu0k = new Discord.MessageEmbed()
     .setTitle('Başarısız')
@@ -20,7 +20,8 @@ if (!args[0])  {
     
     const reklamengelcim = new Discord.MessageEmbed()
     .setTitle('Başarılı')
-    .setDescription('**Reklam Engeli Açtım**')
+      .setColor("#6278c5")
+    .setDescription('<a:hypesquad1:750076071721828452> **Reklam Engeli Açtım**')
     return message.channel.send(reklamengelcim)
 
   }

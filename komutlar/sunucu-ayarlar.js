@@ -6,9 +6,9 @@ let p = await db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
 if (!message.guild) return;
 
 
-const sayfa = [`**${message.guild.name} | Sunucu Ayarları**\n**Botun Prefixi :** \`${p}\`\n**Reklam Engel:** ${db.fetch(`reklamengel_${message.guild.id}`) ? `Açık ` : ` Kapalı ` } \n**Küfür Engel:** ${db.fetch(`kufur_${message.guild.id}`) ? `Açık ` : ` Kapalı ` }`] 
+const sayfa = [`**${message.guild.name} | Sunucu Ayarları**\n**Botun Prefixi :** \`${p}\`\n**Reklam Engel:** ${db.fetch(`reklamengel_${message.guild.id}`) ? `<:acik:749719275580817603>` : `<:kapali:749719203912876214>` } \n**Küfür Engel:** ${db.fetch(`kufur_${message.guild.id}`) ? `<:acik:749719275580817603> ` : `<:kapali:749719203912876214>` }`] 
 const ayarReis = new Discord.MessageEmbed() 
-.setColor(0x36393E) 
+.setColor(0xffd100) 
 .setDescription(sayfa)
 .setTimestamp() 
 message.channel.send(ayarReis) 
