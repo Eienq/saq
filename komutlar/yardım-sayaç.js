@@ -4,13 +4,13 @@ const fynx = require("../ayarlar/bot.json");
 exports.run = async (client, message, args) => { 
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 let eklenti = new Discord.MessageEmbed()  
-.setAuthor(`Pirate Sayaç Menüsü`)
+.setAuthor(`Pirate Sayaç Komutları`, client.user.avatarURL())
 .setColor('#ffd100')
-.addField('Pirate Botu Eklemeyi Unutma',`
-<a:pirate:749380925619437619> ** | **__**${prefix}SAYAÇ-AYARLA**__ **| Sunucunuzda Sayaç Ayarlar.**
-<a:pirate:749380925619437619> ** | **__**${prefix}SAYAÇ-HG-MESAJ**__ **| Sunucunuzdaki Sayacın Hoş Geldin Mesajını Ayarlar.**
-<a:pirate:749380925619437619> ** | **__**${prefix}SAYAÇ-BB-MESAJ**__ **| Sunucunuzdaki Sayacın Görüşürüz Mesajını Ayarlar.**`)
-.addField('<a:pirate:749380925619437619> | Pirate Bot',`  [Botumuza Oy Ver](https://top.gg/bot/713713727794446397) **|**  [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8) **|** [Destek](https://discord.gg/HRC9Yyp)`)
+.setDescription(`<a:pirate:749380925619437619> Pirate botumuzu eklemek için \`${prefix}davet\` yazabilirsiniz.`)
+.addField(`__Sayaç Ayarla__`,`<a:ayar:750021160237793311> \`${prefix}sayaç-ayarla\` Sunucunuzda Sayacı Ayarlar.`,true)
+.addField(`__Oto Cevap Liste__`,`<a:ayar:750021160237793311> \`${prefix}sayaç-hg-mesaj\` Sunucunuzdaki Sayacın Hoş Geldin Mesajını Ayarlar.`,true)
+.addField(`__Oto Cevap Sil__`,`<a:ayar:750021160237793311> \`${prefix}sayaç-bb-mesaj\` Sunucunuzdaki Sayacın Görüşürüz Mesajını Ayarlar.`,true)
+.addField(`__Bilgilendirme__`,`<a:pirate:749380925619437619> \`${prefix}davet\` | Pirate'yi Sunucunuza Davet Edersiniz\n<a:pirate:749380925619437619> \`${prefix}botbilgi\` | Botun İstatistiklerini Gösterir \n <a:pirate:749380925619437619> \`${prefix}ayarlar\` | Sunucunuzda Açık veya Kapalı Olan Komutları Liste Şeklinde Gösterir`)
   .setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(eklenti) 
