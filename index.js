@@ -579,3 +579,21 @@ dbl.webhook.on('vote', vote => {
   })) 
 });
 
+// ROL KORUMA SİSTEMİ
+
+
+client.on("roleCreate", async (rolee, member, guild) => {
+  let rolkoruma = await db.fetch(`rolk_${rolee.guild.id}`);
+  if (rolkoruma == "acik") {
+    rolee.delete();
+    const embed = new Discord.MessageEmbed()
+      .setDescription(
+        "Sunucunuzda yeni bir rol oluşturuludu! fakat geri silindi! (Rol Koruma Sistemi)"
+      )
+      .setColor("BLACK");
+    rolee.guild.owner.send(embed);
+    return;
+  } else {
+    return;
+  }
+});
