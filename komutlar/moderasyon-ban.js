@@ -25,10 +25,10 @@ exports.run = async(client, message, args) => {
 
   const embed = new Discord.MessageEmbed()
   .setColor("#ffd100")
-  .addField('İşlem', 'Sunucudan Banlama')
-  .addField('Banlanan Üye', `${user.tag} (${user.id})`)
-  .addField('Banlayan Yetkili', `${message.author.username}#${message.author.discriminator}`)
-  .addField('Ban Sebebi', "```" + reason + "```")
+  .addField('<a:pirate:749380925619437619> İşlem', 'Sunucudan Banlama')
+  .addField('<a:pirate:749380925619437619> Banlanan Üye', `${user.tag} (${user.id})`)
+  .addField('<a:pirate:749380925619437619> Banlayan Yetkili', `${message.author.username}#${message.author.discriminator}`)
+  .addField('<a:pirate:749380925619437619> Ban Sebebi', "```" + reason + "```")
   modlog.send(embed);
   user.send(`\`${message.guild.name}\` **Adlı Sunucuda Yaptığınız Olumsuz Davranışlardan Dolayı Yasaklandınız** \n **Yetkilinin Girdiği Sebep:** \`${reason}\``)
   
