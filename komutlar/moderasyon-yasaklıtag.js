@@ -4,7 +4,7 @@ const db = require('quick.db')
 exports.run = async (client, message, args) => { 
   const fynx = require("../ayarlar/bot.json");
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
-if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(`Komutu kullanabilmek için gerekli yetkiye sahip değilsin.`)
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
   
 if(!args[0]) return message.channel.send(`Yasaklı tag sistemini kullanabilmek için: ${prefix}**yasaklı-tag ekle tag** yazmalısın.`)
 let argümanlar = ['ekle', 'çıkar']

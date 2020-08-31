@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
   const fynx = require("../ayarlar/bot.json");
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix;
     
-  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> 00Hey Dostum Yetkin Yetmiyor**')
+  if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Üyeleri Yasakla\`" yetkisine sahip olmalısın.**`);
   
 
   let user = args[0];

@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
+     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Üyeleri Yasakla\`" yetkisine sahip olmalısın.**`);
+
 	if (!message.guild) return message.author.send('<a:hypesquad1:750076071721828452> **Bu Komutu Sunucuda Kulanabilirsiniz**');
 
     let kullanici = args[0];

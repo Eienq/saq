@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 
  exports.run = (client, message, args) => {
-   message.delete();
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
+
 
    let question = args.join(' ');
 

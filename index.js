@@ -117,7 +117,7 @@ var oyun = [
 `⚡️ Botu eklemek için | -davet`,
 `🌟 Prefix ayarlamak için | -prefix`,
 ]
-
+  
 client.on("ready", () => {
 setInterval(function() {
 

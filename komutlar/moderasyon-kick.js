@@ -24,7 +24,7 @@ exports.run = async(client, message, args) => {
   if (user.id === message.author.id) return message.channel.send('<a:setting:750076062716788807> **Kendini Kickleyeceğine Kendin Çıksana ?**');
 
   const embed = new Discord.MessageEmbed()
-  .setColor("#6278c5")
+  .setColor("#ffd100")
   .addField('<a:setting:750076062716788807> İşlem', 'Sunucudan Kickleme')
   .addField('<a:setting:750076062716788807> Kicklenen Üye', `${user.tag} (${user.id})`)
   .addField('<a:setting:750076062716788807> Kickleyen Yetkili', `${message.author.username}#${message.author.discriminator}`)
@@ -34,7 +34,7 @@ exports.run = async(client, message, args) => {
   message.guild.member(user).kick();
   
   const embed2 = new Discord.MessageEmbed()
-  .setColor("#6278c5")
+  .setColor("#ffd100")
   .setDescription(`<a:setting:750076062716788807> **Kullanıcı Başarıyla Kicklendi**`)
   message.channel.send(embed2)
   
