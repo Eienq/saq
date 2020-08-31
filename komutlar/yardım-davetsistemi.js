@@ -4,9 +4,9 @@ const fynx = require("../ayarlar/bot.json");
 exports.run = async (client, message, args) => { 
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 let eklenti = new Discord.MessageEmbed()  
-.setAuthor(`Pirate Yardım Menüsü`)
+.setAuthor(`Pirate Davet Sistemi`)
 .setColor('#ffd100')
-.addField('Pirate Botu Eklemek İçin ${prefix}davet',`
+.addField('Pirate Botu Eklemeyi Unutma',`
 <a:pirate:749380925619437619> ** | **__**${prefix}DAVET-KANAL**__ **| Sunucunuzda Kaç Kişinin Ne Kadar Daveti Olduğunu Gösteren Kanalı Ayarlar.**
 <a:pirate:749380925619437619> ** | **__**${prefix}DAVET-KANAL-SIFIRLA**__ **| Sunucunuzda Kaç Kişinin Ne Kadar Daveti Olduğunu Gösteren Kanalı Sıfırlar.**
 <a:pirate:749380925619437619> ** | **__**${prefix}DAVET-EKLE**__ **| Etiketlediğiniz Kişinin Davet Sayısını Arttırır.**

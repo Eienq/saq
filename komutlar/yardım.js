@@ -7,7 +7,7 @@ let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix
 let yardım = new Discord.MessageEmbed()  
 .setAuthor(`Pirate Yardım Menüsü`)
 .setColor('#ffd100')
-.addField('Pirate Botu Eklemek İçin ${prefix}davet',`
+.addField('Pirate Botu Eklemeyi Unutma',`
 <a:pirate:749380925619437619> ** | **__**${prefix}MODERASYON**__ **| Moderasyon Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}MODERASYON2**__ **| Sunucu Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}EKLENTİ**__ **| Eklenti Komutları**

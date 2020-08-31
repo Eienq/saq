@@ -4,9 +4,9 @@ const fynx = require("../ayarlar/bot.json");
 exports.run = async (client, message, args) => { 
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 let eklenti = new Discord.MessageEmbed()  
-.setAuthor(`Pirate Yardım Menüsü`)
+.setAuthor(`Pirate Kayıt Sistemi`)
 .setColor('#ffd100')
-.addField('Pirate Botu Eklemek İçin ${prefix}davet',`
+.addField('Pirate Botu Eklemeyi Unutma',`
 <a:pirate:749380925619437619> ** | **__**${prefix}KAYIT-KANAL-AYARLA**__ **| Kayıt Ol Komutunun Kullanılacağı Kanalı Belirler.**
 <a:pirate:749380925619437619> ** | **__**${prefix}KAYIT-LOG-KANAL-AYARLA**__ **| Kayıt Ol Komutunun Denetim Kaydı Kanalını Belirler.**
 <a:pirate:749380925619437619> ** | **__**${prefix}KAYIT-OL**__ **| Kayıt Kanalında Kayıt Olmanızı Sağlar.**
