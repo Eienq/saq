@@ -6,7 +6,7 @@ let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix
 let eklenti = new Discord.MessageEmbed()  
 .setAuthor(`Pirate Yardım Menüsü`)
 .setColor('#ffd100')
-.addField('Sunuzunuzu 7/24 Denetleyin',`
+.addField('Pirate Botu Eklemek İçin ${prefix}davet',`
 <a:pirate:749380925619437619> ** | **__**${prefix}OTOROL-AYARLA**__ **| Sunucunuzda Otorol Ayarlar.**
 <a:pirate:749380925619437619> ** | **__**${prefix}OTOROL-KAPAT**__ **| Sunucunuzdaki Otorol'ü Kapatır.**
 <a:pirate:749380925619437619> ** | **__**${prefix}OTOROL-MESAJ**__ **| Sunucunuzdaki Otorol'ün Mesajını Ayarlar.**

@@ -7,9 +7,9 @@ exports.run = async (client, message, args) => {
   	let p = db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix;
 
 const embed = new Discord.MessageEmbed()
-.setColor("RANDOM")
+.setColor("#ffd100")
 .setAuthor(`Pirate Linkler`, client.user.avatarURL())
-.setDescription('**• [Pirate`i Ekleyin.](https://discord.com/oauth2/authorize?client_id=511593657711722523&scope=bot&permissions=8)**\n\n**• [Pirate Websitesi](https://alonemusicbot.tk/)**')
+.setDescription('**• [Pirate`i Ekleyin.](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8)**\n\n**• [Pirate Oy Ver](https://top.gg/bot/713713727794446397)**')
 .setFooter(`${message.author.username} tarafından istendi!`) 
 .setTimestamp()
 .setThumbnail(client.user.avatarURL())

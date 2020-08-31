@@ -6,14 +6,14 @@ let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix
 let yardım = new Discord.MessageEmbed()  
 .setAuthor(`Pirate Yardım Menüsü`)
 .setColor('#ffd100')
-.addField('Sunuzunuzu 7/24 Koruyun',`
+.addField('Pirate Botu Eklemek İçin ${prefix}davet',`
+<a:pirate:749380925619437619> ** | **__**${prefix}SAYAÇ**__ **| Sayaç Sistemi Komutları**
+<a:pirate:749380925619437619> ** | **__**${prefix}OTOROL**__ **| OtoRol Sistemi Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}BAN**__ **| Kişiyi Yasaklar**
 <a:pirate:749380925619437619> ** | **__**${prefix}UNBAN**__ **| Kişinin Banını Açar**
 <a:pirate:749380925619437619> ** | **__**${prefix}MODLOG**__ **| Sunucunuzda Log Tuttar**
 <a:pirate:749380925619437619> ** | **__**${prefix}BANSAY**__ **| Sunucuzdan Banlananlar**
 <a:pirate:749380925619437619> ** | **__**${prefix}BANSORGU**__ **| Kişinin Neden Banlandığını Gösterir**
-<a:pirate:749380925619437619> ** | **__**${prefix}SİL**__ **|  Kadar Mesaj Siler**
-<a:pirate:749380925619437619> ** | **__**${prefix}SA-AS**__ **|Sa Yazan Kişilere Cevap Verir.**
 <a:pirate:749380925619437619> ** | **__**${prefix}KÜFÜRENGEL**__ **|  Küfür Edilmesini Tamamen Yasaklar.**
 <a:pirate:749380925619437619> ** | **__**${prefix}REKLAMENGEL**__ **| Reklam Yapılmasını Tamamen Yasaklar.**
 <a:pirate:749380925619437619> ** | **__**${prefix}REKLAM-KİCK**__ **| Kişiyi 3 Uyarıdan Sonra Kickler**
