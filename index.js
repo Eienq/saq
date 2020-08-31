@@ -136,7 +136,7 @@ setInterval(function() {
 
 
 client.on('message', async msg => {
-    let prefix = fynx.prefix;
+  let prefix = await db.fetch(`prefix.${msg.guild.id}`) || fynx.prefix 
   if(msg.content == `<@!713713727794446397>`) return msg.channel.send(`> **Pirate | Prefix**\n\n> <a:hypesquad1:750076071721828452> **Sanırım beni etiketlediniz.**\n > <a:hypesquad1:750076071721828452> Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
