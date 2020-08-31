@@ -23,7 +23,7 @@ let eklenti = new Discord.MessageEmbed()
 .addField(`__Yavaş Mod__`,`<a:setting:750076062716788807> \`${prefix}yavaşmod\` Kanala Yazı Süre Limiti Koyar.`,true)
 .addField(`__Sa-As__`,`<a:setting:750076062716788807> \`${prefix}sa-as\` Sunucuzda Selam Verenlere Selam Der`,true)
 .addField(`__Bilgilendirme__`,`<a:hypesquad1:750076071721828452> \`${prefix}davet\` | Pirate'yi Sunucunuza Davet Edersiniz\n<a:hypesquad1:750076071721828452> \`${prefix}botbilgi\` | Botun İstatistiklerini Gösterir \n <a:hypesquad1:750076071721828452> \`${prefix}ayarlar\` | Sunucunuzda Açık veya Kapalı Olan Komutları Liste Şeklinde Gösterir`)
-.setImage(`https://i.hizliresim.com/TX0QUK.png`)
+.setImage(`https://i.hizliresim.com/Y7jFCB.png`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(eklenti) 
   };

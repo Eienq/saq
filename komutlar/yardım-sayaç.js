@@ -11,7 +11,7 @@ let eklenti = new Discord.MessageEmbed()
 .addField(`__Oto Cevap Liste__`,`<a:ayar:750021160237793311> \`${prefix}sayaç-hg-mesaj\` Sunucunuzdaki Sayacın Hoş Geldin Mesajını Ayarlar.`,true)
 .addField(`__Oto Cevap Sil__`,`<a:ayar:750021160237793311> \`${prefix}sayaç-bb-mesaj\` Sunucunuzdaki Sayacın Görüşürüz Mesajını Ayarlar.`,true)
 .addField(`__Bilgilendirme__`,`<a:pirate:749380925619437619> \`${prefix}davet\` | Pirate'yi Sunucunuza Davet Edersiniz\n<a:pirate:749380925619437619> \`${prefix}botbilgi\` | Botun İstatistiklerini Gösterir \n <a:pirate:749380925619437619> \`${prefix}ayarlar\` | Sunucunuzda Açık veya Kapalı Olan Komutları Liste Şeklinde Gösterir`)
-  .setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
+  .setImage(`https://i.hizliresim.com/Y7jFCB.png`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(eklenti) 
   };

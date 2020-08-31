@@ -16,7 +16,7 @@ let eklenti = new Discord.MessageEmbed()
 .addField(`__İsim Sistem__`,`<a:setting:750076062716788807>\`${prefix}isim-sistem\` Kayıt Ol Komutunu Kullandıktan Sonra Verilecek İsmi Belirler`,true)
 .addField(`__Kayıt Sistemi Kapat__`,`<a:setting:750076062716788807> \`${prefix}kayıt-sistemi-kapat\` Kayıt Sistemini Tamamen Kapatır`,true)
 .addField(`__Bilgilendirme__`,`<a:hypesquad1:750076071721828452> \`${prefix}davet\` | Pirate'yi Sunucunuza Davet Edersiniz\n<a:hypesquad1:750076071721828452> \`${prefix}botbilgi\` | Botun İstatistiklerini Gösterir \n <a:hypesquad1:750076071721828452> \`${prefix}ayarlar\` | Sunucunuzda Açık veya Kapalı Olan Komutları Liste Şeklinde Gösterir`)
-.setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
+.setImage(`https://i.hizliresim.com/Y7jFCB.png`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(eklenti) 
   };
