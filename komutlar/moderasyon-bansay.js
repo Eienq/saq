@@ -8,14 +8,14 @@ exports.run = (bot, message, args) =>
      if(collection.first() == null)
      {
        const embed = new Discord.MessageEmbed()
-       .setTitle(`<a:pirate:749380925619437619> **Banlanan Kullanıcı bulunamadı**`)
+       .setTitle(`<a:hypesquad1:750076071721828452> **Banlanan Kullanıcı bulunamadı**`)
        .setColor("#ffd100");
        message.channel.send({embed});
      }
      else
      {
        const embed = new Discord.MessageEmbed()
-       .setTitle("<a:pirate:749380925619437619> Banlistesi | Sunucudan Banlananlar")
+       .setTitle("<a:hypesquad1:750076071721828452> Banlistesi | Sunucudan Banlananlar")
        .setColor("#ffd100");
        for(userlist of collection)
        {

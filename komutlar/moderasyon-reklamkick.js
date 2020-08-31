@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
   
   if (!args[0]) {
     const sa = new Discord.MessageEmbed()
-    .setDescription(`<a:pirate:749380925619437619>  **Bunu mu Arıyorsun?** ${prefix}reklam-kick aç/kapat`)
+    .setDescription(`<a:hypesquad1:750076071721828452>  **Bunu mu Arıyorsun?** ${prefix}reklam-kick aç/kapat`)
     .setColor('#ffd100')
     .setTimestamp()
     return message.channel.send(sa)
@@ -18,7 +18,7 @@ exports.run = async(client, message, args) => {
     
     db.set(`reklamkick_${message.guild.id}`, "Aktif")
        const sa = new Discord.MessageEmbed()
-    .setDescription(`<a:pirate:749380925619437619>  **Reklam Kick Başarıyla Açıldı!**`)
+    .setDescription(`<a:hypesquad1:750076071721828452>  **Reklam Kick Başarıyla Açıldı!**`)
     .setColor('#ffd100')
     .setTimestamp()
     return message.channel.send(sa)
@@ -27,7 +27,7 @@ exports.run = async(client, message, args) => {
     
     db.delete(`reklamkick_${message.guild.id}`)
        const sa = new Discord.MessageEmbed()
-    .setDescription(`<a:pirate:749380925619437619>  **Reklam Kick Başarıyla Kapatıldı!**`)
+    .setDescription(`<a:hypesquad1:750076071721828452>  **Reklam Kick Başarıyla Kapatıldı!**`)
        .setColor('#ffd100')
     .setTimestamp()
     return message.channel.send(sa)

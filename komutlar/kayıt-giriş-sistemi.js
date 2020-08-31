@@ -6,13 +6,13 @@ exports.run = async (client, message, args) => {
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix   
   
   let mesaj = args.slice(0).join(' ');
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:pirate:749380925619437619> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
   if (mesaj.length <= 3) {
-return message.channel.send(`<a:pirate:749380925619437619>  **Giriş Sistemini Ayarlayabilmek İçin En Az 3 Karakter Belirtebilirsin.**\n **__Örnek__**: ${prefix}giriş-sistemi Hoşgeldin -uye- Kayıt Olmak İçin \`${prefix}kayıt İsim Yaş\` Yazabilirsin.`) 
+return message.channel.send(`<a:hypesquad1:750076071721828452>  **Giriş Sistemini Ayarlayabilmek İçin En Az 3 Karakter Belirtebilirsin.**\n **__Örnek__**: ${prefix}giriş-sistemi Hoşgeldin -uye- Kayıt Olmak İçin \`${prefix}kayıt İsim Yaş\` Yazabilirsin.`) 
 }
 
 db.set(`kayitGM_${message.guild.id}`, mesaj)
-  message.channel.send(`<a:pirate:749380925619437619> **Sunucuya Yeni Üye Katılınca** \`${mesaj}\` **Kayıt Kanalına Bu Şekilde Karşılama Mesajı Atılacaktır.**`)
+  message.channel.send(`<a:hypesquad1:750076071721828452> **Sunucuya Yeni Üye Katılınca** \`${mesaj}\` **Kayıt Kanalına Bu Şekilde Karşılama Mesajı Atılacaktır.**`)
 };
 
 

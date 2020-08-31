@@ -8,19 +8,19 @@ exports.run = async (bot, message, args) => {
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
   
   if (!args[0]) return message.channel.send(`Aç yada kapat yazmalısın!! Örnek: **${prefix}sa-as aç**`)
-  if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('<a:pirate:749380925619437619> **Bu komutu kullanmak için \`MESAJLARI_YÖNET\` yetkisine sahip olmalısın!**')
+  if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('<a:hypesquad1:750076071721828452> **Bu komutu kullanmak için \`MESAJLARI_YÖNET\` yetkisine sahip olmalısın!**')
  
   if (args[0] === 'aç') {
     
     db.set(`ssaass_${message.guild.id}`, 'acik')
-    message.channel.send(`<a:pirate:749380925619437619>  **Artık bot Sa diyince As diyecek. Kapatmak için "\`${prefix}sa-as kapat\`" yazmalısın.**`)
+    message.channel.send(`<a:hypesquad1:750076071721828452>  **Artık bot Sa diyince As diyecek. Kapatmak için "\`${prefix}sa-as kapat\`" yazmalısın.**`)
  
   }
   
   if (args[0] === 'kapat') {
     
     db.set(`ssaass_${message.guild.id}`, 'kapali')
-    message.channel.send(`<a:pirate:749380925619437619> **Artık biri sa diyince cevap vermeyecek.**`)
+    message.channel.send(`<a:hypesquad1:750076071721828452> **Artık biri sa diyince cevap vermeyecek.**`)
 
   }
  

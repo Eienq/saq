@@ -11,24 +11,24 @@ exports.run = async(client, message, args) => {
   
 
     
-  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('<a:ayar:750021160237793311> **Gerekli Yetkin Yok Dostum**')
+  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> **Gerekli Yetkin Yok Dostum**')
  
   
   let user = message.mentions.users.first();
   let reason = args.slice(1).join(' ');
   
-  if (db.has(`log_${message.guild.id}`) === false) return message.channel.send(`<a:ayar:750021160237793311>  **Mod Log Kanalı Ayarlanmamış Ayarlamak İçin** | ${prefix}modlog #kanal`);
+  if (db.has(`log_${message.guild.id}`) === false) return message.channel.send(`<a:setting:750076062716788807>  **Mod Log Kanalı Ayarlanmamış Ayarlamak İçin** | ${prefix}modlog #kanal`);
   let modlog = message.guild.channels.cache.get(db.fetch(`log_${message.guild.id}`).replace("<#", "").replace(">", ""));
-  if (message.mentions.users.size < 1) return message.channel.send('<a:ayar:750021160237793311>**Lütfen Banlamak İstediğiniz Üyeyi Etiketleyin**');
-  if (reason.length < 1) return message.channel.send('<a:ayar:750021160237793311>  **Lütfen Sebep Giriniz**');
-  if (user.id === message.author.id) return message.channel.send('<a:ayar:750021160237793311> **Dostum Kendini Banlıyamazsın**');
+  if (message.mentions.users.size < 1) return message.channel.send('<a:setting:750076062716788807> **Lütfen Banlamak İstediğiniz Üyeyi Etiketleyin**');
+  if (reason.length < 1) return message.channel.send('<a:setting:750076062716788807> **Lütfen Sebep Giriniz**');
+  if (user.id === message.author.id) return message.channel.send('<a:setting:750076062716788807> **Dostum Kendini Banlıyamazsın**');
 
   const embed = new Discord.MessageEmbed()
   .setColor("#ffd100")
-  .addField('<a:ayar:750021160237793311> İşlem', 'Sunucudan Banlama')
-  .addField('<a:ayar:750021160237793311> Banlanan Üye', `${user.tag} (${user.id})`)
-  .addField('<a:ayar:750021160237793311> Banlayan Yetkili', `${message.author.username}#${message.author.discriminator}`)
-  .addField('<a:ayar:750021160237793311> Ban Sebebi', "```" + reason + "```")
+  .addField('<a:setting:750076062716788807> İşlem', 'Sunucudan Banlama')
+  .addField('<a:setting:750076062716788807> Banlanan Üye', `${user.tag} (${user.id})`)
+  .addField('<a:setting:750076062716788807> Banlayan Yetkili', `${message.author.username}#${message.author.discriminator}`)
+  .addField('<a:setting:750076062716788807> Ban Sebebi', "```" + reason + "```")
   modlog.send(embed);
   user.send(`\`${message.guild.name}\` **Adlı Sunucuda Yaptığınız Olumsuz Davranışlardan Dolayı Yasaklandınız** \n **Yetkilinin Girdiği Sebep:** \`${reason}\``)
   
@@ -37,7 +37,7 @@ exports.run = async(client, message, args) => {
   
   const embed2 = new Discord.MessageEmbed()
   .setColor("#ffd100")
-  .setDescription(`<a:ayar:750021160237793311> **Kullanıcı Başarıyla Banlandı**`)
+  .setDescription(`<a:setting:750076062716788807> **Kullanıcı Başarıyla Banlandı**`)
   message.channel.send(embed2)
 
   

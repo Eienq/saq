@@ -37,13 +37,13 @@ const onerili = new Discord.MessageEmbed()
  
       .setColor("RANDOM")
  
-      .setAuthor("<a:pirate:749380925619437619> Yeni Bir Öneri!", client.user.avatarURL())
+      .setAuthor("<a:hypesquad1:750076071721828452> Yeni Bir Öneri!", client.user.avatarURL())
  
-      .addField("<a:pirate:749380925619437619> • Öneren Kullanıcı:", message.author.tag, true)
+      .addField("<a:hypesquad1:750076071721828452> • Öneren Kullanıcı:", message.author.tag, true)
  
-      .addField("<a:pirate:749380925619437619> • Öneren Kullanıcı ID:", message.author.id,true)
+      .addField("<a:hypesquad1:750076071721828452> • Öneren Kullanıcı ID:", message.author.id,true)
  
-      .addField("<a:pirate:749380925619437619> • Önerisi:", öneri)
+      .addField("<a:hypesquad1:750076071721828452> • Önerisi:", öneri)
     
       .setThumbnail(message.author.avatarURL());
  
