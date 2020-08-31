@@ -21,7 +21,7 @@ let eklenti = new Discord.MessageEmbed()
 .addField(`__Mesaj Temizleme__`,`<a:zil:749712956346073118> ${prefix}sil Belirtiğiniz Kadar Mesaj Siler`)
 .addField(`__Yavaş Mod__`,`<a:zil:749712956346073118> ${prefix}yavaşmod Kanala Yazı Süre Limiti Koyar.`)
 .addField(`__Sa-As__`,`<a:zil:749712956346073118> ${prefix}sa-as Sunucuzda Selam Verenlere Selam Der`)
-.addField(`__Diğer Komutlar__`,`<a:pirate:749380925619437619> ${prefix}ayarlar = Sunucunuzdaki açık veya kapalı komutları gösterir.\n<a:pirate:749380925619437619> ${prefix}istek = Bot üzerinde bir istekte bulunmanızı sağlar.\n<a:pirate:749380925619437619> ${prefix}davet = Botu sunucunuza davet etmenizi sağlar.\n<a:pirate:749380925619437619> ${prefix}bot-hakkında = Botun genel bilgilerini gösterir.`)
+.addField(`__Diğer Komutlar__`,`<a:pirate:749380925619437619> ${prefix}davet = Pirate'yi Sunucunuza Davet Edersiniz\n<a:pirate:749380925619437619> ${prefix}botbilgi = Botun İstatistiklerini Gösterir \n <a:pirate:749380925619437619> ${prefix}ayarlar = Sunucunuzda Açık veya Kapalı Olan Komutları Liste Şeklinde Gösterir`)
 .setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(eklenti) 
@@ -30,4 +30,3 @@ exports.config = {
 name: "moderasyon",
   aliases: []
 }
-
