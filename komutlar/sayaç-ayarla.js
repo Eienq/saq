@@ -6,20 +6,20 @@ let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix
 let kanal = message.mentions.channels.first() 
 let sayı = args[1]
 let kalan = args[1] - message.guild.memberCount
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:pirate:749380925619437619> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
  
- if(!kanal) return message.channel.send(`<a:pirate:749380925619437619>  **Lütfen Bir Kanal Belirt!** \n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
+ if(!kanal) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Lütfen Bir Kanal Belirt!** \n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
   
- if(isNaN(args[1])) return message.channel.send(`<a:pirate:749380925619437619>  **Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın!**\n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
+ if(isNaN(args[1])) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın!**\n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
  
- if(message.guild.memberCount > args[1]) return message.channel.send(`<a:pirate:749380925619437619>  **Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın!**\n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
+ if(message.guild.memberCount > args[1]) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın!**\n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
 
  
   message.channel.send(`╔▬▬▬▬▬▬▬▬Pirate Sayaç▬▬▬▬▬▬▬▬▬
-║► <a:pirate:749380925619437619> Sayaç Aktif Edildi.
-║► <a:pirate:749380925619437619> **${args[1]}** Olarak Güncelledim! 
-║► <a:pirate:749380925619437619> Kayıt Kanalını **${kanal}** Olarak Güncelledim! 
-║► <a:pirate:749380925619437619> ${args[1]} Kişi Olmaya Son :fire: **${kalan}** :fire: Kişi Kaldı!
+║► <a:hypesquad1:750076071721828452> Sayaç Aktif Edildi.
+║► <a:hypesquad1:750076071721828452> **${args[1]}** Olarak Güncelledim! 
+║► <a:hypesquad1:750076071721828452> Kayıt Kanalını **${kanal}** Olarak Güncelledim! 
+║► <a:hypesquad1:750076071721828452> ${args[1]} Kişi Olmaya Son :fire: **${kalan}** :fire: Kişi Kaldı!
 ╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
 
   

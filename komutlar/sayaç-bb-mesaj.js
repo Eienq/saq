@@ -7,12 +7,12 @@ exports.run = async (client, message, args) => {
 const fynx = require("../ayarlar/bot.json");
 let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:pirate:749380925619437619>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
   
   let mesaj = args.slice(0).join(' ');
-  if(mesaj.length < 5) return message.channel.send('<a:pirate:749380925619437619>  **Sayaç Hoşgeldin Mesaj Sistemi İçin En Az 5 Karakter Belirtebilirsin!**\n `**__Örnek__**: ${prefix}sayaç-bb-msj -uyetag-, Sunucumuzdan Ayrıldı, -hedefuye- Kişiye Ulaşabilmek İçin -kalanuye- Kişi Kaldı. **-uyesayisi-** Kişiyiz.`')
+  if(mesaj.length < 5) return message.channel.send('<a:hypesquad1:750076071721828452>  **Sayaç Hoşgeldin Mesaj Sistemi İçin En Az 5 Karakter Belirtebilirsin!**\n `**__Örnek__**: ${prefix}sayaç-bb-msj -uyetag-, Sunucumuzdan Ayrıldı, -hedefuye- Kişiye Ulaşabilmek İçin -kalanuye- Kişi Kaldı. **-uyesayisi-** Kişiyiz.`')
   
- message.channel.send('<a:pirate:749380925619437619> **Sayaç Görüşürüz mesajı**\n `'+mesaj+'`\n **Olarak ayarlandı!**') 
+ message.channel.send('<a:hypesquad1:750076071721828452> **Sayaç Görüşürüz mesajı**\n `'+mesaj+'`\n **Olarak ayarlandı!**') 
  db.set(`sayacBB_${message.guild.id}`, mesaj)  
   
 };

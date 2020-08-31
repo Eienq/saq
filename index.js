@@ -136,7 +136,7 @@ setInterval(function() {
 
 client.on('message', async msg => {
     let prefix = fynx.prefix;
-  if(msg.content == `<@!713713727794446397>`) return msg.channel.send(`> **Pirate | Prefix**\n\n> <a:pirate:749380925619437619> **Sanırım beni etiketlediniz.**\n > <a:pirate:749380925619437619> Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@!713713727794446397>`) return msg.channel.send(`> **Pirate | Prefix**\n\n> <a:hypesquad1:750076071721828452> **Sanırım beni etiketlediniz.**\n > <a:hypesquad1:750076071721828452> Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 
@@ -153,7 +153,7 @@ if (!modlogkanal) return;
   const embed = new Discord.MessageEmbed()
   .setColor("#ffd100")
   .setTitle("MESAJ SİLİNDİ")
-.setDescription(`<a:pirate:749380925619437619> <@!${message.author.id}> **adlı kullanıcı tarafından** <#${message.channel.id}> **kanalına gönderilen mesaj silindi!** \n\nSilinen Mesaj: **${message.content}**`)
+.setDescription(`<a:hypesquad1:750076071721828452> <@!${message.author.id}> **adlı kullanıcı tarafından** <#${message.channel.id}> **kanalına gönderilen mesaj silindi!** \n\nSilinen Mesaj: **${message.content}**`)
   .setFooter("Pirate Bot | Log Sistemi")
   modlogkanal.send(embed);
   })
@@ -165,7 +165,7 @@ if (!modlogkanal) return;
   const embed = new Discord.MessageEmbed()
   .setColor("#ffd100")
 
-    .setDescription(`<a:pirate:749380925619437619> **Üye Sunucudan Yasaklandı!** \n<@!${message.user.id}>, ${message.user.tag}`)
+    .setDescription(`<a:hypesquad1:750076071721828452> **Üye Sunucudan Yasaklandı!** \n<@!${message.user.id}>, ${message.user.tag}`)
         .setThumbnail(message.user.avatarURL)
   .setFooter("Pirate Bot | Log Sistemi")
   modlogkanal.send(embed);
@@ -179,7 +179,7 @@ if (!modlogkanal) return;
                 let embed = new Discord.MessageEmbed()
                     .setColor('#ffd100')
                 .setTitle("METİN KANALI OLUŞTURULDU")
-                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlı Metin Kanalı Oluşturuldu!**`)
+                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} **Adlı Metin Kanalı Oluşturuldu!**`)
                 .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             };
@@ -187,7 +187,7 @@ if (!modlogkanal) return;
                 let embed = new Discord.MessageEmbed()
                 .setColor('#ffd100')
 .setTitle("SES KANALI OLUŞTURULDU")
-                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlı Ses Kanalı Oluşturuldu!**`)
+                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} **Adlı Ses Kanalı Oluşturuldu!**`)
                 .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
 
                 modlogkanal.send({embed});
@@ -201,7 +201,7 @@ if (!modlogkanal) return;
     if (channel.type === "text") {
                 let embed = new Discord.MessageEmbed()
                     .setColor('#ffd100')
-                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlın Metin Kanalı  Silindi**`)
+                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} **Adlın Metin Kanalı  Silindi**`)
                 .setFooter(`Pirate Bot | Log Sistemi Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             };
@@ -209,7 +209,7 @@ if (!modlogkanal) return;
                 let embed = new Discord.MessageEmbed()
                 .setColor('#ffd100')
 .setTitle("SES KANALI SİLİNDİ")
-                .setDescription(`<a:pirate:749380925619437619> ${channel.name} **Adlı Ses Kanalı Silindi**`)
+                .setDescription(`<a:hypesquad1:750076071721828452> ${channel.name} **Adlı Ses Kanalı Silindi**`)
             .setFooter(`Pirate Bot | Log Sistemi  Kanal ID: ${channel.id}`)
                 modlogkanal.send({embed});
             }
@@ -246,7 +246,7 @@ client.on("message", async msg => {
             if (!msg.member.hasPermission("MANAGE_GUILD")) {
                   msg.delete();
                           
-                    return msg.channel.send(`<a:pirate:749380925619437619> **Hey ${msg.author} Dur! Bu Sunucuda Küfürü Engelliyorum!**`).then(msg => msg.delete(10000));
+                    return msg.channel.send(`<a:hypesquad1:750076071721828452> **Hey ${msg.author} Dur! Bu Sunucuda Küfürü Engelliyorum!**`).then(msg => msg.delete(10000));
             }              
                 } catch(err) {
                   console.log(err);
@@ -268,7 +268,7 @@ client.on("messageUpdate", async (newMessage, oldMessage) => {
             if (!newMessage.member.hasPermission("MANAGE_GUILD")) {
                   newMessage.delete();
                           
-                    return newMessage.channel.send(`<a:pirate:749380925619437619> **Hey ${newMessage.author} Dur! Bu Sunucuda Küfürü Engelliyorum!**`).then(msg => msg.delete(10000));
+                    return newMessage.channel.send(`<a:hypesquad1:750076071721828452> **Hey ${newMessage.author} Dur! Bu Sunucuda Küfürü Engelliyorum!**`).then(msg => msg.delete(10000));
             }              
                 } catch(err) {
                   console.log(err);
@@ -295,7 +295,7 @@ client.on("message", async message => {
         if (!message.member.permissions.has('KICK_MEMBERS')) {
           message.delete();
           
-          return message.channel.send(`<a:pirate:749380925619437619> **Hey ${message.author} Dur! Bu Sunucuda Reklamı Engelliyorum!**`).then(message => message.delete(3000));
+          return message.channel.send(`<a:hypesquad1:750076071721828452> **Hey ${message.author} Dur! Bu Sunucuda Reklamı Engelliyorum!**`).then(message => message.delete(3000));
           
         }
       } catch(err) {
@@ -315,7 +315,7 @@ client.on("messageUpdate", async (newMessage, oldMessage) => {
         if (!newMessage.member.permissions.has('KICK_MEMBERS')) {
          newMessage.delete();
           
-          return newMessage.channel.send(`<a:pirate:749380925619437619> **Hey ${newMessage.author} Dur! Bu Sunucuda Reklamı Engelliyorum!**`).then(message => message.delete(3000));
+          return newMessage.channel.send(`<a:hypesquad1:750076071721828452> **Hey ${newMessage.author} Dur! Bu Sunucuda Reklamı Engelliyorum!**`).then(message => message.delete(3000));
           
         }
       } catch(err) {
@@ -336,7 +336,7 @@ client.on("message", async msg => {
       if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm' || msg.content.toLowerCase() == 'sea' || msg.content.toLowerCase() == 's.a.' || msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'slm') {
           try {
 
-                  return msg.reply('**<a:pirate:749380925619437619> Aleyküm Selam, Hoşgeldin.** ')
+                  return msg.reply('**<a:hypesquad1:750076071721828452> Aleyküm Selam, Hoşgeldin.** ')
           } catch(err) {
             console.log(err);
           }
@@ -361,11 +361,11 @@ client.on("guildMemberAdd", async member => {
 
   ///....
   if (!mesaj) {
-    return client.channels.cache.get(kanal).send("<a:pirate:749380925619437619> `"+ member.user.username + "`**Adlı Kullanıcı Aramıza Katıldı!** `" + sayaç + "` **Kişi Olmamıza** `" + sonuç + "` **Kişi Kaldı.** `" + member.guild.memberCount + "` **Kişiyiz!**");
+    return client.channels.cache.get(kanal).send("<a:hypesquad1:750076071721828452> `"+ member.user.username + "`**Adlı Kullanıcı Aramıza Katıldı!** `" + sayaç + "` **Kişi Olmamıza** `" + sonuç + "` **Kişi Kaldı.** `" + member.guild.memberCount + "` **Kişiyiz!**");
   }
 
   if (member.guild.memberCount == sayaç) {
-    return client.channels.get(kanal).send(`<a:pirate:749380925619437619> **Sayaç Sıfırlandı!** \`${member.guild.memberCount}\` **Kişiyiz!**`)
+    return client.channels.get(kanal).send(`<a:hypesquad1:750076071721828452> **Sayaç Sıfırlandı!** \`${member.guild.memberCount}\` **Kişiyiz!**`)
     await db.delete(`sayacK_${member.guild.id}`)
     await db.delete(`sayacS_${member.guild.id}`)
     await db.delete(`sayacHG_${member.guild.id}`)
@@ -389,7 +389,7 @@ client.on("guildMemberRemove", async member => {
     ///....
 
   if (!mesaj) {
-    return client.channels.cache.get(kanal).send("<a:pirate:749380925619437619> `" + member.user.username + "` **Adlı Kullanıcı Aramızdan Ayrıldı.**`" + sayaç + "` **Kişi Olmamıza** `" + sonuç + "` **Kişi Kaldı.** `" + member.guild.memberCount + "` **Kişiyiz!**");
+    return client.channels.cache.get(kanal).send("<a:hypesquad1:750076071721828452> `" + member.user.username + "` **Adlı Kullanıcı Aramızdan Ayrıldı.**`" + sayaç + "` **Kişi Olmamıza** `" + sonuç + "` **Kişi Kaldı.** `" + member.guild.memberCount + "` **Kişiyiz!**");
       }
 
   if (mesaj) {
@@ -406,7 +406,7 @@ client.on("guildMemberAdd", async member => {
   if (!kanal) return;
 
   if (!mesaj) {
-    client.channels.get(kanal).send("<a:pirate:749380925619437619> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
+    client.channels.get(kanal).send("<a:hypesquad1:750076071721828452> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
     
   }
 
@@ -425,7 +425,7 @@ client.on("guildMemberAdd", async member => {
   if (!rol) return;
 
   if (!mesaj) {
-    client.channels.cache.get(kanal).send("<a:pirate:749380925619437619> `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` **Kişiyiz!**");
+    client.channels.cache.get(kanal).send("<a:hypesquad1:750076071721828452> `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` **Kişiyiz!**");
     return member.roles.add(rol);
   }
 
@@ -519,7 +519,7 @@ let a = message.author
           db.add(`sayı_${message.author.id}`, 1)
           if (sayı == null) {
             const sa = new Discord.MessageEmbed()
-            .setDescription(`<a:pirate:749380925619437619>  **Hey! <@${message.author.id}> Bu İlk Uyarın Lütfen Tekrarlama!**`)
+            .setDescription(`<a:hypesquad1:750076071721828452>  **Hey! <@${message.author.id}> Bu İlk Uyarın Lütfen Tekrarlama!**`)
             .setColor('#ffd100')
             message.channel.send(sa)
             message.delete()
@@ -528,7 +528,7 @@ let a = message.author
           }
          if (sayı === 1) {
                const sa = new Discord.MessageEmbed()
-            .setDescription(`<a:pirate:749380925619437619> **Hey! <@${message.author.id}> Bu İkinci Uyarın Lütfen Tekrarlama!**`)
+            .setDescription(`<a:hypesquad1:750076071721828452> **Hey! <@${message.author.id}> Bu İkinci Uyarın Lütfen Tekrarlama!**`)
                .setColor('#ffd100')
             message.channel.send(sa)
             message.delete()
@@ -537,7 +537,7 @@ let a = message.author
          }
             if (sayı > 2) {
                const sa = new Discord.MessageEmbed()
-            .setDescription(`<a:pirate:749380925619437619>  **Hey! <@${message.author.id}> Reklamdan Dolayı Kickledim!**`)
+            .setDescription(`<a:hypesquad1:750076071721828452>  **Hey! <@${message.author.id}> Reklamdan Dolayı Kickledim!**`)
                .setColor('#ffd100')
             message.channel.send(sa)
             message.delete()
@@ -582,18 +582,24 @@ dbl.webhook.on('vote', vote => {
 // ROL KORUMA SİSTEMİ
 
 
-client.on("roleCreate", async (rolee, member, guild) => {
-  let rolkoruma = await db.fetch(`rolk_${rolee.guild.id}`);
-  if (rolkoruma == "acik") {
-    rolee.delete();
-    const embed = new Discord.MessageEmbed()
-      .setDescription(
-        "Sunucunuzda yeni bir rol oluşturuludu! fakat geri silindi! (Rol Koruma Sistemi)"
-      )
-      .setColor("BLACK");
-    rolee.guild.owner.send(embed);
-    return;
-  } else {
-    return;
+client.on("roleDelete", async role => {
+  let kanal = await db.fetch(`rolk_${role.guild.id}`);
+  if (!kanal) return;
+  const entry = await role.guild
+    .fetchAuditLogs({ type: "ROLE_DELETE" })
+    .then(audit => audit.entries.first());
+  if (entry.executor.id == client.user.id) return;
+  if (entry.executor.id == role.guild.owner.id) return;
+  if(!entry.executor.hasPermission('ROLE_DELETE')) {
+      role.guild.roles.create({
+    name: role.name,
+    color: role.hexColor,
+    permissions: role.permissions
+  });
+   let emran = new Discord.MessageEmbed()
+   .setColor('0x36393E')
+   .setTitle(`Bir rol silindi !`)
+   .setDescription(`Silinen rol adı ${role.name}, Rol koruma sistemi açık olduğu için rol geri oluşturuldu!`)
+   client.channels.cache.get(kanal).send(emran)
   }
 });

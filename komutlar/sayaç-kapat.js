@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 const db = require('quick.db')
 exports.run = (client, message, args) => { 
 
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:pirate:749380925619437619> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
  const rol = db.fetch(`sayacS_${message.guild.id}`)  
- if(!rol) return message.reply(`<a:pirate:749380925619437619>  **Bu özellik zaten kapalı! :wink: **`)
+ if(!rol) return message.reply(`<a:hypesquad1:750076071721828452>  **Bu özellik zaten kapalı! :wink: **`)
  
  
-  message.channel.send(`<a:pirate:749380925619437619>  **Sayaç başarılı bir şekilde kapatıldı.**`)
+  message.channel.send(`<a:hypesquad1:750076071721828452>  **Sayaç başarılı bir şekilde kapatıldı.**`)
 
  
   db.delete(`sayacS_${message.guild.id}`)  
