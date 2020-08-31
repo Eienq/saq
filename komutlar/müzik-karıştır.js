@@ -43,6 +43,6 @@ return message.channel.send(embedd)
 };
 
 module.exports.config = {
-    name: "random",
+    name: "karıştır",
     aliases: []
 };

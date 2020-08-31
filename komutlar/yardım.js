@@ -10,7 +10,6 @@ let yardım = new Discord.MessageEmbed()
 .addField('Pirate Botu Eklemeyi Unutma',`
 <a:pirate:749380925619437619> ** | **__**${prefix}GENEL**__ **| Genel Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}MODERASYON**__ **| Moderasyon Komutları**
-<a:pirate:749380925619437619> ** | **__**${prefix}MODERASYON2**__ **| Sunucu Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}EKLENTİ**__ **| Eklenti Komutları**
 <a:pirate:749380925619437619> ** | **__**${prefix}MÜZİK**__ **| Müzik Komutları**`)
 .addField('<a:pirate:749380925619437619> | Pirate Bot',`  [Botumuza Oy Ver](https://top.gg/bot/713713727794446397) **|**  [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=713713727794446397&scope=bot&permissions=8) **|** [Destek](https://discord.gg/HRC9Yyp)`)
