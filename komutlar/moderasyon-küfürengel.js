@@ -17,7 +17,7 @@ if (!args[0])  {
   }   
   if (args [0] == 'aç') {
     db.set(`reklamengel_${message.guild.id}`, '<a:hypesquad1:750076071721828452> **Küfür Engel Aktif!**')
-    let lus = await db.fetch(`kufur_${message.guild.id}`)
+    let lus = await db.fetch(`kufurE_${message.guild.id}`)
     
     const reklamengelcim = new Discord.MessageEmbed()
     .setTitle('Başarılı')
@@ -29,7 +29,7 @@ if (!args[0])  {
   
   if (args [0] == 'kapat') {
       
-    db.delete(`kufur_${message.guild.id}`)
+    db.delete(`kufurE_${message.guild.id}`)
 
    const küfürengelcim22 = new Discord.MessageEmbed()
     .setTitle('Başarılı')
