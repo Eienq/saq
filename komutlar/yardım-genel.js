@@ -15,7 +15,7 @@ let eklenti = new Discord.MessageEmbed()
 .addField(`__Oylama__`,`<a:ayar:750021160237793311> \`${prefix}oylama\` Sunucuda Oylama Başlatır`,true)
 .addField(`__Duyuru__`,`<a:ayar:750021160237793311> \`${prefix}duyuru\` Sunucuda Duyuru Yapar`,true)
 .addField(`__Bilgilendirme__`,`<a:pirate:749380925619437619> \`${prefix}davet\` | Pirate'yi Sunucunuza Davet Edersiniz\n<a:pirate:749380925619437619> \`${prefix}botbilgi\` | Botun İstatistiklerini Gösterir \n <a:pirate:749380925619437619> \`${prefix}ayarlar\` | Sunucunuzda Açık veya Kapalı Olan Komutları Liste Şeklinde Gösterir`)
-.setImage(`https://i.hizliresim.com/4Q3agT.jpg`)
+.setImage(`https://i.hizliresim.com/vXF8aN.png`)
 .setThumbnail(client.user.avatarURL)
  message.channel.send(eklenti) 
   };
