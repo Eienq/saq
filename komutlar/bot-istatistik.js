@@ -20,6 +20,6 @@ message.channel.send(lordcreative)
 }
 
 exports.config = {
-name: "i",
+name: "botbilgi",
 aliases: []
 }

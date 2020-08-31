@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
  
 module.exports.run = async (client, message, args) => {
-    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(":no_entry: Bu komutu kullanabilmek için `Üyeleri Yasakla` yetkisine sahip olmanız gerek.");
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("**Bu komutu kullanabilmek için `Üyeleri Yasakla` yetkisine sahip olmanız gerek.**");
     if (!args[0]) {
-        return message.channel.send(`:x: Hey Bu Komutu Kullanmak İçin Bir Kullanıcının ID'sini Belirtmen Gerek!`)
+        return message.channel.send(`**Hey Bu Komutu Kullanmak İçin Bir Kullanıcının ID'sini Belirtmen Gerek!**`)
    }
    var sebep = args.slice(1).join(" ");
    var pirate = args[0]
@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
        message.guild.fetchBans()
            .then(bans => {
                if (bans.has(pirate)) {
-                   return message.channel.send(`:x: Bu Kullanıcı Zaten Yasaklanmış.`)
+                   return message.channel.send(`**Bu Kullanıcı Zaten Yasaklanmış**`)
                }
                message.guild.ban(pirate, sebep)
                    .then(async (member) => {
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
                        else {
                            user = await client.fetchUser(member);
                        }
-                       message.channel.send(`<@!${user.id}> adlı kullanıcı banlandı <a:ban:613373970984468491>`);
+                       message.channel.send(`<@!${user.id}> **adlı kullanıcı banlandı**`);
                    })
                    .catch(error => {
                        message.channel.send(`:x: Bir Hata Oluştu`);
@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
                        else {
                            user = await client.fetchUser(member);
                        }
-                       message.channel.send(`<@!${user.id}> sunucudan yasaklandı <a:ban:613373970984468491>`);
+                       message.channel.send(`<@!${user.id}> **sunucudan yasaklandı**`);
                    })
                    .catch(error => {
                        message.channel.send(` Bir Hata Oluştu`);

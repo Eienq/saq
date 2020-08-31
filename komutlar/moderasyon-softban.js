@@ -1,4 +1,4 @@
-module.exports.run = async (bot, message, args) => {
+  module.exports.run = async (bot, message, args) => {
   message.delete();
   let reason = args.slice(1).join(" ");
   let user = message.mentions.users.first();
