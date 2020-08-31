@@ -113,6 +113,7 @@ const bot = new Discord.Client();
 var oyun = [
 `✨ Yardım almak için | -yardım`,
 `🚀 Yeni Özellikler İçin | -yardım`,
+`🔔 Yenilenen Tasarımı İle`,
 `⚡️ Botu eklemek için | -davet`,
 `🌟 Prefix ayarlamak için | -prefix`,
 ]
