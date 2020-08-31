@@ -23,7 +23,7 @@ exports.run = async (client, message, args, tools) => {
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
       .setColor("#ffd100")
-.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
+.setThumbnail(`https://cdn.discordapp.com/attachments/749380170351116290/750088540288712914/B0oBpM.png`)
 
     message.channel.send(embed);
   }
@@ -32,7 +32,7 @@ exports.run = async (client, message, args, tools) => {
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
       .setColor("#ffd100")
-.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
+.setThumbnail(`https://cdn.discordapp.com/attachments/749380170351116290/750088540288712914/B0oBpM.png`)
     message.channel.send(embed);
     return;
   }
@@ -41,7 +41,7 @@ exports.run = async (client, message, args, tools) => {
       .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
       .addField(`Total Davet:`, sayı2, true)
       .setColor("#ffd100")
-.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
+.setThumbnail(`https://cdn.discordapp.com/attachments/749380170351116290/750088540288712914/B0oBpM.png`)
 
       .setDescription(
         `${message.guild.roles.cache.get(veri).name} rolü için son ${-sayı2 -
@@ -56,7 +56,7 @@ exports.run = async (client, message, args, tools) => {
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
         .setColor("#ffd100")
-.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
+.setThumbnail(`https://cdn.discordapp.com/attachments/749380170351116290/750088540288712914/B0oBpM.png`)
 
       message.channel.send(embed);
       return;
@@ -66,7 +66,7 @@ exports.run = async (client, message, args, tools) => {
         .addField(`Davetlerin Sahibi`, `<@` + kişi.id + `>`, true)
         .addField(`Total Davet:`, sayı2, true)
         .setColor("#ffd100")
-.setThumbnail(`https://i.hizliresim.com/fZ26ws.jpg`)
+.setThumbnail(`https://cdn.discordapp.com/attachments/749380170351116290/750088540288712914/B0oBpM.png`)
         .setFooter(client.user.username, client.user.avatarURL())
 
         .setDescription(

@@ -11,7 +11,7 @@ exports.run = async(client, message, args) => {
   
 
     
-  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> **Gerekli Yetkin Yok Dostum**')
+  if (!message.author.hasPermission("BAN_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> **Gerekli Yetkin Yok Dostum**')
  
   
   let user = message.mentions.users.first();

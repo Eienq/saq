@@ -12,7 +12,7 @@ exports.run = async(client, message, args) => {
   
 
   
-  if (!message.guild.members.cache.get(client.user.id).hasPermission("KICK_MEMBERS")) return message.channel.send('Gerekli izniniz bulunmuyor')
+  if (!message.author.hasPermission("KICK_MEMBERS")) return message.channel.send('Gerekli izniniz bulunmuyor')
 
   
   let user = message.mentions.users.first();
