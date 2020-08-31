@@ -28,6 +28,6 @@ let eklenti = new Discord.MessageEmbed()
  message.channel.send(eklenti) 
   };
 exports.config = {
-name: "moderasyon",
+name: "mod",
   aliases: []
 }
