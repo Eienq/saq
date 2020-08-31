@@ -11,8 +11,8 @@ exports.run = async(client, message, args) => {
   
 
     
-  if (!message.author.hasPermission("BAN_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> **Gerekli Yetkin Yok Dostum**')
- 
+  if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> **Gerekli Yetkin Yok Dostum**')
+
   
   let user = message.mentions.users.first();
   let reason = args.slice(1).join(' ');

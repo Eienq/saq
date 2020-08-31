@@ -12,7 +12,7 @@ exports.run = async(client, message, args) => {
   
 
   
-  if (!message.author.hasPermission("KICK_MEMBERS")) return message.channel.send('Gerekli izniniz bulunmuyor')
+  if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('<a:setting:750076062716788807> **Gerekli izniniz bulunmuyor**')
 
   
   let user = message.mentions.users.first();
