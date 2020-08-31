@@ -596,10 +596,10 @@ client.on("roleDelete", async role => {
     color: role.hexColor,
     permissions: role.permissions
   });
-   let emran = new Discord.MessageEmbed()
+   let pirate = new Discord.MessageEmbed()
    .setColor('0x36393E')
    .setTitle(`Bir rol silindi !`)
    .setDescription(`Silinen rol adı ${role.name}, Rol koruma sistemi açık olduğu için rol geri oluşturuldu!`)
-   client.channels.cache.get(kanal).send(emran)
+   client.channels.cache.get(kanal).send(pirate)
   }
 });
