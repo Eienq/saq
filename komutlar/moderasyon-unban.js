@@ -1,68 +1,43 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+const fs = require('fs');
 
-exports.run = async (client, message, args) => {
+exports.run = (client, message, args) => {
 
-const permError = new Discord.RichEmbed()
-    .setColor('#ed455a')
-      .setTitle('• Hata: 01 •')
-        .setDescription('```Bu Komutu Kullanmak İçin "Üyeleri Yasakla" Yetkisine Sahip Olmalısın```')
+  const db = require('quick.db');
+  
+
     
-const userError = new Discord.RichEmbed()
-    .setColor('#ed455a')
-      .setTitle('• Hata: 02 •')
-        .setDescription('```Yasağı kaldırmak için bir kullanıcı kimliği girmelisiniz g!unban İD```')
+  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('Hey Dostum Yetkin Yetmiyor')
   
-const userError2 = new Discord.RichEmbed()
-.setColor('#ed455a')
-.setTitle('• Hata: 03 •')
-.setDescription("```ID'de Harf Kullanılanamaz```")
-  
-const userError3 = new Discord.RichEmbed()
-.setColor('#ed455a')
-.setTitle('Fynx Moderasyon - Hata')
-.setDescription('```Bu Kullanıcı Yasaklanmamış```')
-    
-const levelError = new Discord.RichEmbed()
-.setColor('#ed455a')
-.setTitle('• Hata: 05 •')
-.setDescription('```Sizinle aynı veya daha yüksek bir role sahip bir üyenin yasağını kaldırmazsınız```')
 
- if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send
-(permError).then
-(message.delete()).then
-(msg => msg.delete(5000));
+  let user = args[0];
+  let reason = args.slice(1).join(' ');
+  if (db.has(`log_${message.guild.id}`) === false) return message.channel.send(`<a:ayar:750021160237793311> **Mod Log Kanalı Ayarlanmamış | ${prefix}modlog #kanal**`);
+  let modlog = message.guild.channels.cache.get(db.fetch(`log_${message.guild.id}`).replace("<#", "").replace(">", ""));
+ if (isNaN(user)) return message.channel.send('<a:ayar:750021160237793311> **Lütfen Banını Açmak İstediğiniz Üyeninin ID sini Girin**');
+  if (reason.length < 1) return message.channel.send('<a:ayar:750021160237793311> **Lütfen Sebep Giriniz**');
+ 
   
-let user = args[0];
-if  (!user) return message.channel.send
-(userError).catch(console.error).then
-(message.delete()).then
-(msg => msg.delete(5000));
+  const embed = new Discord.MessageEmbed()
+  .setColor("#ffd100")
+  .addField('<a:ayar:750021160237793311> İşlem', 'Ban Kaldırma')
+  .addField('<a:ayar:750021160237793311> Banı Açılan Üye', `(${user})`)
+  .addField('<a:ayar:750021160237793311> Banı Açan Yetkili', `${message.author.username}#${message.author.discriminator}`)
+  .addField('<a:ayar:750021160237793311> Banı Açma Sebebi', "```" + reason + "```")
+  modlog.send(embed);
+  message.guild.member(user).unban();
   
-if  (isNaN(args[0])) return message.channel.send
-(userError2).catch(console.error).then
-(message.delete()).then
-(msg => msg.delete(5000));
 
-if  (user.highestRole >= message.author.highestRole) return message.channel.send
-(levelError).then
-(message.delete()).then
-(msg => msg.delete(5000));
   
-const banList = await message.guild.fetchBans();
+  const embed2 = new Discord.MessageEmbed()
+  .setColor("#ffd100")
+  .setDescription(`<a:ayar:750021160237793311> Belirtiğiniz İD'nin Banı Açıldı`)
+  message.channel.send(embed2)
+
   
-  
-if (!user.id === banList) return message.channel.send
-      (userError3).then
-        (message.delete()).then
-          (msg => msg.delete(5000));
-  
-  message.guild.unban(user);
-message.channel.send(`<@!${user}> Adlı Kullanıcının Yasağı Başarıyla Kaldırıldı.`)
-  
-  }
+};
 
 exports.config = {
-    name: 'unban',
-    aliases: []
-
-  };
+  name: 'unban',
+  aliases: ['unban','yasak-kaldır','yasak-aç','ban-kaldır']
+};

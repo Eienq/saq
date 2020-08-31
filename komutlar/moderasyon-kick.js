@@ -31,7 +31,7 @@ exports.run = async(client, message, args) => {
   .addField('<a:pirate:749380925619437619> Kick Sebebi', "```" + reason + "```")
   modlog.send(embed);
   
-  user.kick();
+  message.guild.member(user).kick();
   
   const embed2 = new Discord.MessageEmbed()
   .setColor("#6278c5")
