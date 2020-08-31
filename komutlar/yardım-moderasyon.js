@@ -64,4 +64,3 @@ name: "deneme",
   aliases: []
 }
 
-ney karıştı?
