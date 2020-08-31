@@ -136,7 +136,7 @@ setInterval(function() {
 
 client.on('message', async msg => {
     let prefix = fynx.prefix;
-  if(msg.content == `<@!713713727794446397>`) return msg.channel.send(`> **Pirate | Prefix**\n\n> Sanırım beni etiketlediniz.\n > Buyurun prefix(ön ek)im \`${prefix}\``);
+  if(msg.content == `<@!713713727794446397>`) return msg.channel.send(`> **Pirate | Prefix**\n\n> <a:pirate:749380925619437619> **Sanırım beni etiketlediniz.**\n > <a:pirate:749380925619437619> Buyurun prefix(ön ek)im \`${prefix}\``);
 });
 
 
@@ -361,11 +361,11 @@ client.on("guildMemberAdd", async member => {
 
   ///....
   if (!mesaj) {
-    return client.channels.cache.get(kanal).send(":loudspeaker: :inbox_tray: `"+ member.user.username + "`Adlı Kullanıcı Aramıza Katıldı! `" + sayaç + "` Kişi Olmamıza `" + sonuç + "` Kişi Kaldı. `" + member.guild.memberCount + "` Kişiyiz!");
+    return client.channels.cache.get(kanal).send("<a:pirate:749380925619437619> `"+ member.user.username + "`**Adlı Kullanıcı Aramıza Katıldı!** `" + sayaç + "` **Kişi Olmamıza** `" + sonuç + "` **Kişi Kaldı.** `" + member.guild.memberCount + "` **Kişiyiz!**");
   }
 
   if (member.guild.memberCount == sayaç) {
-    return client.channels.get(kanal).send(`:loudspeaker: Sayaç Sıfırlandı! \`${member.guild.memberCount}\` Kişiyiz!`)
+    return client.channels.get(kanal).send(`<a:pirate:749380925619437619> **Sayaç Sıfırlandı!** \`${member.guild.memberCount}\` **Kişiyiz!**`)
     await db.delete(`sayacK_${member.guild.id}`)
     await db.delete(`sayacS_${member.guild.id}`)
     await db.delete(`sayacHG_${member.guild.id}`)
@@ -389,7 +389,7 @@ client.on("guildMemberRemove", async member => {
     ///....
 
   if (!mesaj) {
-    return client.channels.cache.get(kanal).send(":loudspeaker: :outbox_tray: `" + member.user.username + "` Adlı Kullanıcı Aramızdan Ayrıldı.`" + sayaç + "` Kişi Olmamıza `" + sonuç + "` Kişi Kaldı. `" + member.guild.memberCount + "` Kişiyiz!");
+    return client.channels.cache.get(kanal).send("<a:pirate:749380925619437619> `" + member.user.username + "` **Adlı Kullanıcı Aramızdan Ayrıldı.**`" + sayaç + "` **Kişi Olmamıza** `" + sonuç + "` **Kişi Kaldı.** `" + member.guild.memberCount + "` **Kişiyiz!**");
       }
 
   if (mesaj) {
@@ -406,7 +406,7 @@ client.on("guildMemberAdd", async member => {
   if (!kanal) return;
 
   if (!mesaj) {
-    client.channels.get(kanal).send(":loudspeaker: :inbox_tray: Selam! `" + member.user.username + "`!kayıtol yazarak kayıt olabilirsin!");
+    client.channels.get(kanal).send("<a:pirate:749380925619437619> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
     
   }
 
@@ -425,7 +425,7 @@ client.on("guildMemberAdd", async member => {
   if (!rol) return;
 
   if (!mesaj) {
-    client.channels.cache.get(kanal).send(":loudspeaker: :inbox_tray: `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` Kişiyiz!");
+    client.channels.cache.get(kanal).send("<a:pirate:749380925619437619> `" + member.user.username + "`** Hoş Geldin! Otomatik Rolün Verildi Seninle Beraber** `" + member.guild.memberCount + "` **Kişiyiz!**");
     return member.roles.add(rol);
   }
 

@@ -1,13 +1,14 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
   const db = require('quick.db');
   
-
+  const fynx = require("../ayarlar/bot.json");
+let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix;
     
-  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('Hey Dostum Yetkin Yetmiyor')
+  if (!message.guild.members.cache.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.channel.send('<a:ayar:750021160237793311> 00Hey Dostum Yetkin Yetmiyor**')
   
 
   let user = args[0];
@@ -25,7 +26,7 @@ exports.run = (client, message, args) => {
   .addField('<a:ayar:750021160237793311> Banı Açan Yetkili', `${message.author.username}#${message.author.discriminator}`)
   .addField('<a:ayar:750021160237793311> Banı Açma Sebebi', "```" + reason + "```")
   modlog.send(embed);
-  message.guild.member(user).unban();
+  message.guild.members.unban(user);
   
 
   
