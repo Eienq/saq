@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 exports.run = (client, message, args) => {
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
   if (db.has(`antiraidK_${message.guild.id}`) === false) {
     return message.channel.send(
       "Anti-raid açılmamış. Açmak için **-anti-raid aç**"

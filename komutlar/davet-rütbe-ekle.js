@@ -1,6 +1,8 @@
 const Discord = require("discord.js"),
   db = require("quick.db");
 exports.run = async (client, message, args) => {
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
+
   let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "-";
   let veri = await db.fetch(`rol1_${message.guild.id}`);
   let veri2 = await db.fetch(`rol2_${message.guild.id}`);

@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
 
   let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
 
-  if (!message.member.permissions.has('KICK_MEMBERS')) return message.channel.send(`<a:hypesquad1:750076071721828452> **Hey Sen** Evet Sen! Bu Komut İçin Yeterli Yetkin Yok!`)
+  if (!message.member.permissions.has('BAN_MEMBERS')) return message.channel.send(`<a:hypesquad1:750076071721828452> **Hey Sen** Evet Sen! Bu Komut İçin Yeterli Yetkin Yok!`)
 if (!args[0])  {
     const küfürcu0k = new Discord.MessageEmbed()
     .setTitle('Başarısız')
@@ -40,7 +40,7 @@ if (!args[0])  {
   
 };
 exports.config = {
- name: 'reklam-engelle',
+ name: 'reklamengelle',
   aliases: ['reklam-engel']
 
 };

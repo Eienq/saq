@@ -1,5 +1,5 @@
   module.exports.run = async (bot, message, args) => {
-  message.delete();
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
   let reason = args.slice(1).join(" ");
   let user = message.mentions.users.first();
   if (reason.length < 1)

@@ -3,6 +3,8 @@ const request = require('request')
 const fynx =require("../ayarlar/bot.json");
 const db = require("quick.db");
 exports.run = async(client, message, args) => {
+  if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Kanalları Yönet\`" yetkisine sahip olmalısın.**`);
+
   let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
 if (message.channel.type !== "text") return;
 const limit = args[0] ? args[0] : 0;

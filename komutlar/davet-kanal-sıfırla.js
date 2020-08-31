@@ -2,12 +2,9 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 module.exports.run = async (bot, message, args) => {
   let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "-";
-  if (!message.member.hasPermission("KICK_MEMBERS")) {
-    const embed = new Discord.MessageEmbed()
-      .setDescription("Ne yazık ki bu komutu kullanmaya yetkin yok. Yönetici yetkisine sahip olmanız gerekmektedir.")
-    .setFooter(bot.user.username, bot.user.avatarURL)
-      .setColor("RED");
-    message.channel.send(embed);
+  if (!message.member.hasPermission("ADMINISTRATOR")) {
+  message.channel.send(`<a:hypesquad1:750076071721828452>  **Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
+
     return;
   }
   let kanal = await db.fetch(`davetkanal_${message.guild.id}`)

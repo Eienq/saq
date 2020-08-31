@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-	if (!message.guild) return message.author.send('<a:hypesquad1:750076071721828452> **Bu Komutu Sadece Moderatörler  Kulanabilir**');
+	if (!message.guild) return message.author.send('<a:hypesquad1:750076071721828452> **Bu Komutu Sunucuda Kulanabilirsiniz**');
 
     let kullanici = args[0];
     if (!kullanici) return message.channel.send("<a:hypesquad1:750076071721828452> **Banlanan Bir kullanıcının ID'sini belirtmen gerek**")
