@@ -115,8 +115,6 @@ var oyun = [
 `🚀 Yeni Özellikler İçin | -yardım`,
 `🔔 Yenilenen Tasarımı İle`,
 `⚡️ Botu eklemek için | -davet`,
-`🌈 piratebots.glitch.me`,  
-`🔨 Lord Creative - Bay Ördekcik - Xir`,  
 `🌟 Prefix ayarlamak için | -prefix`
 ]
   
