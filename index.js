@@ -405,13 +405,13 @@ client.on("guildMemberAdd", async member => {
   if (!kanal) return;
 
   if (!mesaj) {
-    client.channels.get(kanal).send("<a:hypesquad1:750076071721828452> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
+    client.channels.cache.get(kanal).send("<a:hypesquad1:750076071721828452> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
     
   }
 
   if (mesaj) {
     var mesajs = mesaj.replace("-uye-", `${member.user.username}`).replace("-uyetag-", `${member.user.tag}`);
-    return client.channels.get(kanal).send(mesajs);
+    return client.channels.cache.get(kanal).send(mesajs);
      }
 });
 
@@ -449,30 +449,6 @@ client.on('message', async msg => {
   }
 });
 
-//Anti Raid Bot Sistemi
-
-client.on("guildMemberAdd", async (member, message) => {
-let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix 
-let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
-  if (!kanal) return;  
-  var cod = member.guild.owner
-  if (member.user.bot === true) {
-     if (db.fetch(`botizin_${member.guild.id}.${member.id}`) == "aktif") {
-    let are = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setThumbnail(member.user.avatarURL)
-      .setDescription(`**${member.user.tag}** (${member.id}) adlı bota bir yetkili verdi eğer kaldırmak istiyorsanız **${prefix}bot-izni kaldır botun_id**.`);
-    cod.send(are);
-     } else {
-       let izinverilmemişbot = new Discord.MessageEmbed()
-      .setColor("RANDOM")
-      .setThumbnail(member.user.avatarURL)
-      .setDescription("**" + member.user.tag +"**" + " (" + member.id+ ") " + "adlı bot sunucuya eklendi ve kickledim eğer izin vermek istiyorsanız **" + prefix + "bot-izni ver botun_id**")
-       member.kick();
-       cod.send(izinverilmemişbot)
-}
-  }
-});
 
 /// YASAKLI TAG
 
@@ -503,48 +479,3 @@ await user.ban() } }
 })
 
 
-// DBL OY TAKİP SİSTEMİ
-
-const DBL = require('dblapi.js'); 
-const dbl = new DBL('DBLTOKEN', { 
-  webhookPort: 5000, 
-  webhookAuth: 'DBLWEBHOOKŞIFRE' 
-}); 
-dbl.webhook.on('ready', hook => { 
-  console.log(`Webhook: http://${hook.hostname}:${hook.port}${hook.path}`);
-}) 
-dbl.webhook.on('vote', vote => { 
-  client.channels.cache.get('749744127800901633').createWebhook(vote.user.username)
-    .then(webhook => webhook.edit(vote.user.username)
-          .then(wb => { 
-    const hook = new Discord.WebhookClient('DBLTOKEN', wb.id, wb.token); 
-    
-    hook.send(`\`${vote.user}\` Oy verdi!`); 
-    hook.delete() 
-  })) 
-});
-
-// ROL KORUMA SİSTEMİ
-
-
-client.on("roleDelete", async role => {
-  let kanal = await db.fetch(`rolk_${role.guild.id}`);
-  if (!kanal) return;
-  const entry = await role.guild
-    .fetchAuditLogs({ type: "ROLE_DELETE" })
-    .then(audit => audit.entries.first());
-  if (entry.executor.id == client.user.id) return;
-  if (entry.executor.id == role.guild.owner.id) return;
-  if(!entry.executor.hasPermission('ROLE_DELETE')) {
-      role.guild.roles.create({
-    name: role.name,
-    color: role.hexColor,
-    permissions: role.permissions
-  });
-   let pirate = new Discord.MessageEmbed()
-   .setColor('0x36393E')
-   .setTitle(`Bir rol silindi !`)
-   .setDescription(`Silinen rol adı ${role.name}, Rol koruma sistemi açık olduğu için rol geri oluşturuldu!`)
-   client.channels.cache.get(kanal).send(pirate)
-  }
-});
