@@ -1,4 +1,4 @@
-
+  
 const db = require("quick.db");
 const Discord = require('discord.js');
 const fynx = require("../ayarlar/bot.json");
