@@ -1,4 +1,4 @@
-
+  
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const DBL = require("dblapi.js");
