@@ -1,8 +1,8 @@
 {
-  "name": "FynxV12",
+  "name": "CreativeDeveloper",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Fynx V12",
+  "author": "Walves",
   "license": "MIT",
   "engines": {
     "node": "12.x"
