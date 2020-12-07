@@ -1,13 +1,23 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const client = new Discord.Client();
-const express = require("express");
-const app = express();
 const moment = require("moment");
 const fynx = require("./ayarlar/bot.json"); 
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
-
+const express = require("express");
+const app = express();
+const http = require("http");
+app.get("/", (request, response) => {
+  console.log(
+    `ASD :D Creative Dec`
+  );
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
 const Alone = "#36393e";
 const AloneDogru = "#22BF41";
 const AloneHata = "#f30707";
